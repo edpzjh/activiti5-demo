@@ -5,9 +5,9 @@ import java.util.Map;
 
 import org.activiti.engine.runtime.ProcessInstance;
 
-import com.bulain.common.test.ActivitiTestCase;
 import com.bulain.mybatis.model.Order;
 import com.bulain.mybatis.service.OrderService;
+import com.bulain.mybatis.test.ActivitiTestCase;
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionProxy;
 

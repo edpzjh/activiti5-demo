@@ -28,6 +28,16 @@
 			<artifactId>activiti5-common</artifactId>
 			<version>1.0.0</version>
 		</dependency>
+		
+		<!-- activiti -->
+		<dependency>
+			<groupId>org.activiti</groupId>
+			<artifactId>activiti-engine</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.activiti</groupId>
+			<artifactId>activiti-spring</artifactId>
+		</dependency>
 
 		<!-- database -->
 		<dependency>

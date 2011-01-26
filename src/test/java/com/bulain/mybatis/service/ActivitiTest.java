@@ -7,7 +7,7 @@ import java.util.Map;
 import org.activiti.engine.runtime.ProcessInstance;
 import org.activiti.engine.task.Task;
 
-import com.bulain.common.test.ActivitiTestCase;
+import com.bulain.mybatis.test.ActivitiTestCase;
 
 public class ActivitiTest extends ActivitiTestCase {
 	private String deploymentId;
