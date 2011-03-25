@@ -1,35 +1,47 @@
 package com.bulain.mybatis.service;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.activiti.engine.RepositoryService;
+import org.activiti.engine.RuntimeService;
+import org.activiti.engine.TaskService;
 import org.activiti.engine.runtime.ProcessInstance;
 import org.activiti.engine.task.Task;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 
-import com.bulain.mybatis.test.ActivitiTestCase;
+import com.bulain.common.test.ServiceTestCase;
 
-public class ActivitiTest extends ActivitiTestCase {
-	private String deploymentId;
-	
-	public static void main(String[] args){
-		junit.textui.TestRunner.run(ActivitiTest.class);
-	}	  
-	
-	protected void setUp() throws Exception {
-	    super.setUp();
-	    super.setUpActiviti();
-	    deploymentId = repositoryService.createDeployment()
-	        .addClasspathResource("diagrams/order.bpmn20.xml")
-	        .deploy().getId();
-	}
-	
-	protected void tearDown() throws Exception {
-	    repositoryService.deleteDeployment(deploymentId, true);
-	    super.tearDownJbpm();
-	    super.tearDown();
-	}
-	
+public class ActivitiTest extends ServiceTestCase{
+    @Autowired
+    private RepositoryService repositoryService;
+    @Autowired
+    private RuntimeService runtimeService;
+    @Autowired
+    private TaskService taskService;
+    
+    private String deploymentId;
+
+    @Before
+    public void setUp() throws Exception {
+        deploymentId = repositoryService.createDeployment()
+            .addClasspathResource("diagrams/order.bpmn20.xml")
+            .deploy().getId();
+    }
+    
+    @After
+    public void tearDown() throws Exception {
+        repositoryService.deleteDeployment(deploymentId, true);
+    }
+    
+	@Test
 	public void testOrderApprove() {
 	    Map<String, Object> variables = new HashMap<String, Object>(); 
 	    variables.put("owner", "johndoe");
@@ -69,8 +81,9 @@ public class ActivitiTest extends ActivitiTestCase {
 	    
 	    processInstance = runtimeService.createProcessInstanceQuery().processInstanceId(pid).singleResult();
 	    assertNull(processInstance);
-	  }
+	}
 	
+	@Test
 	public void testOrderReject() {
 	    Map<String, Object> variables = new HashMap<String, Object>(); 
 	    variables.put("owner", "johndoe");
@@ -139,5 +152,5 @@ public class ActivitiTest extends ActivitiTestCase {
 	    
 	    processInstance = runtimeService.createProcessInstanceQuery().processInstanceId(pid).singleResult();
 	    assertNull(processInstance);
-	  }
+	}
 }

@@ -5,25 +5,27 @@ import java.util.List;
 import org.activiti.engine.repository.ProcessDefinition;
 import org.activiti.engine.runtime.ProcessInstance;
 import org.activiti.engine.task.Task;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
-import com.bulain.mybatis.test.ActivitiTestCase;
+import com.bulain.common.test.ActionTestCase;
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionProxy;
 
-public class ActivitiActionTest extends ActivitiTestCase {
-	public static void main(String[] args) {
-		junit.textui.TestRunner.run(ActivitiActionTest.class);
-	}
+public class ActivitiActionTest extends ActionTestCase {
 	
-	protected void setUp() throws Exception {
+    @Before
+	public void setUp() throws Exception {
 		super.setUp();
-		super.setUpCleanActiviti();
 	}
 
-	protected void tearDown() throws Exception {
+    @After
+	public void tearDown() throws Exception {
 		super.tearDown();
 	}
 
+    @Test
 	public void testWorkflow() throws Exception {
 		initServletMockObjects();
 		ActionProxy proxy = getActionProxy("/activiti/deploy");

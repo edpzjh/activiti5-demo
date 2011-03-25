@@ -3,28 +3,37 @@ package com.bulain.mybatis.controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.activiti.engine.RepositoryService;
+import org.activiti.engine.RuntimeService;
+import org.activiti.engine.TaskService;
 import org.activiti.engine.runtime.ProcessInstance;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 
+import com.bulain.common.test.ActionTestCase;
 import com.bulain.mybatis.model.Order;
 import com.bulain.mybatis.service.OrderService;
-import com.bulain.mybatis.test.ActivitiTestCase;
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionProxy;
 
-public class OrderActionWorkflowTest extends ActivitiTestCase {
-	private String processDefinitionId;
-	private String deploymentId;
-	
+public class OrderActionWorkflowTest extends ActionTestCase {
+	@Autowired
+	private RepositoryService repositoryService;
+	@Autowired
+	private RuntimeService runtimeService;
+	@Autowired
+	private TaskService taskService;
+	@Autowired
 	private OrderService orderService;
 	
-	public static void main(String[] args) {
-		junit.textui.TestRunner.run(OrderActionWorkflowTest.class);
-	}
+	private String processDefinitionId;
+    private String deploymentId;
 	
-	protected void setUp() throws Exception {
+	@Before
+	public void setUp() throws Exception {
 	    super.setUp();
-	    super.setUpActiviti();
-	    super.setUpCleanActiviti();
 	    
 	    deploymentId = repositoryService.createDeployment()
 	        .addClasspathResource("diagrams/order.bpmn20.xml")
@@ -33,7 +42,8 @@ public class OrderActionWorkflowTest extends ActivitiTestCase {
 	    orderService = (OrderService) applicationContext.getBean("orderService");
 	}
 	
-	protected void tearDown() throws Exception {
+	@After
+	public void tearDown() throws Exception {
 	    repositoryService.deleteDeployment(deploymentId, true);
 		super.tearDown();
 	}
@@ -50,6 +60,7 @@ public class OrderActionWorkflowTest extends ActivitiTestCase {
 		return taskService.createTaskQuery().executionId(executionId).singleResult().getId();
 	}
 	
+	@Test
 	public void testWorkflowApprove() throws Exception{
 		String executionId = start();
 		String taskId = task(executionId);
@@ -98,6 +109,7 @@ public class OrderActionWorkflowTest extends ActivitiTestCase {
 		orderService.delete(order.getId());
 	}
 	
+	@Test
 	public void testWorkflowReject() throws Exception{
 		String executionId = start();
 		String taskId = task(executionId);
