@@ -5,8 +5,6 @@ import java.util.List;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.springframework.test.context.transaction.AfterTransaction;
-import org.springframework.test.context.transaction.BeforeTransaction;
 
 import com.bulain.common.page.Page;
 import com.bulain.common.test.ActionTestCase;
@@ -19,23 +17,15 @@ public class OrderActionTest extends ActionTestCase {
     @Before
 	public void setUp() throws Exception {
 	    super.setUp();
+	    super.setUpDB("test-data/init_orders.xml");
 	}
 	
     @After
 	public void tearDown() throws Exception {
 		super.tearDown();
+		super.tearDownDB();
 	}
 	
-	@BeforeTransaction
-    public void setUpDB() throws Exception {
-        super.setUpDB("test-data/init_orders.xml");
-    }
-    
-    @AfterTransaction
-    public void tearDownDB() throws Exception {
-        super.tearDownDB();
-    }
-
     @Test
 	public void testList() throws Exception {
 		initServletMockObjects();
