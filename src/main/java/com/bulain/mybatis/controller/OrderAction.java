@@ -6,7 +6,8 @@ import java.util.Map;
 
 import org.activiti.engine.TaskService;
 import org.activiti.engine.task.Task;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.bulain.common.controller.PageSupportActionSupport;
 import com.bulain.mybatis.model.Order;
@@ -15,7 +16,7 @@ import com.bulain.mybatis.service.OrderService;
 
 public class OrderAction extends PageSupportActionSupport{
 	private static final long serialVersionUID = -1592145738956326742L;
-	private static final Logger LOG = Logger.getLogger(OrderAction.class);
+	private static final Logger LOG = LoggerFactory.getLogger(OrderAction.class);
 
 	private Integer id;
 	private String taskId;
