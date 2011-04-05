@@ -4,40 +4,58 @@
     xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 
     <display-name>struts2-demo</display-name>
-
+    
+    <context-param>
+        <param-name>log4jConfigLocation</param-name>
+        <param-value>classpath:log4j.properties</param-value>
+    </context-param>
+    
+    <context-param>
+        <param-name>log4jRefreshInterval</param-name>
+        <param-value>1000</param-value>
+    </context-param>
+ 
     <filter>
         <filter-name>threadFilter</filter-name>
-        <filter-class>com.bulain.mybatis.log.ThreadFilter</filter-class>
+        <filter-class>com.bulain.common.servlet.Log4jThreadFilter</filter-class>
     </filter>
     <filter>
-        <filter-name>struts-prepare</filter-name>
-        <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareFilter</filter-class>
+        <filter-name>log4jNdcFilter</filter-name>
+        <filter-class>com.bulain.common.servlet.Log4jNdcFilter</filter-class>
     </filter>
-    <filter>
-        <filter-name>sitemesh</filter-name>
-        <filter-class>com.opensymphony.sitemesh.webapp.SiteMeshFilter</filter-class>
-    </filter>
-    <filter>
-        <filter-name>struts-execute</filter-name>
-        <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsExecuteFilter</filter-class>
-    </filter>
-
+	<filter>
+	    <filter-name>struts-prepare</filter-name>
+	    <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareFilter</filter-class>
+	</filter>
+	<filter>
+	    <filter-name>sitemesh</filter-name>
+	    <filter-class>com.opensymphony.sitemesh.webapp.SiteMeshFilter</filter-class>
+	</filter>
+	<filter>
+	    <filter-name>struts-execute</filter-name>
+	    <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsExecuteFilter</filter-class>
+	</filter>
+	
     <filter-mapping>
         <filter-name>threadFilter</filter-name>
         <url-pattern>*.action</url-pattern>
     </filter-mapping>
-    <filter-mapping>
-        <filter-name>struts-prepare</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
-    <filter-mapping>
-        <filter-name>sitemesh</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
-    <filter-mapping>
-        <filter-name>struts-execute</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
+	<filter-mapping>
+	    <filter-name>log4jNdcFilter</filter-name>
+	    <url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+	    <filter-name>struts-prepare</filter-name>
+	    <url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+	    <filter-name>sitemesh</filter-name>
+	    <url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+	    <filter-name>struts-execute</filter-name>
+	    <url-pattern>/*</url-pattern>
+	</filter-mapping>
 
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
@@ -50,5 +68,9 @@
 
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    
+    <listener>
+        <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
     </listener>
 </web-app>
