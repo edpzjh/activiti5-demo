@@ -16,7 +16,7 @@
     </context-param>
  
     <filter>
-        <filter-name>threadFilter</filter-name>
+        <filter-name>log4jThreadFilter</filter-name>
         <filter-class>com.bulain.common.servlet.Log4jThreadFilter</filter-class>
     </filter>
     <filter>
@@ -37,8 +37,8 @@
 	</filter>
 	
     <filter-mapping>
-        <filter-name>threadFilter</filter-name>
-        <url-pattern>*.action</url-pattern>
+        <filter-name>log4jThreadFilter</filter-name>
+        <url-pattern>/*</url-pattern>
     </filter-mapping>
 	<filter-mapping>
 	    <filter-name>log4jNdcFilter</filter-name>
