@@ -8,16 +8,6 @@ public class UserView extends User{
 	private String createdAtName;
 	private String updatedAtName;
 	
-	public UserView(User user){
-		setId(user.getId());
-		setFirstName(user.getFirstName());
-		setLastName(user.getLastName());
-		setCreatedBy(user.getCreatedBy());
-    	setCreatedAt(user.getCreatedAt());
-    	setUpdatedBy(user.getUpdatedBy());
-    	setUpdatedAt(user.getUpdatedAt());
-	}
-	
 	public String getCreatedAtName() {
 		return createdAtName;
 	}

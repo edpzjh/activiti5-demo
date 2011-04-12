@@ -1,5 +1,6 @@
 package com.bulain.mybatis.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -8,10 +9,12 @@ import org.activiti.engine.TaskService;
 import org.activiti.engine.task.Task;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.BeanUtils;
 
 import com.bulain.common.controller.PageSupportActionSupport;
 import com.bulain.mybatis.model.Order;
 import com.bulain.mybatis.pojo.OrderSearch;
+import com.bulain.mybatis.pojo.OrderView;
 import com.bulain.mybatis.service.OrderService;
 
 public class OrderAction extends PageSupportActionSupport{
@@ -24,7 +27,7 @@ public class OrderAction extends PageSupportActionSupport{
 
 	private OrderSearch search;
 	private Order order;
-	private List<Order> listOrder;
+	private List<OrderView> listOrder;
 	
 	private transient OrderService orderService;
 	private transient TaskService taskService;
@@ -33,7 +36,8 @@ public class OrderAction extends PageSupportActionSupport{
 		search = (OrderSearch) getSearchFromSession(OrderSearch.class, search);
 		page = getPageFromSession();
 		
-		listOrder = orderService.page(search, page);
+		List<Order> list = orderService.page(search, page);
+		listOrder = formatList(list);
 		
 		putSearchToSession(OrderSearch.class, search);
 	    putPageToSession();
@@ -159,6 +163,20 @@ public class OrderAction extends PageSupportActionSupport{
 		}
 	}
 	
+	protected List<OrderView> formatList(List<Order> list){
+        List<OrderView> listView = new ArrayList<OrderView>();
+        for(Order order : list){
+            listView.add(formatItem(order));
+        }
+        return listView;
+    }
+    
+    protected OrderView formatItem(Order order){
+        OrderView view = new OrderView();
+        BeanUtils.copyProperties(order, view);
+        return view;
+    }
+	
 	public Integer getId() {
 		return id;
 	}
@@ -183,11 +201,11 @@ public class OrderAction extends PageSupportActionSupport{
 		this.order = order;
 	}
 
-	public List<Order> getListOrder() {
+	public List<OrderView> getListOrder() {
 		return listOrder;
 	}
 
-	public void setListOrder(List<Order> listOrder) {
+	public void setListOrder(List<OrderView> listOrder) {
 		this.listOrder = listOrder;
 	}
 

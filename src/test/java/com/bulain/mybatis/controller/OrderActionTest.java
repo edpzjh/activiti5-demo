@@ -9,6 +9,7 @@ import org.junit.Test;
 import com.bulain.common.page.Page;
 import com.bulain.common.test.ActionTestCase;
 import com.bulain.mybatis.model.Order;
+import com.bulain.mybatis.pojo.OrderView;
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionProxy;
 
@@ -36,7 +37,7 @@ public class OrderActionTest extends ActionTestCase {
 		String result = proxy.execute();
 		assertEquals(Action.SUCCESS, result);
 		
-		List<Order> listOrder = orderAction.getListOrder();
+		List<OrderView> listOrder = orderAction.getListOrder();
 		assertEquals(3, listOrder.size());
 		Page page = orderAction.getPage();
 		assertEquals(1, page.getPage());
