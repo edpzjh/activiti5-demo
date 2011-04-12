@@ -2,6 +2,7 @@ package com.bulain.mybatis.service;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 import java.util.List;
 
@@ -12,15 +13,28 @@ import org.springframework.test.context.transaction.BeforeTransaction;
 
 import com.bulain.common.page.Page;
 import com.bulain.common.test.ServiceTestCase;
+import com.bulain.mybatis.dao.OrderHisMapper;
+import com.bulain.mybatis.dao.OrderMapper;
+import com.bulain.mybatis.dao.OrderMasterMapper;
 import com.bulain.mybatis.model.Order;
+import com.bulain.mybatis.model.OrderHis;
+import com.bulain.mybatis.model.OrderMaster;
 import com.bulain.mybatis.pojo.OrderSearch;
+import com.bulain.mybatis.test.TestConst;
 
 public class OrderServiceImplTest extends ServiceTestCase {
     @Autowired
 	private OrderService orderService;
+    @Autowired
+    private OrderMapper orderMapper;
+    @Autowired
+    private OrderMasterMapper orderMasterMapper;
+    @Autowired
+    private OrderHisMapper orderHisMapper;
 	
 	@BeforeTransaction
 	public void setUp() throws Exception {
+	    super.setUpInitDB(TestConst.TEST_DATA_INIT_COMMON_XML);
 		super.setUpDB("test-data/init_orders.xml");
 	}
 
@@ -92,5 +106,31 @@ public class OrderServiceImplTest extends ServiceTestCase {
 		assertEquals("name_wf", byWfId.getName());
 		assertEquals("note_wf", byWfId.getNote());
 		assertEquals("wf_id_wf", byWfId.getWfId());
+	}
+	
+	@Test
+	public void testFinish(){
+	    //prepare
+	    Order exist = orderMapper.selectByPrimaryKey(Integer.valueOf(102));
+	    
+	    //test
+	    orderService.finish(Integer.valueOf(102));
+	    
+	    //assert order
+	    Order order = orderMapper.selectByPrimaryKey(Integer.valueOf(102));
+        assertNull(order);
+        
+        //prepare search
+        OrderSearch search = new OrderSearch();
+        search.setName(exist.getName());
+        
+        //assert order master
+        List<OrderMaster> findMaster = orderMasterMapper.find(search);
+        assertEquals(1, findMaster.size());
+        
+        //assert order history
+        List<OrderHis> findHis = orderHisMapper.find(search);
+        assertEquals(1, findHis.size());
+        
 	}
 }

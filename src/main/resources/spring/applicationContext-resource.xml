@@ -51,5 +51,8 @@
 			</list>
 		</property>  
 	</bean> 
-
+    
+    <bean id="baseMapper" class="org.mybatis.spring.mapper.MapperFactoryBean" abstract="true"> 
+        <property name="sqlSessionFactory" ref="sqlSessionFactory" /> 
+    </bean>
 </beans>

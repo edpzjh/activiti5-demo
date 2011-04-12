@@ -6,5 +6,7 @@
 	</bean>	
 	<bean id="orderService" class="com.bulain.mybatis.service.OrderServiceImpl">
 		<property name="orderMapper" ref="orderMapper"/>
+        <property name="orderMasterMapper" ref="orderMasterMapper"/>
+        <property name="orderHisMapper" ref="orderHisMapper"/>
 	</bean>	
 </beans>
