@@ -32,6 +32,7 @@
         <property name="beanNames"> 
             <list>
 				<value>*Service</value>
+                <value>*Bpo</value>
 			</list>
         </property> 
         <property name="interceptorNames"> 

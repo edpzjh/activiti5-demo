@@ -5,13 +5,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.activiti.engine.TaskService;
-import org.activiti.engine.task.Task;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 
 import com.bulain.common.controller.PageSupportActionSupport;
+import com.bulain.mybatis.bpo.OrderBpo;
 import com.bulain.mybatis.model.Order;
 import com.bulain.mybatis.pojo.OrderSearch;
 import com.bulain.mybatis.pojo.OrderView;
@@ -30,7 +29,7 @@ public class OrderAction extends PageSupportActionSupport{
 	private List<OrderView> listOrder;
 	
 	private transient OrderService orderService;
-	private transient TaskService taskService;
+	private transient OrderBpo orderBpo;
 	
 	public String list(){
 		search = (OrderSearch) getSearchFromSession(OrderSearch.class, search);
@@ -99,49 +98,55 @@ public class OrderAction extends PageSupportActionSupport{
 
 	//workflow
 	public String request(){
-		taskService.claim(taskId, "bulain");
-		Task task = taskService.createTaskQuery().taskId(taskId).singleResult();
-		String executionId = task.getExecutionId();
-		order = orderService.getByWfId(executionId);
-		
-		if(order == null){
-			order = new Order();
-			order.setWfId(executionId);
-		}
+		order = orderBpo.claim(taskId, "bulain");
 		
 		return SUCCESS;
 	}
 	
 	public String submitRequest(){
-		order.setWfStatus("Requested");
-		if(order.getId() == null){
-			orderService.insert(order);
-		}else{
-			orderService.update(order, false);
-		}
-		if("Request".equals(submit)){
-			taskService.complete(taskId);
-		}
+	    try{
+	        if("Request".equals(submit)){
+	            order.setWfStatus("Requested");
+	            Map<String, Object> variables = new HashMap<String, Object>();
+	            orderBpo.complete(order, taskId, variables);
+	        }else{
+	            if(order.getId() == null){
+	                orderService.insert(order);
+	            }else{
+	                orderService.update(order, false);
+	            }
+	        }
+        }catch (Exception e) {
+            LOG.error("submitRequest()", e);
+            String msg = getText("common.updateError", new String[]{"Order"});
+            addActionError(msg);
+            return ERROR;
+        }
 		
 		return SUCCESS;
 	}
 	
 	public String approve(){
-		taskService.claim(taskId, "bulain");
-		Task task = taskService.createTaskQuery().taskId(taskId).singleResult();
-		String executionId = task.getExecutionId();
-		order = orderService.getByWfId(executionId);
+		order = orderBpo.claim(taskId, "bulain");
 		
 		return SUCCESS;
 	}
 	
 	public String submitApprove(){
-		order.setWfStatus("Approve".equals(submit)?"Approved":"Rejected");
-		orderService.update(order, false);
+	    try{
+	        order.setWfStatus("Approve".equals(submit)?"Approved":"Rejected");
+	        
+	        Map<String, Object> variables = new HashMap<String, Object>();
+	        variables.put("action", "Approve".equals(submit)?"approve":"reject");
+	        
+	        orderBpo.complete(order, taskId, variables);
+        }catch (Exception e) {
+            LOG.error("submitApprove()", e);
+            String msg = getText("common.updateError", new String[]{"Order"});
+            addActionError(msg);
+            return ERROR;
+        }
 		
-		Map<String, Object> variables = new HashMap<String, Object>();
-		variables.put("action", "Approve".equals(submit)?"approve":"reject");
-		taskService.complete(taskId, variables );
 		return SUCCESS;
 	}
 	
@@ -212,9 +217,6 @@ public class OrderAction extends PageSupportActionSupport{
 	public void setOrderService(OrderService orderService) {
 		this.orderService = orderService;
 	}
-	public void setTaskService(TaskService taskService) {
-		this.taskService = taskService;
-	}
 	public String getSubmit() {
 		return submit;
 	}
@@ -227,4 +229,7 @@ public class OrderAction extends PageSupportActionSupport{
 	public void setTaskId(String taskId) {
 		this.taskId = taskId;
 	}
+    public void setOrderBpo(OrderBpo orderBpo) {
+        this.orderBpo = orderBpo;
+    }
 }
