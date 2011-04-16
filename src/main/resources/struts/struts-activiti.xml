@@ -11,7 +11,7 @@
         <action name="deploy" class="activitiAction" method="deploy">
             <result type="redirectAction">list</result>
         </action>
-		<action name="destroy" class="activitiAction" method="destroy">
+        <action name="destroy" class="activitiAction" method="destroy">
             <result type="redirectAction">list</result>
         </action>
         <action name="start" class="activitiAction" method="start">

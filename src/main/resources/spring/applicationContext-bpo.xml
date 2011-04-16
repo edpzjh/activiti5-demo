@@ -2,7 +2,7 @@
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
 <beans>
     <bean id="orderBpo" class="com.bulain.mybatis.bpo.OrderBpoImpl">
-        <property name="orderService" ref="orderService"/>
-        <property name="taskService" ref="taskService"/>
-    </bean> 
+        <property name="orderService" ref="orderService" />
+        <property name="taskService" ref="taskService" />
+    </bean>
 </beans>

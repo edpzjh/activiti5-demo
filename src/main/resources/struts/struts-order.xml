@@ -11,8 +11,8 @@
         <action name="new" class="orderAction" method="newn">
             <result>/order/new.jsp</result>
         </action>
-		<action name="create" class="orderAction" method="create">
-			<interceptor-ref name="orderStack" />
+        <action name="create" class="orderAction" method="create">
+            <interceptor-ref name="orderStack" />
             <result type="redirectAction">list</result>
             <result name="input">/order/new.jsp</result>
             <result name="error">/order/new.jsp</result>
@@ -20,8 +20,8 @@
         <action name="edit" class="orderAction" method="edit">
             <result>/order/edit.jsp</result>
         </action>
-		<action name="update" class="orderAction" method="update">
-			<interceptor-ref name="orderStack" />
+        <action name="update" class="orderAction" method="update">
+            <interceptor-ref name="orderStack" />
             <result type="redirectAction">list</result>
             <result name="input">/order/edit.jsp</result>
             <result name="error">/order/edit.jsp</result>
@@ -29,17 +29,17 @@
         <action name="show" class="orderAction" method="show">
             <result>/order/show.jsp</result>
         </action>
-		<action name="destroy" class="orderAction" method="destroy">
+        <action name="destroy" class="orderAction" method="destroy">
             <result type="redirectAction">list</result>
             <result name="input">/order/list.jsp</result>
             <result name="error">/order/list.jsp</result>
         </action>
-        
+
         <action name="request" class="orderAction" method="request">
             <result>/order/request.jsp</result>
         </action>
         <action name="submitRequest" class="orderAction" method="submitRequest">
-        	<interceptor-ref name="orderStack" />
+            <interceptor-ref name="orderStack" />
             <result type="redirect">/activiti/list.action</result>
             <result name="input">/order/request.jsp</result>
         </action>
@@ -47,7 +47,7 @@
             <result>/order/approve.jsp</result>
         </action>
         <action name="submitApprove" class="orderAction" method="submitApprove">
-        	<interceptor-ref name="orderStack" />
+            <interceptor-ref name="orderStack" />
             <result type="redirect">/activiti/list.action</result>
             <result name="input">/order/approve.jsp</result>
         </action>
