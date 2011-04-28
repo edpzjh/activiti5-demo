@@ -14,4 +14,7 @@
     <bean id="orderHisMapper" parent="baseMapper">
         <property name="mapperInterface" value="com.bulain.mybatis.dao.OrderHisMapper" />
     </bean>
+    <bean id="jodaDemoMapper" parent="baseMapper">
+        <property name="mapperInterface" value="com.bulain.mybatis.dao.JodaDemoMapper" />
+    </bean>
 </beans>

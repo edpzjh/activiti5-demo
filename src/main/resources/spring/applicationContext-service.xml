@@ -9,4 +9,7 @@
         <property name="orderMasterMapper" ref="orderMasterMapper" />
         <property name="orderHisMapper" ref="orderHisMapper" />
     </bean>
+    <bean id="jodaService" class="com.bulain.mybatis.service.JodaServiceImpl">
+        <property name="jodaDemoMapper" ref="jodaDemoMapper" />
+    </bean>
 </beans>
