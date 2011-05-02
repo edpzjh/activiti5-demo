@@ -16,7 +16,7 @@ import org.springframework.test.context.transaction.BeforeTransaction;
 import com.bulain.common.page.Page;
 import com.bulain.common.test.ServiceTestCase;
 import com.bulain.common.util.SystemClock;
-import com.bulain.mybatis.model.JodaDemo;
+import com.bulain.mybatis.model.Joda;
 import com.bulain.mybatis.pojo.JodaSearch;
 
 public class JodaServiceTest extends ServiceTestCase {
@@ -43,7 +43,7 @@ public class JodaServiceTest extends ServiceTestCase {
 
     @Test
     public void testInsert() {
-        JodaDemo record = new JodaDemo();
+        Joda record = new Joda();
         Date xdate = SystemClock.getDate();
         record.setXdate(xdate);
         record.setXtime(xdate);
@@ -54,7 +54,7 @@ public class JodaServiceTest extends ServiceTestCase {
 
     @Test
     public void testGet() {
-        JodaDemo selectByPrimaryKey = jodaService.get(Integer.valueOf(102));
+        Joda selectByPrimaryKey = jodaService.get(Integer.valueOf(102));
         assertNotNull(selectByPrimaryKey);
         
         DateTime xdate = new DateTime(2010, 4, 3, 0, 0, 0, 0);
@@ -70,13 +70,13 @@ public class JodaServiceTest extends ServiceTestCase {
 
     @Test
     public void testUpdate() {
-        JodaDemo record = new JodaDemo();
+        Joda record = new Joda();
         record.setId(Integer.valueOf(103));
-        DateTime dateTime = new DateTime(2011, 4, 3, 9, 0, 0, 0);
-        record.setXdate(dateTime.toDate());
-        record.setXtime(dateTime.toDate());
-        record.setXdatetime(dateTime.toDate());
-        record.setXtimestamp(dateTime.toDate());
+        Date xdate = SystemClock.getDate();
+        record.setXdate(xdate);
+        record.setXtime(xdate);
+        record.setXdatetime(xdate);
+        record.setXtimestamp(xdate);
         jodaService.update(record, true);
     }
 
@@ -85,7 +85,7 @@ public class JodaServiceTest extends ServiceTestCase {
         JodaSearch search = new JodaSearch();
         DateTime dateTime = new DateTime(2010, 4, 4, 0, 0, 0, 0);
         search.setXdate(dateTime.toDate());
-        List<JodaDemo> find = jodaService.find(search);
+        List<Joda> find = jodaService.find(search);
         assertEquals(3, find.size());
     }
     
@@ -104,7 +104,7 @@ public class JodaServiceTest extends ServiceTestCase {
         DateTime dateTime = new DateTime(2010, 4, 4, 0, 0, 0, 0);
         search.setXdate(dateTime.toDate());
         Page page = new Page();
-        List<JodaDemo> listUser = jodaService.page(search, page);
+        List<Joda> listUser = jodaService.page(search, page);
         assertEquals(3, listUser.size());
     }
 

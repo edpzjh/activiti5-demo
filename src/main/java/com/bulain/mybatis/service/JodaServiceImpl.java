@@ -2,18 +2,18 @@ package com.bulain.mybatis.service;
 
 import com.bulain.common.dao.PagedMapper;
 import com.bulain.common.service.PagedServiceImpl;
-import com.bulain.mybatis.dao.JodaDemoMapper;
-import com.bulain.mybatis.model.JodaDemo;
+import com.bulain.mybatis.dao.JodaMapper;
+import com.bulain.mybatis.model.Joda;
 import com.bulain.mybatis.pojo.JodaSearch;
 
-public class JodaServiceImpl extends PagedServiceImpl<JodaSearch, JodaDemo> implements JodaService{
-    private JodaDemoMapper jodaDemoMapper;
+public class JodaServiceImpl extends PagedServiceImpl<JodaSearch, Joda> implements JodaService{
+    private JodaMapper jodaMapper;
     
-    public void setJodaDemoMapper(JodaDemoMapper jodaDemoMapper) {
-        this.jodaDemoMapper = jodaDemoMapper;
+    public void setJodaMapper(JodaMapper jodaMapper) {
+        this.jodaMapper = jodaMapper;
     }
     @Override
-    public PagedMapper<JodaSearch, JodaDemo> getPagedMapper() {
-        return jodaDemoMapper;
+    public PagedMapper<JodaSearch, Joda> getPagedMapper() {
+        return jodaMapper;
     }
 }

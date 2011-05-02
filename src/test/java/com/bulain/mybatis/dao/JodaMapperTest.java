@@ -15,12 +15,12 @@ import org.springframework.test.context.transaction.BeforeTransaction;
 
 import com.bulain.common.test.ServiceTestCase;
 import com.bulain.common.util.SystemClock;
-import com.bulain.mybatis.model.JodaDemo;
+import com.bulain.mybatis.model.Joda;
 import com.bulain.mybatis.pojo.JodaSearch;
 
-public class JodaDemoMapperTest extends ServiceTestCase {
+public class JodaMapperTest extends ServiceTestCase {
     @Autowired
-    private JodaDemoMapper jodaDemoMapper;
+    private JodaMapper jodaMapper;
     
     @BeforeTransaction
     public void setUp() throws Exception {
@@ -31,50 +31,50 @@ public class JodaDemoMapperTest extends ServiceTestCase {
 
     @AfterTransaction
     public void tearDown() throws Exception {
-        super.tearDownDB();
         DateTimeUtils.setCurrentMillisSystem();
+        super.tearDownDB();
     }
     
     @Test
     public void testDeleteByPrimaryKey() {
-        int deleteByPrimaryKey = jodaDemoMapper.deleteByPrimaryKey(Integer.valueOf(101));
+        int deleteByPrimaryKey = jodaMapper.deleteByPrimaryKey(Integer.valueOf(101));
         assertEquals(1, deleteByPrimaryKey);
     }
 
     @Test
     public void testInsert() {
-        JodaDemo record = new JodaDemo();
+        Joda record = new Joda();
         Date xdate = SystemClock.getDate();
         record.setXdate(xdate);
         record.setXtime(xdate);
         record.setXdatetime(xdate);
         record.setXtimestamp(xdate);
-        int insert = jodaDemoMapper.insert(record);
+        int insert = jodaMapper.insert(record);
         assertEquals(1, insert);
     }
 
     @Test
     public void testInsertSelective() {
-        JodaDemo record = new JodaDemo();
+        Joda record = new Joda();
         Date xdate = SystemClock.getDate();
         record.setXdate(xdate);
         record.setXtime(xdate);
         record.setXdatetime(xdate);
         record.setXtimestamp(xdate);
-        int insert = jodaDemoMapper.insertSelective(record);
+        int insert = jodaMapper.insertSelective(record);
         assertEquals(1, insert);
     }
 
     @Test
     public void testSelectByPrimaryKey() {
-        JodaDemo selectByPrimaryKey = jodaDemoMapper.selectByPrimaryKey(Integer.valueOf(102));
+        Joda selectByPrimaryKey = jodaMapper.selectByPrimaryKey(Integer.valueOf(102));
         assertNotNull(selectByPrimaryKey);
-        
+
         DateTime xdate = new DateTime(2010, 4, 3, 0, 0, 0, 0);
         DateTime xtime = new DateTime(1970, 1, 1, 8, 0, 0, 0);
         DateTime xdatetime = new DateTime(2010, 4, 3, 8, 0, 0, 0);
         DateTime xtimestamp = new DateTime(2010, 4, 3, 8, 0, 0, 0);
-        
+
         assertEquals(xdate.toDate(), selectByPrimaryKey.getXdate());
         assertEquals(xtime.toDate(), selectByPrimaryKey.getXtime());
         assertEquals(xdatetime.toDate(), selectByPrimaryKey.getXdatetime());
@@ -83,27 +83,27 @@ public class JodaDemoMapperTest extends ServiceTestCase {
 
     @Test
     public void testUpdateByPrimaryKeySelective() {
-        JodaDemo record = new JodaDemo();
+        Joda record = new Joda();
         record.setId(Integer.valueOf(103));
-        DateTime dateTime = new DateTime(2011, 4, 3, 9, 0, 0, 0);
-        record.setXdate(dateTime.toDate());
-        record.setXtime(dateTime.toDate());
-        record.setXdatetime(dateTime.toDate());
-        record.setXtimestamp(dateTime.toDate());
-        int updateByPrimaryKeySelective = jodaDemoMapper.updateByPrimaryKeySelective(record);
+        Date xdate = SystemClock.getDate();
+        record.setXdate(xdate);
+        record.setXtime(xdate);
+        record.setXdatetime(xdate);
+        record.setXtimestamp(xdate);
+        int updateByPrimaryKeySelective = jodaMapper.updateByPrimaryKeySelective(record);
         assertEquals(1, updateByPrimaryKeySelective);
     }
 
     @Test
     public void testUpdateByPrimaryKey() {
-        JodaDemo record = new JodaDemo();
+        Joda record = new Joda();
         record.setId(Integer.valueOf(104));
-        DateTime dateTime = new DateTime(2011, 4, 3, 9, 0, 0, 0);
-        record.setXdate(dateTime.toDate());
-        record.setXtime(dateTime.toDate());
-        record.setXdatetime(dateTime.toDate());
-        record.setXtimestamp(dateTime.toDate());
-        int updateByPrimaryKey = jodaDemoMapper.updateByPrimaryKey(record);
+        Date xdate = SystemClock.getDate();
+        record.setXdate(xdate);
+        record.setXtime(xdate);
+        record.setXdatetime(xdate);
+        record.setXtimestamp(xdate);
+        int updateByPrimaryKey = jodaMapper.updateByPrimaryKey(record);
         assertEquals(1, updateByPrimaryKey);
     }
 
@@ -112,7 +112,7 @@ public class JodaDemoMapperTest extends ServiceTestCase {
         JodaSearch search = new JodaSearch();
         DateTime dateTime = new DateTime(2010, 4, 4, 0, 0, 0, 0);
         search.setXdate(dateTime.toDate());
-        List<JodaDemo> find = jodaDemoMapper.find(search);
+        List<Joda> find = jodaMapper.find(search);
         assertEquals(3, find.size());
     }
     
@@ -121,7 +121,7 @@ public class JodaDemoMapperTest extends ServiceTestCase {
         JodaSearch search = new JodaSearch();
         DateTime dateTime = new DateTime(2010, 4, 4, 0, 0, 0, 0);
         search.setXdate(dateTime.toDate());
-        Long count = jodaDemoMapper.count(search);
+        Long count = jodaMapper.count(search);
         assertEquals(Long.valueOf(3), count);
     }
     
@@ -132,7 +132,7 @@ public class JodaDemoMapperTest extends ServiceTestCase {
         search.setXdate(dateTime.toDate());
         search.setLow(0);
         search.setHigh(20);
-        List<JodaDemo> listUser = jodaDemoMapper.page(search);
+        List<Joda> listUser = jodaMapper.page(search);
         assertEquals(3, listUser.size());
     }
 }

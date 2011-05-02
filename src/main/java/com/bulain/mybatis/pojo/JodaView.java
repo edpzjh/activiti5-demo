@@ -1,42 +1,40 @@
 package com.bulain.mybatis.pojo;
 
-import java.util.Date;
+import com.bulain.mybatis.model.Joda;
 
-import com.bulain.mybatis.model.JodaDemo;
-
-public class JodaView extends JodaDemo{
+public class JodaView extends Joda{
     private static final long serialVersionUID = 5114363861135391354L;
     
-    private Date xdateName;
-    private Date xtimeName;
-    private Date xdatetimeName;
-    private Date xtimestampName;
+    private String xdateName;
+    private String xtimeName;
+    private String xdatetimeName;
+    private String xtimestampName;
     
     private String createdAtName;
     private String updatedAtName;
     
-    public Date getXdateName() {
+    public String getXdateName() {
         return xdateName;
     }
-    public void setXdateName(Date xdateName) {
+    public void setXdateName(String xdateName) {
         this.xdateName = xdateName;
     }
-    public Date getXtimeName() {
+    public String getXtimeName() {
         return xtimeName;
     }
-    public void setXtimeName(Date xtimeName) {
+    public void setXtimeName(String xtimeName) {
         this.xtimeName = xtimeName;
     }
-    public Date getXdatetimeName() {
+    public String getXdatetimeName() {
         return xdatetimeName;
     }
-    public void setXdatetimeName(Date xdatetimeName) {
+    public void setXdatetimeName(String xdatetimeName) {
         this.xdatetimeName = xdatetimeName;
     }
-    public Date getXtimestampName() {
+    public String getXtimestampName() {
         return xtimestampName;
     }
-    public void setXtimestampName(Date xtimestampName) {
+    public void setXtimestampName(String xtimestampName) {
         this.xtimestampName = xtimestampName;
     }
     public String getCreatedAtName() {

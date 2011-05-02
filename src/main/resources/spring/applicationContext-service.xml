@@ -10,6 +10,6 @@
         <property name="orderHisMapper" ref="orderHisMapper" />
     </bean>
     <bean id="jodaService" class="com.bulain.mybatis.service.JodaServiceImpl">
-        <property name="jodaDemoMapper" ref="jodaDemoMapper" />
+        <property name="jodaMapper" ref="jodaMapper" />
     </bean>
 </beans>

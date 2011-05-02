@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.bulain.mybatis.dao.JodaDemoMapper" >
-  <resultMap id="BaseResultMap" type="com.bulain.mybatis.model.JodaDemo" >
+<mapper namespace="com.bulain.mybatis.dao.JodaMapper" >
+  <resultMap id="BaseResultMap" type="com.bulain.mybatis.model.Joda" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="xdate" property="xdate" jdbcType="DATE" />
     <result column="xtime" property="xtime" jdbcType="TIME" />
@@ -25,7 +25,7 @@
     delete from joda_demo
     where id = #{id}
   </delete>
-  <insert id="insert" parameterType="com.bulain.mybatis.model.JodaDemo" >
+  <insert id="insert" parameterType="com.bulain.mybatis.model.Joda" >
     insert into joda_demo (xdate, xtime, xdatetime, xtimestamp, created_by, created_at, 
       updated_by, updated_at)
     values (#{xdate}, #{xtime}, #{xdatetime}, #{xtimestamp}, #{createdBy}, #{createdAt}, 
@@ -34,7 +34,7 @@
       SELECT LAST_INSERT_ID()
     </selectKey>
   </insert>
-  <insert id="insertSelective" parameterType="com.bulain.mybatis.model.JodaDemo" >
+  <insert id="insertSelective" parameterType="com.bulain.mybatis.model.Joda" >
     insert into joda_demo
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="xdate != null" >
@@ -92,7 +92,7 @@
       SELECT LAST_INSERT_ID()
     </selectKey>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.bulain.mybatis.model.JodaDemo" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.bulain.mybatis.model.Joda" >
     update joda_demo
     <set >
       <if test="xdate != null" >
@@ -122,7 +122,7 @@
     </set>
     where id = #{id}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.bulain.mybatis.model.JodaDemo" >
+  <update id="updateByPrimaryKey" parameterType="com.bulain.mybatis.model.Joda" >
     update joda_demo
     set xdate = #{xdate},
       xtime = #{xtime},

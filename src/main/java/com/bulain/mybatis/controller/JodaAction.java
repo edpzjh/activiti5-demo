@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 
 import com.bulain.common.controller.PageSupportActionSupport;
-import com.bulain.mybatis.model.JodaDemo;
+import com.bulain.mybatis.model.Joda;
 import com.bulain.mybatis.pojo.JodaSearch;
 import com.bulain.mybatis.pojo.JodaView;
 import com.bulain.mybatis.service.JodaService;
@@ -20,8 +20,8 @@ public class JodaAction extends PageSupportActionSupport{
     private Integer id;
 
     private JodaSearch search;
-    private JodaDemo joda;
-    private List<JodaView> listOrder;
+    private Joda joda;
+    private List<JodaView> listJoda;
     
     private transient JodaService jodaService;
     
@@ -29,8 +29,8 @@ public class JodaAction extends PageSupportActionSupport{
         search = (JodaSearch) getSearchFromSession(JodaSearch.class, search);
         page = getPageFromSession();
         
-        List<JodaDemo> list = jodaService.page(search, page);
-        listOrder = formatList(list);
+        List<Joda> list = jodaService.page(search, page);
+        listJoda = formatList(list);
         
         putSearchToSession(JodaSearch.class, search);
         putPageToSession();
@@ -39,17 +39,17 @@ public class JodaAction extends PageSupportActionSupport{
     }
     
     public String newn(){
-        joda = new JodaDemo();
+        joda = new Joda();
         return SUCCESS;
     }
     public String create(){
         try{
             jodaService.insert(joda);
-            String msg = getText("common.createInfo", new String[]{"JodaDemo"});
+            String msg = getText("common.createInfo", new String[]{"Joda"});
             addActionMessage(msg);
         }catch (Exception e) {
             LOG.error("create()", e);
-            String msg = getText("common.createError", new String[]{"JodaDemo"});
+            String msg = getText("common.createError", new String[]{"Joda"});
             addActionError(msg);
             return ERROR;
         }
@@ -66,11 +66,11 @@ public class JodaAction extends PageSupportActionSupport{
     public String update(){
         try{
             jodaService.update(joda, false);
-            String msg = getText("common.updateInfo", new String[]{"JodaDemo"});
+            String msg = getText("common.updateInfo", new String[]{"Joda"});
             addActionMessage(msg);
         }catch (Exception e) {
             LOG.error("update()", e);
-            String msg = getText("common.updateError", new String[]{"JodaDemo"});
+            String msg = getText("common.updateError", new String[]{"Joda"});
             addActionError(msg);
             return ERROR;
         }
@@ -79,11 +79,11 @@ public class JodaAction extends PageSupportActionSupport{
     public String destroy(){
         try{
             jodaService.delete(id);
-            String msg = getText("common.deleteInfo", new String[]{"JodaDemo"});
+            String msg = getText("common.deleteInfo", new String[]{"Joda"});
             addActionMessage(msg);
         }catch (Exception e) {
             LOG.error("destroy()", e);
-            String msg = getText("common.deleteError", new String[]{"JodaDemo"});
+            String msg = getText("common.deleteError", new String[]{"Joda"});
             addActionError(msg);
             return ERROR;
         }
@@ -97,15 +97,15 @@ public class JodaAction extends PageSupportActionSupport{
         }
     }
     
-    protected List<JodaView> formatList(List<JodaDemo> list){
+    protected List<JodaView> formatList(List<Joda> list){
         List<JodaView> listView = new ArrayList<JodaView>();
-        for(JodaDemo joda : list){
+        for(Joda joda : list){
             listView.add(formatItem(joda));
         }
         return listView;
     }
     
-    protected JodaView formatItem(JodaDemo joda){
+    protected JodaView formatItem(Joda joda){
         JodaView view = new JodaView();
         BeanUtils.copyProperties(joda, view);
         return view;
@@ -127,20 +127,20 @@ public class JodaAction extends PageSupportActionSupport{
         this.search = search;
     }
 
-    public JodaDemo getJoda() {
+    public Joda getJoda() {
         return joda;
     }
 
-    public void setJoda(JodaDemo joda) {
+    public void setJoda(Joda joda) {
         this.joda = joda;
     }
-
-    public List<JodaView> getListOrder() {
-        return listOrder;
+   
+    public List<JodaView> getListJoda() {
+        return listJoda;
     }
 
-    public void setListOrder(List<JodaView> listOrder) {
-        this.listOrder = listOrder;
+    public void setListJoda(List<JodaView> listJoda) {
+        this.listJoda = listJoda;
     }
 
     public void setJodaService(JodaService jodaService) {
