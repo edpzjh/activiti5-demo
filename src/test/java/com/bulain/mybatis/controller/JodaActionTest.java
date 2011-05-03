@@ -61,7 +61,7 @@ public class JodaActionTest extends ActionTestCase {
     public void testCreate() throws Exception {
         initServletMockObjects();
         request.setParameter("joda.xdate", "2010-04-03");
-        request.setParameter("joda.xtime", "2010-04-03 08:00:00");
+        request.setParameter("joda.xtime", "08:00");
         
         ActionProxy proxy = getActionProxy("/joda/create");
         proxy.getAction();
@@ -102,7 +102,7 @@ public class JodaActionTest extends ActionTestCase {
         initServletMockObjects();
         request.setParameter("id", "103");
         request.setParameter("joda.xdate", "2010-04-03");
-        request.setParameter("joda.xtime", "2010-04-03 08:00:00");
+        request.setParameter("joda.xtime", "08:00");
         
         ActionProxy proxy = getActionProxy("/joda/update");
         proxy.getAction();

@@ -21,7 +21,7 @@
     </tr>
     <tr>
         <td class="page-form-label"><s:text name="joda.xtime"/></td>
-        <td class="page-form-value"><s:date id="xtime" name="joda.xtime" format="%{getText('fmt.time')}" /><s:textfield key="joda.xtime" value="%{xtime}" maxlength="20"/></td>
+        <td class="page-form-value"><s:date id="xtime" name="joda.xtime" format="%{getText('fmt.time')}" /><s:textfield key="joda.xtime" value="%{xtime}" maxlength="10"/></td>
         <td></td>
         <td></td>
     </tr>

@@ -32,6 +32,7 @@
 $(document).ready(function() {
 	$("#create").validate();
 	$("#create_joda_xdate").datepicker({dateFormat:'<s:text name="fmt.jq.date"/>'});
+	$('#create_joda_xtime').timepicker();
 });
 </script>
 </script>

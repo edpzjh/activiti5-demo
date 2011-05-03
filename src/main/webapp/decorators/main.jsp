@@ -5,10 +5,12 @@
 	<head>
 		<link href="<s:url value='/public/jquery/css/validate/jquery.validate.css'/>" rel="stylesheet" type="text/css"/>
 		<link href="<s:url value='/public/jquery/css/ui-lightness/jquery-ui-1.8.4.custom.css'/>" rel="stylesheet" type="text/css"/>
+		<link href="<s:url value='/public/jquery/css/ui-lightness/jquery-ui-timepicker.css'/>" rel="stylesheet" type="text/css"/>
 		<link href="<s:url value='/public/stylesheets/globel.css'/>" rel="stylesheet" type="text/css"/>
 		<script src="<s:url value='/public/jquery/js/jquery-1.4.2.js'/>" type="text/javascript"></script>
 		<script src="<s:url value='/public/jquery/js/jquery.validate.js'/>" type="text/javascript"></script>
 		<script src="<s:url value='/public/jquery/js/jquery-ui-1.8.4.custom.min.js'/>" type="text/javascript"></script>
+		<script src="<s:url value='/public/jquery/js/jquery.ui.timepicker.js'/>" type="text/javascript"></script>
 		<script src="<s:url value='/public/javascripts/public.js'/>" type="text/javascript"></script>
 		<title><decorator:title default="sitemesh" /></title>
 		<decorator:head />
