@@ -32,6 +32,12 @@
         <td></td>
     </tr>
     <tr>
+        <td class="page-form-label"><s:text name="joda.xtimestamp"/></td>
+        <td class="page-form-value"><s:date id="xtimestamp" name="joda.xtimestamp" format="%{getText('fmt.datetime')}" /><s:textfield key="joda.xtimestamp" value="%{xtimestamp}" maxlength="20"/></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
         <td width="20%"></td>
         <td width="30%"></td>
         <td width="20%"></td>
