@@ -28,9 +28,9 @@
         </tr>
         <tr>
             <td class="page-form-label"><s:text name="joda.xdate"/></td>
-            <td class="page-form-value"><s:textfield key="search.xdate"/></td>
-            <td/>
-            <td/>
+            <td class="page-form-value"><s:date id="xdate" name="search.xdate" format="%{getText('fmt.date')}" /><s:textfield key="search.xdate" value="%{xdate}" maxlength="20"/></td>
+            <td class="page-form-label"><s:text name="joda.xtime"/></td>
+            <td class="page-form-value"><s:date id="xtime" name="search.xtime" format="%{getText('fmt.time')}" /><s:textfield key="search.xtime" value="%{xtime}" maxlength="10"/></td>
         </tr>
         <tr>
             <td width="20%"/>
@@ -51,6 +51,13 @@
         </tr>
     </table>
 </s:form>
+<script type="text/javascript">
+$(document).ready(function() {
+    $("#search").validate();
+    $("#search_search_xdate").datepicker({dateFormat:'<s:text name="fmt.jq.date"/>'});
+    $('#search_search_xtime').timepicker();
+});
+</script>
 <br/>
 
 <table id="list" class="list-table" cellspacing="0" width="100%" border="1">
@@ -58,7 +65,7 @@
     	<th><page:order fixOrderBy="xdate"><s:text name="joda.xdate"/></page:order></th>
         <th><page:order fixOrderBy="xtime"><s:text name="joda.xtime"/></page:order></th>
         <th><page:order fixOrderBy="xdatetime"><s:text name="joda.xdatetime"/></page:order></th>
-        <th><page:order fixOrderBy="xtimestamp"><s:text name="joda.xtimestamp"/></page:order></th>
+        <th><page:order fixOrderBy="xtimestamp"><s:text name="joda.xtimep"/></page:order></th>
         <th><page:order fixOrderBy="updated_by"><s:text name="common.updatedBy"/></page:order></th>
         <th><page:order fixOrderBy="updated_at"><s:text name="common.updatedAt"/></page:order></th>
         <th class="minNoWrap"><s:text name="action.action"/></th>

@@ -2,9 +2,9 @@ package com.bulain.mybatis.model;
 
 import java.util.Date;
 
-import com.bulain.common.model.Entity;
+import com.bulain.common.model.Trackable;
 
-public class Joda implements Entity{
+public class Joda implements Trackable{
     private static final long serialVersionUID = -5752868790524850684L;
     
     private Integer id;
