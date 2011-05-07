@@ -56,7 +56,8 @@ public class JodaAction extends PageSupportActionSupport{
         return SUCCESS;
     }
     public String show(){
-        joda = jodaService.get(id);
+        Joda temp = jodaService.get(id);
+        joda = formatItem(temp);
         return SUCCESS;
     }
     public String edit(){

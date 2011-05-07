@@ -62,7 +62,8 @@ public class OrderAction extends PageSupportActionSupport{
 		return SUCCESS;
 	}
 	public String show(){
-		order = orderService.get(id);
+		Order temp = orderService.get(id);
+		order = formatItem(temp);
 		return SUCCESS;
 	}
 	public String edit(){
