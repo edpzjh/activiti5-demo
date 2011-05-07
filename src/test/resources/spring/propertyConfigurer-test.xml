@@ -8,4 +8,7 @@
 			</list>
 		</property>
 	</bean>
+    <bean id="baseSqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean" abstract="true">
+        <property name="configLocation" value="classpath:mybatis/mybatis-config-test.xml" />
+    </bean>
 </beans>
