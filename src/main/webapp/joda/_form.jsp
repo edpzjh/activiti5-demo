@@ -11,6 +11,7 @@
     <tr>
         <td class="page-form-title" colspan="4"><s:text name="joda.model"/><s:text name="title.info"/></td>
         <s:hidden key="id"/>
+        <s:hidden key="joda.version"/>
         <s:token/>
     </tr>
     <tr>

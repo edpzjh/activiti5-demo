@@ -2,9 +2,10 @@ package com.bulain.mybatis.model;
 
 import java.util.Date;
 
+import com.bulain.common.model.Entity;
 import com.bulain.common.model.Trackable;
 
-public class OrderMaster implements Trackable{
+public class OrderMaster implements Entity, Trackable{
     private static final long serialVersionUID = -9106706103055787112L;
 
     private Integer id;

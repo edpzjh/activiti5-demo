@@ -2,9 +2,11 @@ package com.bulain.mybatis.model;
 
 import java.util.Date;
 
+import com.bulain.common.model.Entity;
 import com.bulain.common.model.Trackable;
+import com.bulain.common.model.Versionable;
 
-public class Joda implements Trackable{
+public class Joda implements Entity, Trackable, Versionable{
     private static final long serialVersionUID = -5752868790524850684L;
     
     private Integer id;
@@ -17,7 +19,7 @@ public class Joda implements Trackable{
     private Date createdAt;
     private String updatedBy;
     private Date updatedAt;
-    
+    private Long version;
     
     public Integer getId() {
         return id;
@@ -73,5 +75,10 @@ public class Joda implements Trackable{
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
     }
-    
+    public Long getVersion() {
+        return version;
+    }
+    public void setVersion(Long version) {
+        this.version = version;
+    }
 }

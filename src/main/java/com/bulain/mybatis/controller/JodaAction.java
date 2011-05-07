@@ -45,11 +45,11 @@ public class JodaAction extends PageSupportActionSupport{
     public String create(){
         try{
             jodaService.insert(joda);
-            String msg = getText("common.createInfo", new String[]{"Joda"});
+            String msg = getText("info.create", new String[]{getText("joda.model")});
             addActionMessage(msg);
         }catch (Exception e) {
             LOG.error("create()", e);
-            String msg = getText("common.createError", new String[]{"Joda"});
+            String msg = getText("error.create", new String[]{getText("joda.model")});
             addActionError(msg);
             return ERROR;
         }
@@ -66,11 +66,11 @@ public class JodaAction extends PageSupportActionSupport{
     public String update(){
         try{
             jodaService.update(joda, false);
-            String msg = getText("common.updateInfo", new String[]{"Joda"});
+            String msg = getText("info.update", new String[]{getText("joda.model")});
             addActionMessage(msg);
         }catch (Exception e) {
             LOG.error("update()", e);
-            String msg = getText("common.updateError", new String[]{"Joda"});
+            String msg = getText("error.update", new String[]{getText("joda.model")});
             addActionError(msg);
             return ERROR;
         }
@@ -79,11 +79,11 @@ public class JodaAction extends PageSupportActionSupport{
     public String destroy(){
         try{
             jodaService.delete(id);
-            String msg = getText("common.deleteInfo", new String[]{"Joda"});
+            String msg = getText("info.delete", new String[]{getText("joda.model")});
             addActionMessage(msg);
         }catch (Exception e) {
             LOG.error("destroy()", e);
-            String msg = getText("common.deleteError", new String[]{"Joda"});
+            String msg = getText("error.delete", new String[]{getText("joda.model")});
             addActionError(msg);
             return ERROR;
         }
