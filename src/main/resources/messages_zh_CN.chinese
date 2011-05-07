@@ -8,9 +8,9 @@ title.approve=审核
 title.info=信息
 
 common.createdBy=创建人
-common.createdAt=创建日期
+common.createdAt=创建时间
 common.updatedBy=修改人
-common.updatedAt=修改日期
+common.updatedAt=修改时间
 
 info.create={0}信息 保存成功
 info.update={0}信息 更新成功

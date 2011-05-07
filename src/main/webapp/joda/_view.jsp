@@ -31,6 +31,8 @@
         <td></td>
         <td></td>
     </tr>
+    <s:set name="track" value="joda"/>
+    <s:include value="/common/_track.jsp"/>
     <tr>
         <td width="20%"></td>
         <td width="30%"></td>

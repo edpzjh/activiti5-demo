@@ -65,7 +65,7 @@ $(document).ready(function() {
     	<th><page:order fixOrderBy="xdate"><s:text name="joda.xdate"/></page:order></th>
         <th><page:order fixOrderBy="xtime"><s:text name="joda.xtime"/></page:order></th>
         <th><page:order fixOrderBy="xdatetime"><s:text name="joda.xdatetime"/></page:order></th>
-        <th><page:order fixOrderBy="xtimestamp"><s:text name="joda.xtimep"/></page:order></th>
+        <th><page:order fixOrderBy="xtimestamp"><s:text name="joda.xtimestamp"/></page:order></th>
         <th><page:order fixOrderBy="updated_by"><s:text name="common.updatedBy"/></page:order></th>
         <th><page:order fixOrderBy="updated_at"><s:text name="common.updatedAt"/></page:order></th>
         <th class="minNoWrap"><s:text name="action.action"/></th>

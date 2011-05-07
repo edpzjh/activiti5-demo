@@ -68,9 +68,9 @@
             <td class="noWrap"><s:property value="name"/></td>
             <td class="noWrap"><s:property value="note"/></td>
             <td class="noWrap"><s:property value="createdBy"/></td>
-            <td class="noWrap"><s:property value="createdAt"/></td>
+            <td class="noWrap"><s:date name="updatedAt" format="%{getText('fmt.timestamp')}" /></td>
             <td class="noWrap"><s:property value="updatedBy"/></td>
-            <td class="noWrap"><s:property value="updatedAt"/></td>
+            <td class="noWrap"><s:date name="updatedAt" format="%{getText('fmt.timestamp')}" /></td>
             <td class="minNoWrap">
         	<s:url id="url" action="show"><s:param name="id" value="id"></s:param></s:url><a href="<s:property value="#url"/>"><s:text name="action.show"/></a>
         	|<s:url id="url" action="edit"><s:param name="id" value="id"></s:param></s:url><a href="<s:property value="#url"/>"><s:text name="action.edit"/></a>

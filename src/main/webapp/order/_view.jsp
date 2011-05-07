@@ -17,6 +17,8 @@
         <td class="page-form-label"><s:text name="order.note"/></td>
         <td class="page-form-value" colspan="3"><page:textarea value="order.note"/></td>
     </tr>
+    <s:set name="track" value="order"/>
+    <s:include value="/common/_track.jsp"/>
     <tr>
         <td width="20%"></td>
         <td width="30%"></td>
