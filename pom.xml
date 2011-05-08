@@ -10,7 +10,7 @@
 	<groupId>com.bulain</groupId>
 	<artifactId>activiti5-demo</artifactId>
 	<packaging>war</packaging>
-	<version>1.0.2</version>
+	<version>1.0.3-SNAPSHOT</version>
 	<name>activiti5-demo</name>
     <url>https://github.com/bulain/activiti5-demo</url>
   
