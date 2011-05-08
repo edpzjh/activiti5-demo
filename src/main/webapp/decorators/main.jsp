@@ -9,6 +9,8 @@
 		<link href="<s:url value='/public/stylesheets/globel.css'/>" rel="stylesheet" type="text/css"/>
 		<script src="<s:url value='/public/jquery/js/jquery-1.4.2.js'/>" type="text/javascript"></script>
 		<script src="<s:url value='/public/jquery/js/jquery.validate.js'/>" type="text/javascript"></script>
+		<s:set name="locale" value="#session['WW_TRANS_I18N_LOCALE']" />
+        <script src="<s:url value='/public/jquery/js/localization/messages_%{#locale}.js'/>" type="text/javascript"></script>
 		<script src="<s:url value='/public/jquery/js/jquery-ui-1.8.4.custom.min.js'/>" type="text/javascript"></script>
 		<script src="<s:url value='/public/jquery/js/jquery.ui.timepicker.js'/>" type="text/javascript"></script>
 		<script src="<s:url value='/public/javascripts/public.js'/>" type="text/javascript"></script>
