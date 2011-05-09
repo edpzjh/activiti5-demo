@@ -66,7 +66,7 @@ public class JodaAction extends PageSupportActionSupport{
     }
     public String update(){
         try{
-            jodaService.update(joda, false);
+            jodaService.update(joda, true);
             String msg = getText("info.update", new String[]{getText("joda.model")});
             addActionMessage(msg);
         }catch (Exception e) {

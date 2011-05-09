@@ -22,19 +22,19 @@
     </tr>
     <tr>
         <td class="page-form-label"><s:text name="joda.xtime"/></td>
-        <td class="page-form-value"><s:date id="xtime" name="joda.xtime" format="%{getText('fmt.time')}" /><s:textfield key="joda.xtime" value="%{xtime}" maxlength="5"/></td>
+        <td class="page-form-value"><s:date id="xtime" name="joda.xtime" format="%{getText('fmt.time')}" /><s:textfield key="joda.xtime" value="%{xtime}" cssClass="time" maxlength="5"/></td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <td class="page-form-label"><s:text name="joda.xdatetime"/></td>
-        <td class="page-form-value"><s:date id="xdatetime" name="joda.xdatetime" format="%{getText('fmt.datetime')}" /><s:textfield key="joda.xdatetime" value="%{xdatetime}" maxlength="16"/></td>
+        <td class="page-form-value"><s:date id="xdatetime" name="joda.xdatetime" format="%{getText('fmt.datetime')}" /><s:textfield key="joda.xdatetime" value="%{xdatetime}" cssClass="date" maxlength="16"/></td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <td class="page-form-label"><s:text name="joda.xtimestamp"/></td>
-        <td class="page-form-value"><s:date id="xtimestamp" name="joda.xtimestamp" format="%{getText('fmt.datetime')}" /><s:textfield key="joda.xtimestamp" value="%{xtimestamp}" maxlength="16"/></td>
+        <td class="page-form-value"><s:date id="xtimestamp" name="joda.xtimestamp" format="%{getText('fmt.datetime')}" /><s:textfield key="joda.xtimestamp" value="%{xtimestamp}" cssClass="date" maxlength="16"/></td>
         <td></td>
         <td></td>
     </tr>

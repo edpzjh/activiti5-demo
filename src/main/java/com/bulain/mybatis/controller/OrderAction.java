@@ -72,7 +72,7 @@ public class OrderAction extends PageSupportActionSupport{
 	}
 	public String update(){
 		try{
-			orderService.update(order, false);
+			orderService.update(order, true);
 			String msg = getText("common.updateInfo", new String[]{"Order"});
 			addActionMessage(msg);
 		}catch (Exception e) {

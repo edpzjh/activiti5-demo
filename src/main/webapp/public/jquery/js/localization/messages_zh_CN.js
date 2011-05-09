@@ -19,5 +19,6 @@ jQuery.extend(jQuery.validator.messages, {
 		rangelength: jQuery.validator.format("请输入一个长度介于 {0} 和 {1} 之间的字符串"),
 		range: jQuery.validator.format("请输入一个介于 {0} 和 {1} 之间的值"),
 		max: jQuery.validator.format("请输入一个最大为 {0} 的值"),
-		min: jQuery.validator.format("请输入一个最小为 {0} 的值")
+		min: jQuery.validator.format("请输入一个最小为 {0} 的值"),
+		time: "请输入合法的时间"
 });
