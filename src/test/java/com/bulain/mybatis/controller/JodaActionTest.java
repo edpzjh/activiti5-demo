@@ -1,6 +1,7 @@
 package com.bulain.mybatis.controller;
 
 import java.util.List;
+import java.util.Locale;
 
 import org.junit.After;
 import org.junit.Before;
@@ -15,17 +16,22 @@ import com.opensymphony.xwork2.ActionProxy;
 
 
 public class JodaActionTest extends ActionTestCase {
+    private Locale defaultLocale;
 
     @Before
     public void setUp() throws Exception {
         super.setUp();
         super.setUpDB("test-data/init_jodas.xml");
+        
+        defaultLocale = Locale.getDefault();
+        Locale.setDefault(Locale.CHINESE);
     }
     
     @After
     public void tearDown() throws Exception {
         super.tearDown();
         super.tearDownDB();
+        Locale.setDefault(defaultLocale);
     }
     
     @Test
