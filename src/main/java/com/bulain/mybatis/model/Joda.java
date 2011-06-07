@@ -1,12 +1,13 @@
 package com.bulain.mybatis.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import com.bulain.common.model.Entity;
 import com.bulain.common.model.Trackable;
 import com.bulain.common.model.Versionable;
 
-public class Joda implements Entity, Trackable, Versionable{
+public class Joda implements Entity, Trackable, Versionable, Serializable{
     private static final long serialVersionUID = -5752868790524850684L;
     
     private Integer id;
