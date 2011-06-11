@@ -7,21 +7,21 @@ import com.bulain.common.model.Entity;
 import com.bulain.common.model.Trackable;
 import com.bulain.common.model.Versionable;
 
-public class Joda implements Entity, Trackable, Versionable, Serializable{
+public class Joda implements Entity, Trackable, Versionable, Serializable {
     private static final long serialVersionUID = -5752868790524850684L;
-    
+
     private Integer id;
     private Date xdate;
     private Date xtime;
     private Date xdatetime;
     private Date xtimestamp;
-    
+
     private String createdBy;
     private Date createdAt;
     private String updatedBy;
     private Date updatedAt;
     private Long version;
-    
+
     public Integer getId() {
         return id;
     }

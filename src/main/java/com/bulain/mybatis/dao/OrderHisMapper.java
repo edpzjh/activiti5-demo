@@ -4,6 +4,6 @@ import com.bulain.common.dao.PagedMapper;
 import com.bulain.mybatis.model.OrderHis;
 import com.bulain.mybatis.pojo.OrderSearch;
 
-public interface OrderHisMapper extends PagedMapper<OrderSearch,OrderHis>{
+public interface OrderHisMapper extends PagedMapper<OrderSearch, OrderHis> {
 
 }

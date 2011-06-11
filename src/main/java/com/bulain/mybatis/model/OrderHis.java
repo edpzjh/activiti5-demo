@@ -6,23 +6,16 @@ import java.util.Date;
 import com.bulain.common.model.Entity;
 import com.bulain.common.model.Trackable;
 
-public class OrderHis implements Entity, Trackable, Serializable{
+public class OrderHis implements Entity, Trackable, Serializable {
     private static final long serialVersionUID = -8298273519354938482L;
 
     private Integer id;
-
     private String name;
-
     private String note;
-
     private Date effDate;
-
     private String createdBy;
-
     private Date createdAt;
-
     private String updatedBy;
-
     private Date updatedAt;
 
     public Integer getId() {

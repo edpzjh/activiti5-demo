@@ -14,16 +14,16 @@ public class OrderBpoImpl implements OrderBpo {
 
     public Order claim(String taskId, String userId) {
         taskService.claim(taskId, userId);
-        
+
         Task task = taskService.createTaskQuery().taskId(taskId).singleResult();
         String executionId = task.getExecutionId();
         Order order = orderService.getByWfId(executionId);
-        
-        if(order == null){
+
+        if (order == null) {
             order = new Order();
             order.setWfId(executionId);
         }
-        
+
         return order;
     }
 

@@ -4,14 +4,14 @@ import java.util.Date;
 
 import com.bulain.common.page.Search;
 
-public class JodaSearch extends Search{
+public class JodaSearch extends Search {
     private static final long serialVersionUID = 6374323029613853764L;
-    
+
     private Date xdate;
     private Date xtime;
     private Date xdatetimeFrom;
     private Date xdatetimeTo;
-    
+
     public Date getXdate() {
         return xdate;
     }
