@@ -1,135 +1,135 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-	<parent>
-		<groupId>com.bulain</groupId>
-		<artifactId>parent</artifactId>
-		<version>1.0.0</version>
-	</parent>
+    <parent>
+        <groupId>com.bulain</groupId>
+        <artifactId>parent</artifactId>
+        <version>1.0.0</version>
+    </parent>
 
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.bulain</groupId>
-	<artifactId>activiti5-demo</artifactId>
-	<packaging>war</packaging>
-	<version>1.0.3-SNAPSHOT</version>
-	<name>activiti5-demo</name>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.bulain</groupId>
+    <artifactId>activiti5-demo</artifactId>
+    <packaging>war</packaging>
+    <version>1.0.3-SNAPSHOT</version>
+    <name>activiti5-demo</name>
     <url>https://github.com/bulain/activiti5-demo</url>
-  
+
     <scm>
-		<connection>scm:git:git@github.com:bulain/activiti5-demo.git</connection>
-		<developerConnection>scm:git:git@github.com:bulain/activiti5-demo.git</developerConnection>
-		<url>git@github.com:bulain/activiti5-demo.git</url>
+        <connection>scm:git:git@github.com:bulain/activiti5-demo.git</connection>
+        <developerConnection>scm:git:git@github.com:bulain/activiti5-demo.git</developerConnection>
+        <url>git@github.com:bulain/activiti5-demo.git</url>
     </scm>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<common.version>1.0.1</common.version>
-		<tools.version>1.5</tools.version>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <common.version>1.0.1</common.version>
+        <tools.version>1.5</tools.version>
         <mysql.version>5.1.17</mysql.version>
-	</properties>
+    </properties>
 
-	<dependencies>
+    <dependencies>
 		<!-- common -->
-		<dependency>
-			<groupId>com.bulain</groupId>
-			<artifactId>common</artifactId>
-			<version>${common.version}</version>
-		</dependency>
+        <dependency>
+            <groupId>com.bulain</groupId>
+            <artifactId>common</artifactId>
+            <version>${common.version}</version>
+        </dependency>
 		
 		<!-- activiti -->
-		<dependency>
-			<groupId>org.activiti</groupId>
-			<artifactId>activiti-engine</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.activiti</groupId>
-			<artifactId>activiti-spring</artifactId>
+        <dependency>
+            <groupId>org.activiti</groupId>
+            <artifactId>activiti-engine</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.activiti</groupId>
+            <artifactId>activiti-spring</artifactId>
             <exclusions>
                 <exclusion>
                     <groupId>commons-dbcp</groupId>
                     <artifactId>commons-dbcp</artifactId>
                 </exclusion>
             </exclusions>
-		</dependency>
+        </dependency>
 
 		<!-- database -->
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-		</dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
         
         <!-- p6spy -->
-		<dependency>
+        <dependency>
             <groupId>p6spy</groupId>
             <artifactId>p6spy</artifactId>
             <optional>true</optional>
         </dependency>
         
         <!-- mail -->
-		<dependency>
-			<groupId>javax.mail</groupId>
-			<artifactId>mail</artifactId>
-		</dependency>
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+        </dependency>
 
 		<!-- commpile -->
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jsp-api</artifactId>
-			<scope>provided</scope>
-		</dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jsp-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
 		
 		<!-- test -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-test</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.struts</groupId>
-			<artifactId>struts2-junit-plugin</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.dbunit</groupId>
-			<artifactId>dbunit</artifactId>
-			<scope>test</scope>
-		</dependency>
-		
-	</dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts2-junit-plugin</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.dbunit</groupId>
+            <artifactId>dbunit</artifactId>
+            <scope>test</scope>
+        </dependency>
 
-	<build>
-		<finalName>activiti5-demo</finalName>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>1.5</source>
-					<target>1.5</target>
-					<encoding>UTF-8</encoding>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-source-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>attach-sources</id>
-						<goals>
-							<goal>jar-no-fork</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
+    </dependencies>
+
+    <build>
+        <finalName>activiti5-demo</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.5</source>
+                    <target>1.5</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.mybatis.maven</groupId>
                 <artifactId>maven-migration-plugin</artifactId>
@@ -153,9 +153,9 @@
                     </dependency>
                 </dependencies>
             </plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-antrun-plugin</artifactId>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
                 <dependencies>
                     <dependency>
                         <groupId>com.sun</groupId>
@@ -165,25 +165,21 @@
                         <systemPath>${java.home}/../lib/tools.jar</systemPath>
                     </dependency>
                 </dependencies>
-				<executions>
-					<execution>
-						<phase>compile</phase>
-						<goals>
-							<goal>run</goal>
-						</goals>
-						<configuration>
-							<tasks>
-								<native2ascii dest="${project.build.directory}/classes" 
-                                    src="${project.build.directory}/classes" 
-                                    includes="**/*.chinese" 
-                                    ext=".properties" 
-                                    encoding="UTF-8" />
-							</tasks>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <tasks>
+                                <native2ascii dest="${project.build.directory}/classes" src="${project.build.directory}/classes" includes="**/*.chinese" ext=".properties" encoding="UTF-8" />
+                            </tasks>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <configuration>
@@ -261,6 +257,6 @@
                     </reportPlugins>
                 </configuration>
             </plugin>
-		</plugins>
-	</build>
+        </plugins>
+    </build>
 </project>
