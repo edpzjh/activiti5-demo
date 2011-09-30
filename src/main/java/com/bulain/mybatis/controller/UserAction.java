@@ -12,6 +12,7 @@ import com.bulain.mybatis.pojo.UserView;
 import com.bulain.mybatis.service.UserService;
 
 public class UserAction extends PageSupportActionSupport {
+    private static final String TEXT_USER_MODEL = "user.model";
     private static final long serialVersionUID = -4301484346812182688L;
 
     private Integer id;
@@ -39,7 +40,16 @@ public class UserAction extends PageSupportActionSupport {
         return SUCCESS;
     }
     public String create() {
-        userService.insert(user);
+        try {
+            userService.insert(user);
+            String msg = getText("info.create", new String[]{getText(TEXT_USER_MODEL)});
+            addActionMessage(msg);
+        } catch (Exception e) {
+            LOG.error("create()", e);
+            String msg = getText("error.create", new String[]{getText(TEXT_USER_MODEL)});
+            addActionError(msg);
+            return ERROR;
+        }
         return SUCCESS;
     }
     public String show() {
@@ -51,11 +61,30 @@ public class UserAction extends PageSupportActionSupport {
         return SUCCESS;
     }
     public String update() {
-        userService.update(user, true);
+        try {
+            userService.update(user, true);
+            String msg = getText("common.updateInfo", new String[]{TEXT_USER_MODEL});
+            addActionMessage(msg);
+        } catch (Exception e) {
+            LOG.error("update()", e);
+            String msg = getText("common.updateError", new String[]{TEXT_USER_MODEL});
+            addActionError(msg);
+            return ERROR;
+        }
         return SUCCESS;
     }
     public String destroy() {
-        userService.delete(id);
+        try {
+            userService.delete(id);
+            String msg = getText("common.deleteInfo", new String[]{TEXT_USER_MODEL});
+            addActionMessage(msg);
+        } catch (Exception e) {
+            LOG.error("destroy()", e);
+            String msg = getText("common.deleteError", new String[]{TEXT_USER_MODEL});
+            addActionError(msg);
+            return ERROR;
+        }
+        
         return SUCCESS;
     }
 

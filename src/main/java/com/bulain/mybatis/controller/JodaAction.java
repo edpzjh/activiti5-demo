@@ -14,6 +14,7 @@ import com.bulain.mybatis.pojo.JodaView;
 import com.bulain.mybatis.service.JodaService;
 
 public class JodaAction extends PageSupportActionSupport {
+    private static final String TEXT_JODA_MODEL = "joda.model";
     private static final long serialVersionUID = -985235699430511943L;
     private static final Logger LOG = LoggerFactory.getLogger(JodaAction.class);
 
@@ -45,11 +46,11 @@ public class JodaAction extends PageSupportActionSupport {
     public String create() {
         try {
             jodaService.insert(joda);
-            String msg = getText("info.create", new String[]{getText("joda.model")});
+            String msg = getText("info.create", new String[]{getText(TEXT_JODA_MODEL)});
             addActionMessage(msg);
         } catch (Exception e) {
             LOG.error("create()", e);
-            String msg = getText("error.create", new String[]{getText("joda.model")});
+            String msg = getText("error.create", new String[]{getText(TEXT_JODA_MODEL)});
             addActionError(msg);
             return ERROR;
         }
@@ -67,11 +68,11 @@ public class JodaAction extends PageSupportActionSupport {
     public String update() {
         try {
             jodaService.update(joda, true);
-            String msg = getText("info.update", new String[]{getText("joda.model")});
+            String msg = getText("info.update", new String[]{getText(TEXT_JODA_MODEL)});
             addActionMessage(msg);
         } catch (Exception e) {
             LOG.error("update()", e);
-            String msg = getText("error.update", new String[]{getText("joda.model")});
+            String msg = getText("error.update", new String[]{getText(TEXT_JODA_MODEL)});
             addActionError(msg);
             return ERROR;
         }
@@ -80,11 +81,11 @@ public class JodaAction extends PageSupportActionSupport {
     public String destroy() {
         try {
             jodaService.delete(id);
-            String msg = getText("info.delete", new String[]{getText("joda.model")});
+            String msg = getText("info.delete", new String[]{getText(TEXT_JODA_MODEL)});
             addActionMessage(msg);
         } catch (Exception e) {
             LOG.error("destroy()", e);
-            String msg = getText("error.delete", new String[]{getText("joda.model")});
+            String msg = getText("error.delete", new String[]{getText(TEXT_JODA_MODEL)});
             addActionError(msg);
             return ERROR;
         }
@@ -99,8 +100,8 @@ public class JodaAction extends PageSupportActionSupport {
 
     protected List<JodaView> formatList(List<Joda> list) {
         List<JodaView> listView = new ArrayList<JodaView>();
-        for (Joda joda : list) {
-            listView.add(formatItem(joda));
+        for (Joda item : list) {
+            listView.add(formatItem(item));
         }
         return listView;
     }
