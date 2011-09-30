@@ -3,6 +3,8 @@ package com.bulain.mybatis.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 
 import com.bulain.common.controller.PageSupportActionSupport;
@@ -14,6 +16,7 @@ import com.bulain.mybatis.service.UserService;
 public class UserAction extends PageSupportActionSupport {
     private static final String TEXT_USER_MODEL = "user.model";
     private static final long serialVersionUID = -4301484346812182688L;
+    private static final Logger LOG = LoggerFactory.getLogger(UserAction.class);
 
     private Integer id;
     private UserSearch search;
