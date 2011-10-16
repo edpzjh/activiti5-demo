@@ -8,33 +8,33 @@ import java.util.List;
 
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeUtils;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.transaction.AfterTransaction;
-import org.springframework.test.context.transaction.BeforeTransaction;
 
+import com.bulain.common.dataset.DataSet;
 import com.bulain.common.test.ServiceTestCase;
 import com.bulain.common.util.SystemClock;
 import com.bulain.mybatis.model.Joda;
 import com.bulain.mybatis.pojo.JodaSearch;
 
+@DataSet(file = "test-data/init_jodas.xml")
 public class JodaMapperTest extends ServiceTestCase {
     @Autowired
     private JodaMapper jodaMapper;
-    
-    @BeforeTransaction
+
+    @Before
     public void setUp() throws Exception {
-        super.setUpDB("test-data/init_jodas.xml");
         DateTime dateTime = new DateTime(2010, 4, 3, 8, 0, 0, 0);
         DateTimeUtils.setCurrentMillisFixed(dateTime.getMillis());
     }
 
-    @AfterTransaction
+    @After
     public void tearDown() throws Exception {
         DateTimeUtils.setCurrentMillisSystem();
-        super.tearDownDB();
     }
-    
+
     @Test
     public void testDeleteByPrimaryKey() {
         int deleteByPrimaryKey = jodaMapper.deleteByPrimaryKey(Integer.valueOf(101));
@@ -108,25 +108,25 @@ public class JodaMapperTest extends ServiceTestCase {
     }
 
     @Test
-    public void testFind(){
+    public void testFind() {
         JodaSearch search = new JodaSearch();
         DateTime dateTime = new DateTime(2010, 4, 4, 0, 0, 0, 0);
         search.setXdate(dateTime.toDate());
         List<Joda> find = jodaMapper.find(search);
         assertEquals(3, find.size());
     }
-    
+
     @Test
-    public void testCount(){
+    public void testCount() {
         JodaSearch search = new JodaSearch();
         DateTime dateTime = new DateTime(2010, 4, 4, 0, 0, 0, 0);
         search.setXdate(dateTime.toDate());
         Long count = jodaMapper.count(search);
         assertEquals(Long.valueOf(3), count);
     }
-    
+
     @Test
-    public void testPage(){
+    public void testPage() {
         JodaSearch search = new JodaSearch();
         DateTime dateTime = new DateTime(2010, 4, 4, 0, 0, 0, 0);
         search.setXdate(dateTime.toDate());

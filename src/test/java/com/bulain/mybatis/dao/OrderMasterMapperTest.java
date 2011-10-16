@@ -1,38 +1,29 @@
 package com.bulain.mybatis.dao;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import java.util.List;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.transaction.AfterTransaction;
-import org.springframework.test.context.transaction.BeforeTransaction;
 
+import com.bulain.common.dataset.DataSet;
 import com.bulain.common.test.ServiceTestCase;
 import com.bulain.mybatis.model.OrderMaster;
 import com.bulain.mybatis.pojo.OrderSearch;
 
+@DataSet(file = "test-data/init_order_masters.xml")
 public class OrderMasterMapperTest extends ServiceTestCase {
     @Autowired
     private OrderMasterMapper orderMasterMapper;
-    
-    @BeforeTransaction
-    public void setUp() throws Exception {
-        super.setUpDB("test-data/init_order_masters.xml");
-    }
-
-    @AfterTransaction
-    public void tearDown() throws Exception {
-        super.tearDownDB();
-    }
 
     @Test
     public void testSelectByName() {
         OrderMaster orderMaster = orderMasterMapper.selectByName("name_102");
-        
+
         assertNotNull(orderMaster);
-        
+
         assertEquals("name_102", orderMaster.getName());
         assertEquals("note_102", orderMaster.getNote());
     }

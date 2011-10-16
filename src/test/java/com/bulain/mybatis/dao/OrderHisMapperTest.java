@@ -6,26 +6,16 @@ import java.util.List;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.transaction.AfterTransaction;
-import org.springframework.test.context.transaction.BeforeTransaction;
 
+import com.bulain.common.dataset.DataSet;
 import com.bulain.common.test.ServiceTestCase;
 import com.bulain.mybatis.model.OrderHis;
 import com.bulain.mybatis.pojo.OrderSearch;
 
+@DataSet(file = "test-data/init_order_hiss.xml")
 public class OrderHisMapperTest extends ServiceTestCase {
     @Autowired
     private OrderHisMapper orderHisMapper;
-    
-    @BeforeTransaction
-    public void setUp() throws Exception {
-        super.setUpDB("test-data/init_order_hiss.xml");
-    }
-
-    @AfterTransaction
-    public void tearDown() throws Exception {
-        super.tearDownDB();
-    }
 
     @Test
     public void testFind() {

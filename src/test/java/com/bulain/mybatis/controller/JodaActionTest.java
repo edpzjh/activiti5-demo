@@ -7,6 +7,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.bulain.common.dataset.DataSet;
 import com.bulain.common.page.Page;
 import com.bulain.common.test.ActionTestCase;
 import com.bulain.mybatis.model.Joda;
@@ -14,36 +15,34 @@ import com.bulain.mybatis.pojo.JodaView;
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionProxy;
 
-
+@DataSet(file = "test-data/init_jodas.xml")
 public class JodaActionTest extends ActionTestCase {
     private Locale defaultLocale;
 
     @Before
     public void setUp() throws Exception {
         super.setUp();
-        super.setUpDB("test-data/init_jodas.xml");
-        
+
         defaultLocale = Locale.getDefault();
         Locale.setDefault(Locale.CHINESE);
     }
-    
+
     @After
     public void tearDown() throws Exception {
         super.tearDown();
-        super.tearDownDB();
         Locale.setDefault(defaultLocale);
     }
-    
+
     @Test
     public void testList() throws Exception {
         initServletMockObjects();
         request.setParameter("search.xdate", "2010-04-03");
-        
+
         ActionProxy proxy = getActionProxy("/joda/list");
         JodaAction jodaAction = (JodaAction) proxy.getAction();
         String result = proxy.execute();
         assertEquals(Action.SUCCESS, result);
-        
+
         List<JodaView> listJoda = jodaAction.getListJoda();
         assertEquals(3, listJoda.size());
         Page page = jodaAction.getPage();
@@ -53,12 +52,12 @@ public class JodaActionTest extends ActionTestCase {
     @Test
     public void testNewn() throws Exception {
         initServletMockObjects();
-        
+
         ActionProxy proxy = getActionProxy("/joda/new");
-        JodaAction jodaAction = (JodaAction)proxy.getAction();
+        JodaAction jodaAction = (JodaAction) proxy.getAction();
         String result = proxy.execute();
         assertEquals(Action.SUCCESS, result);
-        
+
         Joda joda = jodaAction.getJoda();
         assertNotNull(joda);
     }
@@ -68,7 +67,7 @@ public class JodaActionTest extends ActionTestCase {
         initServletMockObjects();
         request.setParameter("joda.xdate", "2010-04-03");
         request.setParameter("joda.xtime", "08:00");
-        
+
         ActionProxy proxy = getActionProxy("/joda/create");
         proxy.getAction();
         String result = proxy.execute();
@@ -79,12 +78,12 @@ public class JodaActionTest extends ActionTestCase {
     public void testShow() throws Exception {
         initServletMockObjects();
         request.setParameter("id", "102");
-        
+
         ActionProxy proxy = getActionProxy("/joda/show");
         JodaAction jodaAction = (JodaAction) proxy.getAction();
         String result = proxy.execute();
         assertEquals(Action.SUCCESS, result);
-        
+
         Joda joda = jodaAction.getJoda();
         assertNotNull(joda);
     }
@@ -93,12 +92,12 @@ public class JodaActionTest extends ActionTestCase {
     public void testEdit() throws Exception {
         initServletMockObjects();
         request.setParameter("id", "103");
-        
+
         ActionProxy proxy = getActionProxy("/joda/edit");
         JodaAction jodaAction = (JodaAction) proxy.getAction();
         String result = proxy.execute();
         assertEquals(Action.SUCCESS, result);
-        
+
         Joda joda = jodaAction.getJoda();
         assertNotNull(joda);
     }
@@ -109,7 +108,7 @@ public class JodaActionTest extends ActionTestCase {
         request.setParameter("id", "103");
         request.setParameter("joda.xdate", "2010-04-03");
         request.setParameter("joda.xtime", "08:00");
-        
+
         ActionProxy proxy = getActionProxy("/joda/update");
         proxy.getAction();
         String result = proxy.execute();
@@ -120,7 +119,7 @@ public class JodaActionTest extends ActionTestCase {
     public void testDestroy() throws Exception {
         initServletMockObjects();
         request.setParameter("id", "101");
-        
+
         ActionProxy proxy = getActionProxy("/joda/destroy");
         proxy.getAction();
         String result = proxy.execute();
