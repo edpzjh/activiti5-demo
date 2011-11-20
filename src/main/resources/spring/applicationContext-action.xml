@@ -6,4 +6,5 @@
     <bean id="activitiAction" class="com.bulain.mybatis.controller.ActivitiAction" singleton="false" />
     <bean id="orderAction" class="com.bulain.mybatis.controller.OrderAction" singleton="false" />
     <bean id="jodaAction" class="com.bulain.mybatis.controller.JodaAction" singleton="false" />
+    <bean id="referanceAction" class="com.bulain.activiti.controller.ReferanceAction" singleton="false" />
 </beans>

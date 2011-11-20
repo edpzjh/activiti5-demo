@@ -5,7 +5,7 @@
 		<fileset dir="target/${ant.project.name}/WEB-INF/lib">
 			<include name="*.jar" />
 		</fileset>
-		<path location="target/classes"/>
+		<path location="target/classes" />
 	</path>
 
 	<target name="copy">
@@ -38,5 +38,12 @@
 				<propertyref name="generator.target" />
 			</propertyset>
 		</mbggenerator>
+	</target>
+
+	<target name="xjc">
+		<mkdir dir="${xjc.outdir}" />
+		<exec executable="xjc">
+			<arg line="-p ${xjc.package} -d ${xjc.outdir} -xmlschema ${xjc.schema}" />
+		</exec>
 	</target>
 </project>

@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
-<beans>
-    <bean id="userService" class="com.bulain.mybatis.service.UserServiceImpl">
-        <property name="userMapper" ref="userMapper" />
-    </bean>
-    <bean id="orderService" class="com.bulain.mybatis.service.OrderServiceImpl">
-        <property name="orderMapper" ref="orderMapper" />
-        <property name="orderMasterMapper" ref="orderMasterMapper" />
-        <property name="orderHisMapper" ref="orderHisMapper" />
-    </bean>
-    <bean id="jodaService" class="com.bulain.mybatis.service.JodaServiceImpl">
-        <property name="jodaMapper" ref="jodaMapper" />
-    </bean>
+<beans default-autowire="byName">
+    <bean id="userService" class="com.bulain.mybatis.service.UserServiceImpl"/>
+    <bean id="orderService" class="com.bulain.mybatis.service.OrderServiceImpl"/>
+    <bean id="jodaService" class="com.bulain.mybatis.service.JodaServiceImpl"/>
+    <bean id="referanceService" class="com.bulain.activiti.service.ReferanceServiceImpl"/>
+    <bean id="cacheService" class="com.bulain.common.cache.NoCacheServiceImpl"/>
 </beans>

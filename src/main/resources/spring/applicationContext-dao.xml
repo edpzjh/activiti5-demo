@@ -17,4 +17,8 @@
     <bean id="jodaMapper" parent="baseMapper">
         <property name="mapperInterface" value="com.bulain.mybatis.dao.JodaMapper" />
     </bean>
+    
+    <bean id="referanceMapper" parent="baseMapper">
+        <property name="mapperInterface" value="com.bulain.activiti.dao.ReferanceMapper" />
+    </bean>
 </beans>
