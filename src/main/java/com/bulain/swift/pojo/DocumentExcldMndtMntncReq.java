@@ -37,7 +37,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "Document", propOrder = {
     "acctExcldMndtMntncReq"
 })
-public class Document015 {
+public class DocumentExcldMndtMntncReq {
 
     @XmlElement(name = "AcctExcldMndtMntncReq", required = true)
     protected AccountExcludedMandateMaintenanceRequestV01 acctExcldMndtMntncReq;

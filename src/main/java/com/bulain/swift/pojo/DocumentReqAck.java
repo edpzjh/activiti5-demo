@@ -38,7 +38,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "Document", propOrder = {
     "acctReqAck"
 })
-public class Document010 {
+public class DocumentReqAck {
 
     @XmlElement(name = "AcctReqAck", required = true)
     protected AccountRequestAcknowledgementV01 acctReqAck;
