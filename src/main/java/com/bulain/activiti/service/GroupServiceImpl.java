@@ -9,6 +9,7 @@ import com.bulain.common.service.PagedServiceImpl;
 public class GroupServiceImpl extends PagedServiceImpl<GroupSearch, Group> implements GroupService {
     private GroupMapper groupMapper;
 
+    @Override
     protected PagedMapper<GroupSearch, Group> getPagedMapper() {
         return groupMapper;
     }

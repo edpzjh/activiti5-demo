@@ -35,6 +35,8 @@
             <li class="sub-menu"><a href="<s:url value='/activiti/list.action'/>">Activiti</a></li>
             <li class="sub-menu"><a href="<s:url value='/order/list.action'/>">Order</a></li>
             <li class="sub-menu"><a href="<s:url value='/joda/list.action'/>">Joda</a></li>
+            <li class="sub-menu"><a href="<s:url value='/group/list.action'/>">Group</a></li>
+            <li class="sub-menu"><a href="<s:url value='/category/list.action'/>">Category</a></li>
         </ul>
     </div>
     <div class="section">

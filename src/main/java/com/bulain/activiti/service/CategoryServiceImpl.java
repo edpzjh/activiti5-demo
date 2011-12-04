@@ -9,6 +9,7 @@ import com.bulain.common.service.PagedServiceImpl;
 public class CategoryServiceImpl extends PagedServiceImpl<CategorySearch, Category> implements CategoryService {
     private CategoryMapper categoryMapper;
     
+    @Override
     protected PagedMapper<CategorySearch, Category> getPagedMapper() {
         return categoryMapper;
     }

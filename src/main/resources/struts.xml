@@ -41,7 +41,10 @@
 	<include file="struts/struts-activiti.xml"/>
     <include file="struts/struts-joda.xml"/>
     <include file="struts/struts-referance.xml"/>
+    <include file="struts/struts-group.xml"/>
+    <include file="struts/struts-category.xml"/>
 
+    
     <package name="default" namespace="/" extends="struts-default">
         <default-action-ref name="index" />
     </package>
