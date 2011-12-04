@@ -6,4 +6,6 @@
     <bean id="jodaService" class="com.bulain.mybatis.service.JodaServiceImpl"/>
     <bean id="referanceService" class="com.bulain.activiti.service.ReferanceServiceImpl"/>
     <bean id="cacheService" class="com.bulain.common.cache.NoCacheServiceImpl"/>
+    <bean id="groupService" class="com.bulain.activiti.service.GroupServiceImpl"/>
+    <bean id="categoryService" class="com.bulain.activiti.service.CategoryServiceImpl"/>
 </beans>

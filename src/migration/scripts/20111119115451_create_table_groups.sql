@@ -4,6 +4,7 @@ create table groups(
     id int(11) NOT NULL auto_increment,
     
     name varchar(20),
+    type varchar(20),
     description varchar(255),
     
     created_by varchar(20),

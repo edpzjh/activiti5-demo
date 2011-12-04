@@ -1,9 +1,10 @@
 --// create table catagorys
 -- Migration SQL that makes the change goes here.
-create table catagorys(
+create table categorys(
     id int(11) NOT NULL auto_increment,
     
     name varchar(20),
+    type varchar(20),
     description varchar(255),
     
     created_by varchar(20),
@@ -16,5 +17,5 @@ create table catagorys(
 
 --//@UNDO
 -- SQL to undo the change goes here.
-drop table catagorys;
+drop table categorys;
 

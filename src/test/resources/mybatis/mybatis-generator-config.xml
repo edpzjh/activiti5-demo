@@ -30,7 +30,7 @@
     <javaClientGenerator type="XMLMAPPER" targetPackage="${generator.packagePrefix}.dao"  targetProject="${generator.target}">
       <property name="enableSubPackages" value="true" />
     </javaClientGenerator>
-
+<!-- 
 	<table schema="${generator.schema}" tableName="users" domainObjectName="User" 
     	enableInsert="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true" 
     	enableSelectByExample="false" enableDeleteByExample="false" enableCountByExample="false" enableUpdateByExample="false">
@@ -60,6 +60,19 @@
     </table>
 
     <table schema="${generator.schema}" tableName="joda_demo" domainObjectName="Joda" 
+        enableInsert="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true" 
+        enableSelectByExample="false" enableDeleteByExample="false" enableCountByExample="false" enableUpdateByExample="false">
+      <property name="useActualColumnNames" value="false"/>
+      <generatedKey column="ID" sqlStatement="Mysql" identity="true" />
+    </table>
+ -->
+    <table schema="${generator.schema}" tableName="groups" domainObjectName="Group" 
+        enableInsert="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true" 
+        enableSelectByExample="false" enableDeleteByExample="false" enableCountByExample="false" enableUpdateByExample="false">
+      <property name="useActualColumnNames" value="false"/>
+      <generatedKey column="ID" sqlStatement="Mysql" identity="true" />
+    </table>
+    <table schema="${generator.schema}" tableName="categorys" domainObjectName="Category" 
         enableInsert="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true" 
         enableSelectByExample="false" enableDeleteByExample="false" enableCountByExample="false" enableUpdateByExample="false">
       <property name="useActualColumnNames" value="false"/>

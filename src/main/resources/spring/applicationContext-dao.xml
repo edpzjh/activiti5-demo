@@ -21,4 +21,12 @@
     <bean id="referanceMapper" parent="baseMapper">
         <property name="mapperInterface" value="com.bulain.activiti.dao.ReferanceMapper" />
     </bean>
+    
+    <bean id="groupMapper" parent="baseMapper">
+        <property name="mapperInterface" value="com.bulain.activiti.dao.GroupMapper" />
+    </bean>
+    <bean id="categoryMapper" parent="baseMapper">
+        <property name="mapperInterface" value="com.bulain.activiti.dao.CategoryMapper" />
+    </bean>
+    
 </beans>
