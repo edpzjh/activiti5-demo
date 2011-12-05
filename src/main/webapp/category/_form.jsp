@@ -21,7 +21,7 @@
     </tr>
     <tr>
         <td class="page-form-label"><s:text name="category.type"/></td>
-        <td class="page-form-value"><s:textfield key="category.type" cssClass="required" maxLength="50"/></td>
+        <td class="page-form-value"><s:select name="category.type" list="listReferanceCategoryType" listKey="key" listValue="value" value="category.type" cssClass="required"/></td>
         <td></td>
         <td></td>
     </tr>

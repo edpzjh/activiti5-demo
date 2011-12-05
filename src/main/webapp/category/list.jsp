@@ -50,7 +50,7 @@
 <table id="list" class="list-table" cellspacing="0" width="100%" border="1">
     <tr class="list-table-header">
     	<th width="10%"><page:order fixOrderBy="name"><s:text name="category.name"/></page:order></th>
-    	<th width="10%"><page:order fixOrderBy="typeName"><s:text name="category.type"/></page:order></th>
+    	<th width="10%"><page:order fixOrderBy="type"><s:text name="category.type"/></page:order></th>
         <th width="10%"><page:order fixOrderBy="updated_by"><s:text name="common.updatedBy"/></page:order></th>
         <th width="10%"><page:order fixOrderBy="updated_at"><s:text name="common.updatedAt"/></page:order></th>
         <th class="minNoWrap"><s:text name="action.action"/></th>
@@ -58,7 +58,7 @@
     <s:iterator value="listCategory" status="status">
         <tr class="<s:if test="#status.even">list-line-even</s:if><s:else>list-line-odd</s:else>" >
             <td class="noWrap"><s:property value="name"/></td>
-            <td class="noWrap"><s:property value="type"/></td>
+            <td class="noWrap"><s:property value="typeName"/></td>
             <td class="noWrap"><s:property value="updatedBy"/></td>
             <td class="noWrap"><s:date name="updatedAt" format="%{getText('fmt.timestamp')}" /></td>
             <td class="minNoWrap">

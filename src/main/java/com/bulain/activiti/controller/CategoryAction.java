@@ -65,6 +65,7 @@ public class CategoryAction extends PageSupportActionSupport {
     
     public String show() {
         category = categoryService.get(id);
+        category = formatItem(category);
         return SUCCESS;
     }
     

@@ -14,7 +14,7 @@
     </tr>
     <tr>
         <td class="page-form-label"><s:text name="category.type"/></td>
-        <td class="page-form-value"><s:property value="category.type"/></td>
+        <td class="page-form-value"><s:property value="category.typeName"/></td>
         <td></td>
         <td></td>
     </tr>
