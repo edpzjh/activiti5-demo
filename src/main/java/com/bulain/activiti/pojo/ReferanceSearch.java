@@ -8,7 +8,7 @@ public class ReferanceSearch extends Search {
     private String name;
     private String code;
     private String lang;
-    private String catagory;
+    private String category;
 
     public String getName() {
         return name;
@@ -28,10 +28,10 @@ public class ReferanceSearch extends Search {
     public void setLang(String lang) {
         this.lang = lang;
     }
-    public String getCatagory() {
-        return catagory;
+    public String getCategory() {
+        return category;
     }
-    public void setCatagory(String catagory) {
-        this.catagory = catagory;
+    public void setCategory(String category) {
+        this.category = category;
     }
 }

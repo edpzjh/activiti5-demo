@@ -15,8 +15,8 @@
     <tr>
         <td class="page-form-label"><s:text name="referance.lang"/></td>
         <td class="page-form-value"><s:property value="referance.langName"/></td>
-        <td class="page-form-label"><s:text name="referance.catagory"/></td>
-        <td class="page-form-value"><s:property value="referance.catagoryName"/></td>
+        <td class="page-form-label"><s:text name="referance.category"/></td>
+        <td class="page-form-value"><s:property value="referance.categoryName"/></td>
     </tr>
     <tr>
         <td class="page-form-label"><s:text name="referance.text"/></td>

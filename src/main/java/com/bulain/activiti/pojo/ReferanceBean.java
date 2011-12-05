@@ -9,7 +9,7 @@ public class ReferanceBean implements Serializable {
     private String code;
     private String textEN;
     private String textCN;
-    private String catagory;
+    private String category;
 
     public String getName() {
         return name;
@@ -35,10 +35,10 @@ public class ReferanceBean implements Serializable {
     public void setTextCN(String textCN) {
         this.textCN = textCN;
     }
-    public String getCatagory() {
-        return catagory;
+    public String getCategory() {
+        return category;
     }
-    public void setCatagory(String catagory) {
-        this.catagory = catagory;
+    public void setCategory(String category) {
+        this.category = category;
     }
 }

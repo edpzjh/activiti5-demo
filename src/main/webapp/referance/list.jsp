@@ -33,9 +33,9 @@
             <td class="page-form-value">
             	<s:select name="search.lang" list="listReferanceLang" listKey="key" listValue="value" value="search.lang" />
             </td>
-            <td class="page-form-label"><s:text name="referance.catagory"/></td>
+            <td class="page-form-label"><s:text name="referance.category"/></td>
             <td class="page-form-value">
-            	<s:select name="search.catagory" list="listReferanceCatagory" listKey="key" listValue="value" value="search.catagory" />
+            	<s:select name="search.category" list="listReferanceCategory" listKey="key" listValue="value" value="search.category" />
             </td>
         </tr>
         <tr>
@@ -64,7 +64,7 @@
     	<th><page:order fixOrderBy="name"><s:text name="referance.name"/></page:order></th>
         <th><page:order fixOrderBy="code"><s:text name="referance.code"/></page:order></th>
         <th><page:order fixOrderBy="lang"><s:text name="referance.lang"/></page:order></th>
-        <th><page:order fixOrderBy="catagory"><s:text name="referance.catagory"/></page:order></th>
+        <th><page:order fixOrderBy="category"><s:text name="referance.category"/></page:order></th>
         <th><page:order fixOrderBy="text"><s:text name="referance.text"/></page:order></th>
         <th class="minNoWrap"><s:text name="action.action"/></th>
     </tr>
@@ -73,7 +73,7 @@
             <td class="noWrap"><s:property value="nameName"/></td>
             <td class="noWrap"><s:property value="code"/></td>
             <td class="noWrap"><s:property value="langName"/></td>
-            <td class="noWrap"><s:property value="catagoryName"/></td>
+            <td class="noWrap"><s:property value="categoryName"/></td>
             <td class="noWrap"><page:text value="text"/></td>
             <td class="minNoWrap">
         	<s:url id="url" action="show"><s:param name="id" value="id"></s:param></s:url><a href="<s:property value="#url"/>"><s:text name="action.show"/></a>

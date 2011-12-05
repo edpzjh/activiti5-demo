@@ -7,7 +7,7 @@ public class ReferanceView extends Referance {
 
     private String nameName;
     private String langName;
-    private String catagoryName;
+    private String categoryName;
     private String createdAtName;
     private String updatedAtName;
 
@@ -17,7 +17,7 @@ public class ReferanceView extends Referance {
         setCode(model.getCode());
         setText(model.getText());
         setLang(model.getLang());
-        setCatagory(model.getCatagory());
+        setCategory(model.getCategory());
         setCreatedBy(model.getCreatedBy());
         setCreatedAt(model.getCreatedAt());
         setUpdatedBy(model.getUpdatedBy());
@@ -36,11 +36,11 @@ public class ReferanceView extends Referance {
     public void setLangName(String langName) {
         this.langName = langName;
     }
-    public String getCatagoryName() {
-        return catagoryName;
+    public String getCategoryName() {
+        return categoryName;
     }
-    public void setCatagoryName(String catagoryName) {
-        this.catagoryName = catagoryName;
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
     }
     public String getCreatedAtName() {
         return createdAtName;

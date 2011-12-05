@@ -27,9 +27,9 @@
         <td class="page-form-value">
         	<s:select name="referance.lang" list="listReferanceLang" listKey="key" listValue="value" value="referance.lang" />
         </td>
-        <td class="page-form-label"><s:text name="referance.catagory"/></td>
+        <td class="page-form-label"><s:text name="referance.category"/></td>
         <td class="page-form-value">
-        	<s:select name="referance.catagory" list="listReferanceCatagory" listKey="key" listValue="value" value="referance.catagory" />
+        	<s:select name="referance.category" list="listReferanceCategory" listKey="key" listValue="value" value="referance.category" />
         </td>
     </tr>
     <tr>
@@ -81,7 +81,7 @@ $(document).ready(function() {
 				required: true,
 				maxlength: 20
 			},
-			"referance.catagory": {
+			"referance.category": {
 				maxlength: 20
 			}
 		},
@@ -102,8 +102,8 @@ $(document).ready(function() {
 				required: "<s:text name='js.validate.required'><s:param><s:text name='referance.lang'/></s:param></s:text>",
 				maxlength: "<s:text name='js.validate.maxlength'><s:param><s:text name='referance.lang'/></s:param><s:param>20</s:param></s:text>"
 			},
-			"referance.catagory": {
-				maxlength: "<s:text name='js.validate.maxlength'><s:param><s:text name='referance.catagory'/></s:param><s:param>20</s:param></s:text>"
+			"referance.category": {
+				maxlength: "<s:text name='js.validate.maxlength'><s:param><s:text name='referance.category'/></s:param><s:param>20</s:param></s:text>"
 			}
 		}
 	});

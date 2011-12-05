@@ -22,9 +22,9 @@
         <td class="page-form-value"><s:textfield name="referanceBean.code"/></td>
     </tr>
     <tr>
-        <td class="page-form-label"><s:text name="referance.catagory"/></td>
+        <td class="page-form-label"><s:text name="referance.category"/></td>
         <td class="page-form-value">
-        	<s:select name="referanceBean.catagory" list="listReferanceCatagory" listKey="key" listValue="value" value="referanceBean.catagory" />
+        	<s:select name="referanceBean.category" list="listReferanceCategory" listKey="key" listValue="value" value="referanceBean.category" />
         </td>
         <td/>
         <td/>
@@ -67,7 +67,7 @@ $(document).ready(function() {
 			"referanceBean.textCN": {
 				maxlength: 250
 			},
-			"referanceBean.catagory": {
+			"referanceBean.category": {
 				maxlength: 20
 			}
 		},
@@ -86,8 +86,8 @@ $(document).ready(function() {
 			"referanceBean.textCN": {
 				maxlength: "<s:text name='js.validate.maxlength'><s:param><s:text name='referanceBean.textCN'/></s:param><s:param>250</s:param></s:text>"
 			},
-			"referanceBean.catagory": {
-				maxlength: "<s:text name='js.validate.maxlength'><s:param><s:text name='referanceBean.catagory'/></s:param><s:param>20</s:param></s:text>"
+			"referanceBean.category": {
+				maxlength: "<s:text name='js.validate.maxlength'><s:param><s:text name='referanceBean.category'/></s:param><s:param>20</s:param></s:text>"
 			}
 		}
 	});

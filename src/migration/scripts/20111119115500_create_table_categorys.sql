@@ -1,4 +1,4 @@
---// create table catagorys
+--// create table categorys
 -- Migration SQL that makes the change goes here.
 create table categorys(
     id int(11) NOT NULL auto_increment,

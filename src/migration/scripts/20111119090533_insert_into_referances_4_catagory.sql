@@ -1,7 +1,7 @@
---// insert into referances 4 catagory
+--// insert into referances 4 category
 -- Migration SQL that makes the change goes here.
-INSERT INTO referances VALUES (301,'Catagory','Default','Default','en','','createdBy',SYSDATE(),'createdBy',SYSDATE());
-INSERT INTO referances VALUES (302,'Catagory','Default','д╛хо','zh','','createdBy',SYSDATE(),'createdBy',SYSDATE());
+INSERT INTO referances VALUES (301,'Category','Default','Default','en','','createdBy',SYSDATE(),'createdBy',SYSDATE());
+INSERT INTO referances VALUES (302,'Category','Default','д╛хо','zh','','createdBy',SYSDATE(),'createdBy',SYSDATE());
 
 
 

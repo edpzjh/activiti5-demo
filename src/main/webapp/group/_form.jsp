@@ -21,7 +21,7 @@
     </tr>
     <tr>
         <td class="page-form-label"><s:text name="group.type"/></td>
-        <td class="page-form-value"><s:textfield key="group.type" cssClass="required" maxLength="50"/></td>
+        <td class="page-form-value"><s:select name="group.type" list="listReferanceGroupType" listKey="key" listValue="value" value="group.type" cssClass="required"/></td>
         <td></td>
         <td></td>
     </tr>

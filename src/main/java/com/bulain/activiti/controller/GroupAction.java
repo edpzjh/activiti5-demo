@@ -10,7 +10,10 @@ import org.springframework.beans.BeanUtils;
 import com.bulain.activiti.model.Group;
 import com.bulain.activiti.pojo.GroupSearch;
 import com.bulain.activiti.pojo.GroupView;
+import com.bulain.activiti.pojo.Item;
+import com.bulain.activiti.pojo.ItemConst;
 import com.bulain.activiti.service.GroupService;
+import com.bulain.activiti.service.ReferanceService;
 import com.bulain.common.controller.PageSupportActionSupport;
 
 public class GroupAction extends PageSupportActionSupport {
@@ -24,6 +27,9 @@ public class GroupAction extends PageSupportActionSupport {
     private List<GroupView> listGroup;
 
     private transient GroupService groupService;
+    private transient ReferanceService referanceService;
+    
+    private List<Item> listReferanceGroupType;
 
     public String list() {
         search = (GroupSearch) getSearchFromSession(GroupSearch.class, search);
@@ -57,6 +63,7 @@ public class GroupAction extends PageSupportActionSupport {
     }
     public String show() {
         group = groupService.get(id);
+        group = formatItem(group);
         return SUCCESS;
     }
     public String edit() {
@@ -92,12 +99,26 @@ public class GroupAction extends PageSupportActionSupport {
     }
 
     public void prepareList() {
+        listReferanceGroupType = referanceService.findItem(ItemConst.NAME_GROUP_TYPE, getLanguage());
     }
 
+    public void prepareNewn(){
+        prepareList();
+    }
+    
+    public void prepareEdit(){
+        prepareList();
+    }
+    
+    public void prepareCreate(){
+        prepareList();
+    }
+    
     public void prepareUpdate() {
         if (id != null) {
             group = groupService.get(id);
         }
+        prepareList();
     }
 
     protected List<GroupView> formatList(List<Group> list) {
@@ -111,6 +132,9 @@ public class GroupAction extends PageSupportActionSupport {
     protected GroupView formatItem(Group group) {
         GroupView view = new GroupView();
         BeanUtils.copyProperties(group, view);
+        
+        view.setTypeName(referanceService.getText(ItemConst.NAME_GROUP_TYPE, group.getType(), getLanguage()));
+        
         return view;
     }
 
@@ -148,4 +172,17 @@ public class GroupAction extends PageSupportActionSupport {
     public void setGroupService(GroupService groupService) {
         this.groupService = groupService;
     }
+
+    public List<Item> getListReferanceGroupType() {
+        return listReferanceGroupType;
+    }
+
+    public void setListReferanceGroupType(List<Item> listReferanceGroupType) {
+        this.listReferanceGroupType = listReferanceGroupType;
+    }
+
+    public void setReferanceService(ReferanceService referanceService) {
+        this.referanceService = referanceService;
+    }
+    
 }

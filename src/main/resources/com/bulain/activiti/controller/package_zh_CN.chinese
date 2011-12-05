@@ -7,7 +7,7 @@ referance.name=名称
 referance.code=代码
 referance.text=内容
 referance.lang=语言
-referance.catagory=类别
+referance.category=类别
 referance.textEN=英文内容
 referance.textCN=中文内容
 
@@ -29,7 +29,7 @@ content.fileName=文件名
 content.contentType=文件类型
 content.refId=参考号
 content.refName=参考名称
-content.catagory=类别
+content.category=类别
 content.lang=语言
 content.file=文件
 

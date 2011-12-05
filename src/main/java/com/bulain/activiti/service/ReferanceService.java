@@ -12,8 +12,8 @@ public interface ReferanceService extends PagedService<ReferanceSearch, Referanc
     void insert(ReferanceBean referanceBean);
 
     String getText(String name, String code, String lang);
-    String getText(String name, String code, String lang, String catagory);
+    String getText(String name, String code, String lang, String category);
 
     List<Item> findItem(String name, String lang);
-    List<Item> findItem(String name, String lang, String catagory);
+    List<Item> findItem(String name, String lang, String category);
 }

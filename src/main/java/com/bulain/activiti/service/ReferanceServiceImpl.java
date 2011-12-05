@@ -15,7 +15,7 @@ import com.bulain.common.service.PagedServiceImpl;
 public class ReferanceServiceImpl extends PagedServiceImpl<ReferanceSearch, Referance> implements ReferanceService {
     private static final String COMA = "__";
 
-    private static final String DEFAULT_CATAGORY = "";
+    private static final String DEFAULT_CATEGORY = "";
     private static final String DEFAULT_TEXT = "";
 
     private ReferanceMapper referanceMapper;
@@ -37,7 +37,7 @@ public class ReferanceServiceImpl extends PagedServiceImpl<ReferanceSearch, Refe
     public void insert(Referance referance) {
         super.insert(referance);
 
-        String key = referance.getName() + COMA + referance.getLang() + COMA + referance.getCatagory();
+        String key = referance.getName() + COMA + referance.getLang() + COMA + referance.getCategory();
         cacheService.delete(Item.class, key);
     }
     public void insert(ReferanceBean referanceBean) {
@@ -46,23 +46,23 @@ public class ReferanceServiceImpl extends PagedServiceImpl<ReferanceSearch, Refe
 
         beanEN.setName(referanceBean.getName());
         beanEN.setCode(referanceBean.getCode());
-        beanEN.setCatagory(referanceBean.getCatagory());
+        beanEN.setCategory(referanceBean.getCategory());
         beanEN.setLang(Constants.LANG_EN);
         beanEN.setText(referanceBean.getTextEN());
 
         beanCN.setName(referanceBean.getName());
         beanCN.setCode(referanceBean.getCode());
-        beanCN.setCatagory(referanceBean.getCatagory());
+        beanCN.setCategory(referanceBean.getCategory());
         beanCN.setLang(Constants.LANG_ZH);
         beanCN.setText(referanceBean.getTextCN());
 
         super.insert(beanEN);
         super.insert(beanCN);
 
-        String key = beanEN.getName() + COMA + beanEN.getLang() + COMA + beanEN.getCatagory();
+        String key = beanEN.getName() + COMA + beanEN.getLang() + COMA + beanEN.getCategory();
         cacheService.delete(Item.class, key);
 
-        key = beanCN.getName() + COMA + beanCN.getLang() + COMA + beanCN.getCatagory();
+        key = beanCN.getName() + COMA + beanCN.getLang() + COMA + beanCN.getCategory();
         cacheService.delete(Item.class, key);
     }
 
@@ -70,10 +70,10 @@ public class ReferanceServiceImpl extends PagedServiceImpl<ReferanceSearch, Refe
         super.update(referance, forced);
 
         cacheService.delete(Referance.class, referance.getId());
-        String key = referance.getName() + COMA + referance.getLang() + COMA + referance.getCatagory();
+        String key = referance.getName() + COMA + referance.getLang() + COMA + referance.getCategory();
         cacheService.delete(Item.class, key);
         key = referance.getName() + COMA + referance.getCode() + COMA + referance.getLang() + COMA
-                + referance.getCatagory();
+                + referance.getCategory();
         cacheService.delete(Item.class, key);
     }
     public void delete(Integer id) {
@@ -81,22 +81,22 @@ public class ReferanceServiceImpl extends PagedServiceImpl<ReferanceSearch, Refe
         super.delete(id);
 
         cacheService.delete(Referance.class, id);
-        String key = referance.getName() + COMA + referance.getLang() + COMA + referance.getCatagory();
+        String key = referance.getName() + COMA + referance.getLang() + COMA + referance.getCategory();
         cacheService.delete(Item.class, key);
         key = referance.getName() + COMA + referance.getCode() + COMA + referance.getLang() + COMA
-                + referance.getCatagory();
+                + referance.getCategory();
         cacheService.delete(Item.class, key);
     }
 
     public String getText(String name, String code, String lang) {
-        return getText(name, code, lang, DEFAULT_CATAGORY);
+        return getText(name, code, lang, DEFAULT_CATEGORY);
     }
-    public String getText(String name, String code, String lang, String catagory) {
+    public String getText(String name, String code, String lang, String category) {
         if (code == null || code.length() <= 0) {
             return DEFAULT_TEXT;
         }
 
-        String key = name + COMA + code + COMA + lang + COMA + catagory;
+        String key = name + COMA + code + COMA + lang + COMA + category;
         Item item = (Item) cacheService.get(Item.class, key);
 
         if (item == null) {
@@ -104,7 +104,7 @@ public class ReferanceServiceImpl extends PagedServiceImpl<ReferanceSearch, Refe
             search.setName(name);
             search.setCode(code);
             search.setLang(lang);
-            search.setCatagory(catagory);
+            search.setCategory(category);
             item = referanceMapper.selectItemByExample(search);
             if (item != null) {
                 cacheService.add(Item.class, key, item);
@@ -117,11 +117,11 @@ public class ReferanceServiceImpl extends PagedServiceImpl<ReferanceSearch, Refe
         return DEFAULT_TEXT;
     }
     public List<Item> findItem(String name, String lang) {
-        return findItem(name, lang, DEFAULT_CATAGORY);
+        return findItem(name, lang, DEFAULT_CATEGORY);
     }
 
-    public List<Item> findItem(String name, String lang, String catagory) {
-        String key = name + COMA + lang + COMA + catagory;
+    public List<Item> findItem(String name, String lang, String category) {
+        String key = name + COMA + lang + COMA + category;
         @SuppressWarnings("unchecked")
         List<Item> list = (List<Item>) cacheService.get(Item.class, key);
 
@@ -129,7 +129,7 @@ public class ReferanceServiceImpl extends PagedServiceImpl<ReferanceSearch, Refe
             ReferanceSearch search = new ReferanceSearch();
             search.setName(name);
             search.setLang(lang);
-            search.setCatagory(catagory);
+            search.setCategory(category);
             list = referanceMapper.selectListByExample(search);
             list.add(0, Item.DEFUALT_ITEM);
             cacheService.add(Item.class, key, list);

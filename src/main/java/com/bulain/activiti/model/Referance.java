@@ -18,7 +18,7 @@ public class Referance implements Trackable, Serializable {
 
     private String lang;
 
-    private String catagory;
+    private String category;
 
     private String createdBy;
 
@@ -68,12 +68,12 @@ public class Referance implements Trackable, Serializable {
         this.lang = lang == null ? null : lang.trim();
     }
 
-    public String getCatagory() {
-        return catagory;
+    public String getCategory() {
+        return category;
     }
 
-    public void setCatagory(String catagory) {
-        this.catagory = catagory == null ? null : catagory.trim();
+    public void setCategory(String category) {
+        this.category = category == null ? null : category.trim();
     }
 
     public String getCreatedBy() {

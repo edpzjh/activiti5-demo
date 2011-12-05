@@ -43,7 +43,7 @@
 			<message key="validate.stringlength"></message>
 		</field-validator>
 	</field>
-	<field name="referance.catagory">
+	<field name="referance.category">
 		<field-validator type="stringlength">
 			<param name="minLength">0</param>
 			<param name="maxLength">20</param>

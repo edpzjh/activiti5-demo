@@ -24,7 +24,7 @@
             <td class="page-form-label"><s:text name="category.name"/></td>
             <td class="page-form-value"><s:textfield key="search.name"/></td>
             <td class="page-form-label"><s:text name="category.type"/></td>
-            <td class="page-form-value"><s:textfield key="search.type"/></td>
+            <td class="page-form-value"><s:select name="search.type" list="listReferanceCategoryType" listKey="key" listValue="value" value="search.type" /></td>
         </tr>
         <tr>
             <td width="20%"></td>
@@ -50,7 +50,7 @@
 <table id="list" class="list-table" cellspacing="0" width="100%" border="1">
     <tr class="list-table-header">
     	<th width="10%"><page:order fixOrderBy="name"><s:text name="category.name"/></page:order></th>
-    	<th width="10%"><page:order fixOrderBy="type"><s:text name="category.type"/></page:order></th>
+    	<th width="10%"><page:order fixOrderBy="typeName"><s:text name="category.type"/></page:order></th>
         <th width="10%"><page:order fixOrderBy="updated_by"><s:text name="common.updatedBy"/></page:order></th>
         <th width="10%"><page:order fixOrderBy="updated_at"><s:text name="common.updatedAt"/></page:order></th>
         <th class="minNoWrap"><s:text name="action.action"/></th>

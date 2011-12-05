@@ -25,7 +25,7 @@ public class ReferanceMapperTest extends ServiceTestCase {
         ReferanceSearch search = new ReferanceSearch();
         search.setName("name_page");
         search.setLang("lang_page");
-        search.setCatagory("catagory_page");
+        search.setCategory("category_page");
         List<Item> selectListByExample = referanceMapper.selectListByExample(search);
         assertEquals(3, selectListByExample.size());
     }
@@ -36,7 +36,7 @@ public class ReferanceMapperTest extends ServiceTestCase {
         search.setName("name_102");
         search.setCode("code_102");
         search.setLang("lang_102");
-        search.setCatagory("catagory_102");
+        search.setCategory("category_102");
         Item selectItemByExample = referanceMapper.selectItemByExample(search);
         assertNotNull(selectItemByExample);
     }
@@ -47,7 +47,7 @@ public class ReferanceMapperTest extends ServiceTestCase {
         search.setName("name_page");
         search.setCode("code_page");
         search.setLang("lang_page");
-        search.setCatagory("catagory_page");
+        search.setCategory("category_page");
         List<Referance> find = referanceMapper.find(search);
         assertEquals(3, find.size());
     }
@@ -58,7 +58,7 @@ public class ReferanceMapperTest extends ServiceTestCase {
         search.setName("name_page");
         search.setCode("code_page");
         search.setLang("lang_page");
-        search.setCatagory("catagory_page");
+        search.setCategory("category_page");
         Long count = referanceMapper.count(search);
         assertEquals(Long.valueOf(3), count);
     }
@@ -69,7 +69,7 @@ public class ReferanceMapperTest extends ServiceTestCase {
         search.setName("name_page");
         search.setCode("code_page");
         search.setLang("lang_page");
-        search.setCatagory("catagory_page");
+        search.setCategory("category_page");
         Page page = new Page();
         page.setCount(10);
         search.setHigh(page.getHigh());
@@ -90,7 +90,7 @@ public class ReferanceMapperTest extends ServiceTestCase {
         record.setName("name");
         record.setCode("code");
         record.setLang("lang");
-        record.setCatagory("catagory");
+        record.setCategory("category");
         record.setText("text");
         int insert = referanceMapper.insert(record);
         assertEquals(1, insert);
@@ -102,7 +102,7 @@ public class ReferanceMapperTest extends ServiceTestCase {
         record.setName("name");
         record.setCode("code");
         record.setLang("lang");
-        record.setCatagory("catagory");
+        record.setCategory("category");
         record.setText("text");
         int insertSelective = referanceMapper.insertSelective(record);
         assertEquals(1, insertSelective);
@@ -116,7 +116,7 @@ public class ReferanceMapperTest extends ServiceTestCase {
         assertEquals("code_102", selectByPrimaryKey.getCode());
         assertEquals("text_102", selectByPrimaryKey.getText());
         assertEquals("lang_102", selectByPrimaryKey.getLang());
-        assertEquals("catagory_102", selectByPrimaryKey.getCatagory());
+        assertEquals("category_102", selectByPrimaryKey.getCategory());
     }
 
     @Test
@@ -126,7 +126,7 @@ public class ReferanceMapperTest extends ServiceTestCase {
         record.setName("name-updated");
         record.setCode("code-updated");
         record.setLang("lang-updated");
-        record.setCatagory("catagory-updated");
+        record.setCategory("category-updated");
         record.setText("text-updated");
         int updateByPrimaryKeySelective = referanceMapper.updateByPrimaryKeySelective(record);
         assertEquals(1, updateByPrimaryKeySelective);
@@ -139,7 +139,7 @@ public class ReferanceMapperTest extends ServiceTestCase {
         record.setName("name-updated");
         record.setCode("code-updated");
         record.setLang("lang-updated");
-        record.setCatagory("catagory-updated");
+        record.setCategory("category-updated");
         record.setText("text-updated");
         int updateByPrimaryKey = referanceMapper.updateByPrimaryKey(record);
         assertEquals(1, updateByPrimaryKey);

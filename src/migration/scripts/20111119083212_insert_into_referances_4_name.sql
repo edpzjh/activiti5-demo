@@ -4,8 +4,8 @@ INSERT INTO referances VALUES (101,'Referance','Referance','Referance','en','','
 INSERT INTO referances VALUES (102,'Referance','Referance','参考名称','zh','','createdBy',SYSDATE(),'createdBy',SYSDATE());
 INSERT INTO referances VALUES (103,'Referance','Language','Language','en','','createdBy',SYSDATE(),'createdBy',SYSDATE());
 INSERT INTO referances VALUES (104,'Referance','Language','语言','zh','','createdBy',SYSDATE(),'createdBy',SYSDATE());
-INSERT INTO referances VALUES (105,'Referance','Catagory','Catagory','en','','createdBy',SYSDATE(),'createdBy',SYSDATE());
-INSERT INTO referances VALUES (106,'Referance','Catagory','分类','zh','','createdBy',SYSDATE(),'createdBy',SYSDATE());
+INSERT INTO referances VALUES (105,'Referance','Category','Category','en','','createdBy',SYSDATE(),'createdBy',SYSDATE());
+INSERT INTO referances VALUES (106,'Referance','Category','分类','zh','','createdBy',SYSDATE(),'createdBy',SYSDATE());
 INSERT INTO referances VALUES (107,'Referance','Country','Country','en','','createdBy',SYSDATE(),'createdBy',SYSDATE());
 INSERT INTO referances VALUES (108,'Referance','Country','国家','zh','','createdBy',SYSDATE(),'createdBy',SYSDATE());
 INSERT INTO referances VALUES (109,'Referance','TimeZone','TimeZone','en','','createdBy',SYSDATE(),'createdBy',SYSDATE());

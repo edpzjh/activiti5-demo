@@ -6,7 +6,7 @@ create table referances(
 	code varchar(50) NOT NULL,
 	text varchar(255),
 	lang varchar(20) NOT NULL,
-	catagory varchar(20),
+	category varchar(20),
 	
 	created_by varchar(20),
 	created_at datetime,

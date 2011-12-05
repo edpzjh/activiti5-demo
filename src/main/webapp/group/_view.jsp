@@ -14,7 +14,7 @@
     </tr>
     <tr>
         <td class="page-form-label"><s:text name="group.type"/></td>
-        <td class="page-form-value"><s:property value="group.type"/></td>
+        <td class="page-form-value"><s:property value="group.typeName"/></td>
         <td></td>
         <td></td>
     </tr>

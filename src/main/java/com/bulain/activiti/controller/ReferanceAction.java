@@ -26,7 +26,7 @@ public class ReferanceAction extends PageSupportActionSupport {
 
     private List<Item> listReferanceName;
     private List<Item> listReferanceLang;
-    private List<Item> listReferanceCatagory;
+    private List<Item> listReferanceCategory;
 
     public String list() {
         search = (ReferanceSearch) getSearchFromSession(ReferanceSearch.class, search);
@@ -43,7 +43,6 @@ public class ReferanceAction extends PageSupportActionSupport {
 
     public String newn() {
         referanceBean = new ReferanceBean();
-        prepareEdit();
         return SUCCESS;
     }
     public String create() {
@@ -57,7 +56,6 @@ public class ReferanceAction extends PageSupportActionSupport {
     }
     public String edit() {
         referance = referanceService.get(id);
-        prepareEdit();
         return SUCCESS;
     }
     public String update() {
@@ -78,7 +76,7 @@ public class ReferanceAction extends PageSupportActionSupport {
     public void prepareList() {
         listReferanceName = referanceService.findItem(ItemConst.NAME_REFERANCE, getLanguage());
         listReferanceLang = referanceService.findItem(ItemConst.NAME_LANGUAGE, getLanguage());
-        listReferanceCatagory = referanceService.findItem(ItemConst.NAME_CATAGORY, getLanguage());
+        listReferanceCategory = referanceService.findItem(ItemConst.NAME_CATEGORY, getLanguage());
     }
     public void prepareNewn() {
         prepareList();
@@ -99,7 +97,7 @@ public class ReferanceAction extends PageSupportActionSupport {
         ReferanceView refv = new ReferanceView(ref);
         refv.setNameName(referanceService.getText(ItemConst.NAME_REFERANCE, refv.getName(), getLanguage()));
         refv.setLangName(referanceService.getText(ItemConst.NAME_LANGUAGE, refv.getLang(), getLanguage()));
-        refv.setCatagoryName(referanceService.getText(ItemConst.NAME_CATAGORY, refv.getCatagory(), getLanguage()));
+        refv.setCategoryName(referanceService.getText(ItemConst.NAME_CATEGORY, refv.getCategory(), getLanguage()));
         return refv;
     }
 
@@ -163,12 +161,12 @@ public class ReferanceAction extends PageSupportActionSupport {
         this.listReferanceLang = listReferanceLang;
     }
 
-    public List<Item> getListReferanceCatagory() {
-        return listReferanceCatagory;
+    public List<Item> getListReferanceCategory() {
+        return listReferanceCategory;
     }
 
-    public void setListReferanceCatagory(List<Item> listReferanceCatagory) {
-        this.listReferanceCatagory = listReferanceCatagory;
+    public void setListReferanceCategory(List<Item> listReferanceCategory) {
+        this.listReferanceCategory = listReferanceCategory;
     }
 
 }

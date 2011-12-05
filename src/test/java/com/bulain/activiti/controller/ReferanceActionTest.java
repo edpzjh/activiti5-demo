@@ -39,7 +39,7 @@ public class ReferanceActionTest extends ActionTestCase {
         request.setParameter("referanceBean.code", "code");
         request.setParameter("referanceBean.textEN", "textEN");
         request.setParameter("referanceBean.textCN", "textCN");
-        request.setParameter("referanceBean.catagory", "catagory");
+        request.setParameter("referanceBean.category", "category");
 
         proxy = getActionProxy("/referance/create");
         referanceAction = (ReferanceAction) proxy.getAction();
@@ -70,7 +70,7 @@ public class ReferanceActionTest extends ActionTestCase {
         assertEquals("code", referance.getCode());
         assertEquals("textEN", referance.getText());
         assertEquals("en", referance.getLang());
-        assertEquals("catagory", referance.getCatagory());
+        assertEquals("category", referance.getCategory());
 
         initServletMockObjects();
         request.setParameter("referance.id", Integer.toString(idEN));
@@ -78,7 +78,7 @@ public class ReferanceActionTest extends ActionTestCase {
         request.setParameter("referance.code", "code-updated");
         request.setParameter("referance.text", "textEN-updated");
         request.setParameter("referance.lang", "en");
-        request.setParameter("referance.catagory", "catagory-updated");
+        request.setParameter("referance.category", "category-updated");
         proxy = getActionProxy("/referance/update");
         referanceAction = (ReferanceAction) proxy.getAction();
         result = proxy.execute();
@@ -95,7 +95,7 @@ public class ReferanceActionTest extends ActionTestCase {
         assertEquals("code-updated", referance.getCode());
         assertEquals("textEN-updated", referance.getText());
         assertEquals("en", referance.getLang());
-        assertEquals("catagory-updated", referance.getCatagory());
+        assertEquals("category-updated", referance.getCategory());
 
         initServletMockObjects();
         request.setParameter("id", Integer.toString(idEN));

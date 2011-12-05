@@ -7,14 +7,14 @@
     <result column="code" property="code" jdbcType="VARCHAR" />
     <result column="text" property="text" jdbcType="VARCHAR" />
     <result column="lang" property="lang" jdbcType="VARCHAR" />
-    <result column="catagory" property="catagory" jdbcType="VARCHAR" />
+    <result column="category" property="category" jdbcType="VARCHAR" />
     <result column="created_by" property="createdBy" jdbcType="VARCHAR" />
     <result column="created_at" property="createdAt" jdbcType="TIMESTAMP" />
     <result column="updated_by" property="updatedBy" jdbcType="VARCHAR" />
     <result column="updated_at" property="updatedAt" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, name, code, text, lang, catagory, created_by, created_at, updated_by, updated_at
+    id, name, code, text, lang, category, created_by, created_at, updated_by, updated_at
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
@@ -27,9 +27,9 @@
     where id = #{id}
   </delete>
   <insert id="insert" parameterType="com.bulain.activiti.model.Referance" >
-    insert into referances (name, code, text, lang, catagory, created_by, created_at, 
+    insert into referances (name, code, text, lang, category, created_by, created_at, 
       updated_by, updated_at)
-    values (#{name}, #{code}, #{text}, #{lang}, #{catagory}, #{createdBy}, #{createdAt}, 
+    values (#{name}, #{code}, #{text}, #{lang}, #{category}, #{createdBy}, #{createdAt}, 
       #{updatedBy}, #{updatedAt})
     <selectKey resultType="java.lang.Integer" keyProperty="id" >
       SELECT LAST_INSERT_ID()
@@ -50,8 +50,8 @@
       <if test="lang != null" >
         lang,
       </if>
-      <if test="catagory != null" >
-        catagory,
+      <if test="category != null" >
+        category,
       </if>
       <if test="createdBy != null" >
         created_by,
@@ -79,8 +79,8 @@
       <if test="lang != null" >
         #{lang},
       </if>
-      <if test="catagory != null" >
-        #{catagory},
+      <if test="category != null" >
+        #{category},
       </if>
       <if test="createdBy != null" >
         #{createdBy},
@@ -114,8 +114,8 @@
       <if test="lang != null" >
         lang = #{lang},
       </if>
-      <if test="catagory != null" >
-        catagory = #{catagory},
+      <if test="category != null" >
+        category = #{category},
       </if>
       <if test="createdBy != null" >
         created_by = #{createdBy},
@@ -138,7 +138,7 @@
       code = #{code},
       text = #{text},
       lang = #{lang},
-      catagory = #{catagory},
+      category = #{category},
       created_by = #{createdBy},
       created_at = #{createdAt},
       updated_by = #{updatedBy},
@@ -158,8 +158,8 @@
   		<if test="lang != null and lang != '' ">
   			and lang = #{lang}
   		</if>
-  		<if test="catagory != null and catagory != '' ">
-  			and catagory = #{catagory}
+  		<if test="category != null and category != '' ">
+  			and category = #{category}
   		</if>
   	</where>
   </sql>
@@ -194,7 +194,7 @@
     from referances
     where name=#{name}
     and lang=#{lang}
-    and catagory=#{catagory}
+    and category=#{category}
     order by code
   </select>
   <select id="selectItemByExample" resultMap="ItemMap" parameterType="com.bulain.activiti.pojo.ReferanceSearch">
@@ -203,6 +203,6 @@
     where name=#{name}
     and code=#{code}
     and lang=#{lang}
-    and catagory=#{catagory}
+    and category=#{category}
   </select>
 </mapper>

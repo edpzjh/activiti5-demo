@@ -24,7 +24,7 @@
             <td class="page-form-label"><s:text name="group.name"/></td>
             <td class="page-form-value"><s:textfield key="search.name"/></td>
             <td class="page-form-label"><s:text name="group.type"/></td>
-            <td class="page-form-value"><s:textfield key="search.type"/></td>
+            <td class="page-form-value"><s:select name="search.type" list="listReferanceGroupType" listKey="key" listValue="value" value="search.type" /></td>
         </tr>
         <tr>
             <td width="20%"></td>
@@ -58,7 +58,7 @@
     <s:iterator value="listGroup" status="status">
         <tr class="<s:if test="#status.even">list-line-even</s:if><s:else>list-line-odd</s:else>" >
             <td class="noWrap"><s:property value="name"/></td>
-            <td class="noWrap"><s:property value="type"/></td>
+            <td class="noWrap"><s:property value="typeName"/></td>
             <td class="noWrap"><s:property value="updatedBy"/></td>
             <td class="noWrap"><s:date name="updatedAt" format="%{getText('fmt.timestamp')}" /></td>
             <td class="minNoWrap">

@@ -32,7 +32,7 @@ public class ReferanceServiceImplTest extends ServiceTestCase {
         assertEquals("code_102", referance.getCode());
         assertEquals("text_102", referance.getText());
         assertEquals("lang_102", referance.getLang());
-        assertEquals("catagory_102", referance.getCatagory());
+        assertEquals("category_102", referance.getCategory());
     }
 
     @Test
@@ -41,7 +41,7 @@ public class ReferanceServiceImplTest extends ServiceTestCase {
         record.setName("name");
         record.setCode("code");
         record.setLang("lang");
-        record.setCatagory("catagory");
+        record.setCategory("category");
         record.setText("text");
         referanceService.insert(record);
     }
@@ -51,7 +51,7 @@ public class ReferanceServiceImplTest extends ServiceTestCase {
         ReferanceBean referanceBean = new ReferanceBean();
         referanceBean.setName("name");
         referanceBean.setCode("code");
-        referanceBean.setCatagory("catagory");
+        referanceBean.setCategory("category");
         referanceBean.setTextEN("textEN");
         referanceBean.setTextEN("textEN");
         referanceService.insert(referanceBean);
@@ -64,7 +64,7 @@ public class ReferanceServiceImplTest extends ServiceTestCase {
         record.setName("name-updated");
         record.setCode("code-updated");
         record.setLang("lang-updated");
-        record.setCatagory("catagory-updated");
+        record.setCategory("category-updated");
         record.setText("text-updated");
         referanceService.update(record, true);
     }
@@ -77,7 +77,7 @@ public class ReferanceServiceImplTest extends ServiceTestCase {
 
     @Test
     public void testGetTextStringStringStringString() {
-        String text = referanceService.getText("name_102", "code_102", "lang_102", "catagory_102");
+        String text = referanceService.getText("name_102", "code_102", "lang_102", "category_102");
         assertEquals("text_102", text);
     }
 
@@ -89,7 +89,7 @@ public class ReferanceServiceImplTest extends ServiceTestCase {
 
     @Test
     public void testFindItemStringStringString() {
-        List<Item> findItem = referanceService.findItem("name_page", "lang_page", "catagory_page");
+        List<Item> findItem = referanceService.findItem("name_page", "lang_page", "category_page");
         assertEquals(4, findItem.size());
     }
 
