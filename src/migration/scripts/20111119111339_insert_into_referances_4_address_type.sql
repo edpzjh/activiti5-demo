@@ -1,4 +1,4 @@
---// insert into referances 4 address_type
+--// insert into referances 4 AddressType
 -- Migration SQL that makes the change goes here.
 INSERT INTO referances VALUES (113,'Referance','AddressType','AddressType','en','','createdBy',SYSDATE(),'createdBy',SYSDATE());
 INSERT INTO referances VALUES (114,'Referance','AddressType','µÿ÷∑¿‡–Õ','zh','','createdBy',SYSDATE(),'createdBy',SYSDATE());

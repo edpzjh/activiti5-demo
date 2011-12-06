@@ -2,16 +2,28 @@
 -- Migration SQL that makes the change goes here.
 create table organisations(
     id int(11) NOT NULL auto_increment,
-    name varchar(20),
-    description varchar(20),
     
-    
+    full_legal_name varchar(255),
+    trading_name varchar(255),
+    country_of_operation varchar(255),
+    registration_date date,
+    operational_address_id int(11),
+    business_address_id int(11),
+    legal_address_id int(11),
+    bic varchar(255),
+    identification varchar(255),
+    scheme_name varchar(255),
+    issuer varchar(255),
+    representative_officer_id int(11),
+    treasury_manager_id int(11),
+    main_mandate_holder_id int(11),
+    sender_id int(11),
     
     created_by varchar(20),
     created_at datetime,
     updated_by varchar(20),
     updated_at datetime,
-    PRIMARY KEY  (id)
+    PRIMARY KEY (id)
 );
 
 
