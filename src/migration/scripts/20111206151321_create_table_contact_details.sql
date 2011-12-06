@@ -1,16 +1,16 @@
---// create table institutions
+--// create table contact_details
 -- Migration SQL that makes the change goes here.
-create table institutions(
+create table contact_details(
     id int(11) NOT NULL auto_increment,
-    
-    bic varchar(255),
-    identification varchar(255),
-    scheme_name varchar(255),
-    issuer varchar(255),
+  
+    name_prefix varchar(255),
     name varchar(255),
-    postal_address_id int(11),
-    clearing_system_member_id int(11),
-    
+    phone_number varchar(255),
+    mobile_number varchar(255),
+    fax_number varchar(255),
+    email_address varchar(255),
+    other varchar(255),
+  
     created_by varchar(20),
     created_at datetime,
     updated_by varchar(20),
@@ -18,8 +18,7 @@ create table institutions(
     PRIMARY KEY  (id)
 );
 
-
 --//@UNDO
 -- SQL to undo the change goes here.
-drop table institutions;
+drop table contact_details;
 
