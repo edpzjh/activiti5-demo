@@ -1,8 +1,13 @@
 package com.bulain.activiti.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Category {
+import com.bulain.common.model.Trackable;
+
+public class Category implements Trackable, Serializable {
+    private static final long serialVersionUID = 5745753532061415385L;
+
     private Integer id;
 
     private String name;

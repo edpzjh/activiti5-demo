@@ -4,8 +4,8 @@ create table accounts(
     id int(11) NOT NULL auto_increment,
     
     iban varchar(255),
-    identification varchar(255),
     scheme_name varchar(255),
+    identification varchar(255),
     issuer varchar(255),
     
     name varchar(255),
