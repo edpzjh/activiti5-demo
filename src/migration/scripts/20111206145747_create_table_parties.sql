@@ -12,7 +12,7 @@ create table parties(
     other_identification_id int(11),
     country_of_residence varchar(255),
     contact_detail_id int(11),
-    
+/*    
     expiry_date date,
     issue_date date,
     identification_id int(11),
@@ -25,7 +25,7 @@ create table parties(
     taxidentification_number varchar(255),
     other_identification_id int(11),
     identity_card_number varchar(255),
-
+*/
     created_by varchar(20),
     created_at datetime,
     updated_by varchar(20),
