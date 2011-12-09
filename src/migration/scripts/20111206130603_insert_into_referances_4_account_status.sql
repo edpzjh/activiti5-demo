@@ -1,7 +1,7 @@
 --// insert into referances 4 account status
 -- Migration SQL that makes the change goes here.
 INSERT INTO referances VALUES (121,'Referance','AccountStatus','AccountStatus','en','','createdBy',SYSDATE(),'createdBy',SYSDATE());
-INSERT INTO referances VALUES (122,'Referance','AccountStatus','AccountStatus','zh','','createdBy',SYSDATE(),'createdBy',SYSDATE());
+INSERT INTO referances VALUES (122,'Referance','AccountStatus','ÕË»§×´Ì¬','zh','','createdBy',SYSDATE(),'createdBy',SYSDATE());
 
 INSERT INTO referances VALUES (1301,'AccountStatus','DELE','Deleted','en','','createdBy',SYSDATE(),'createdBy',SYSDATE());
 INSERT INTO referances VALUES (1302,'AccountStatus','DELE','Deleted','zh','','createdBy',SYSDATE(),'createdBy',SYSDATE());
