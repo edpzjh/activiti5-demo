@@ -8,4 +8,5 @@
     <bean id="cacheService" class="com.bulain.common.cache.NoCacheServiceImpl"/>
     <bean id="groupService" class="com.bulain.activiti.service.GroupServiceImpl"/>
     <bean id="categoryService" class="com.bulain.activiti.service.CategoryServiceImpl"/>
+    <bean id="accountService" class="com.bulain.activiti.service.AccountServiceImpl"/>
 </beans>

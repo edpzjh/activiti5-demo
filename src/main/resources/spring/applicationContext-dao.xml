@@ -28,5 +28,8 @@
     <bean id="categoryMapper" parent="baseMapper">
         <property name="mapperInterface" value="com.bulain.activiti.dao.CategoryMapper" />
     </bean>
+    <bean id="accountMapper" parent="baseMapper">
+        <property name="mapperInterface" value="com.bulain.activiti.dao.AccountMapper" />
+    </bean>
     
 </beans>

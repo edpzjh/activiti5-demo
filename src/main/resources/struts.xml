@@ -35,7 +35,6 @@
 		</global-exception-mappings>
 	</package>
 	
-
 	<include file="struts/struts-user.xml"/>
 	<include file="struts/struts-order.xml"/>
 	<include file="struts/struts-activiti.xml"/>
@@ -43,7 +42,7 @@
     <include file="struts/struts-referance.xml"/>
     <include file="struts/struts-group.xml"/>
     <include file="struts/struts-category.xml"/>
-
+    <include file="struts/struts-account.xml"/>
     
     <package name="default" namespace="/" extends="struts-default">
         <default-action-ref name="index" />

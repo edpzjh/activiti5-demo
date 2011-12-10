@@ -11,11 +11,10 @@ public class AccountSearch extends Search {
     private String schemeName;
     private String identification;
     private String issuer;
-    private String name;
     private String status;
-    private String type;
+    private String name;
     private String currency;
-    private String accountPurpose;
+    private String type;
     private String statementCycle;
     private Date closingDate;
     private String purpose;
@@ -71,12 +70,6 @@ public class AccountSearch extends Search {
     }
     public void setCurrency(String currency) {
         this.currency = currency;
-    }
-    public String getAccountPurpose() {
-        return accountPurpose;
-    }
-    public void setAccountPurpose(String accountPurpose) {
-        this.accountPurpose = accountPurpose;
     }
     public String getStatementCycle() {
         return statementCycle;

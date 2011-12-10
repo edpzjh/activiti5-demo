@@ -7,15 +7,14 @@
     <result column="scheme_name" property="schemeName" jdbcType="VARCHAR" />
     <result column="identification" property="identification" jdbcType="VARCHAR" />
     <result column="issuer" property="issuer" jdbcType="VARCHAR" />
-    <result column="name" property="name" jdbcType="VARCHAR" />
     <result column="status" property="status" jdbcType="VARCHAR" />
-    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
     <result column="currency" property="currency" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
     <result column="monthly_payment_value" property="monthlyPaymentValue" jdbcType="DECIMAL" />
     <result column="monthly_received_value" property="monthlyReceivedValue" jdbcType="DECIMAL" />
     <result column="monthly_transaction_number" property="monthlyTransactionNumber" jdbcType="INTEGER" />
     <result column="average_balance" property="averageBalance" jdbcType="DECIMAL" />
-    <result column="account_purpose" property="accountPurpose" jdbcType="VARCHAR" />
     <result column="floor_notification_amount" property="floorNotificationAmount" jdbcType="DECIMAL" />
     <result column="ceiling_notification_amount" property="ceilingNotificationAmount" jdbcType="DECIMAL" />
     <result column="statement_cycle" property="statementCycle" jdbcType="VARCHAR" />
@@ -31,11 +30,11 @@
     <result column="updated_at" property="updatedAt" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, iban, scheme_name, identification, issuer, name, status, type, currency, monthly_payment_value, 
-    monthly_received_value, monthly_transaction_number, average_balance, account_purpose, 
-    floor_notification_amount, ceiling_notification_amount, statement_cycle, closing_date, 
-    purpose, restriction, target_go_live_date, target_closing_date, urgency_flag, created_by, 
-    created_at, updated_by, updated_at
+    id, iban, scheme_name, identification, issuer, status, name, currency, type, monthly_payment_value, 
+    monthly_received_value, monthly_transaction_number, average_balance, floor_notification_amount, 
+    ceiling_notification_amount, statement_cycle, closing_date, purpose, restriction, 
+    target_go_live_date, target_closing_date, urgency_flag, created_by, created_at, updated_by, 
+    updated_at
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
@@ -52,20 +51,20 @@
       SELECT LAST_INSERT_ID()
     </selectKey>
     insert into accounts (iban, scheme_name, identification, 
-      issuer, name, status, 
-      type, currency, monthly_payment_value, 
+      issuer, status, name, 
+      currency, type, monthly_payment_value, 
       monthly_received_value, monthly_transaction_number, 
-      average_balance, account_purpose, floor_notification_amount, 
+      average_balance, floor_notification_amount, 
       ceiling_notification_amount, statement_cycle, 
       closing_date, purpose, restriction, 
       target_go_live_date, target_closing_date, urgency_flag, 
       created_by, created_at, updated_by, 
       updated_at)
     values (#{iban,jdbcType=VARCHAR}, #{schemeName,jdbcType=VARCHAR}, #{identification,jdbcType=VARCHAR}, 
-      #{issuer,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, 
-      #{type,jdbcType=VARCHAR}, #{currency,jdbcType=VARCHAR}, #{monthlyPaymentValue,jdbcType=DECIMAL}, 
+      #{issuer,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
+      #{currency,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, #{monthlyPaymentValue,jdbcType=DECIMAL}, 
       #{monthlyReceivedValue,jdbcType=DECIMAL}, #{monthlyTransactionNumber,jdbcType=INTEGER}, 
-      #{averageBalance,jdbcType=DECIMAL}, #{accountPurpose,jdbcType=VARCHAR}, #{floorNotificationAmount,jdbcType=DECIMAL}, 
+      #{averageBalance,jdbcType=DECIMAL}, #{floorNotificationAmount,jdbcType=DECIMAL}, 
       #{ceilingNotificationAmount,jdbcType=DECIMAL}, #{statementCycle,jdbcType=VARCHAR}, 
       #{closingDate,jdbcType=DATE}, #{purpose,jdbcType=VARCHAR}, #{restriction,jdbcType=VARCHAR}, 
       #{targetGoLiveDate,jdbcType=DATE}, #{targetClosingDate,jdbcType=DATE}, #{urgencyFlag,jdbcType=VARCHAR}, 
@@ -90,17 +89,17 @@
       <if test="issuer != null" >
         issuer,
       </if>
-      <if test="name != null" >
-        name,
-      </if>
       <if test="status != null" >
         status,
       </if>
-      <if test="type != null" >
-        type,
+      <if test="name != null" >
+        name,
       </if>
       <if test="currency != null" >
         currency,
+      </if>
+      <if test="type != null" >
+        type,
       </if>
       <if test="monthlyPaymentValue != null" >
         monthly_payment_value,
@@ -113,9 +112,6 @@
       </if>
       <if test="averageBalance != null" >
         average_balance,
-      </if>
-      <if test="accountPurpose != null" >
-        account_purpose,
       </if>
       <if test="floorNotificationAmount != null" >
         floor_notification_amount,
@@ -170,17 +166,17 @@
       <if test="issuer != null" >
         #{issuer,jdbcType=VARCHAR},
       </if>
-      <if test="name != null" >
-        #{name,jdbcType=VARCHAR},
-      </if>
       <if test="status != null" >
         #{status,jdbcType=VARCHAR},
       </if>
-      <if test="type != null" >
-        #{type,jdbcType=VARCHAR},
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
       </if>
       <if test="currency != null" >
         #{currency,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=VARCHAR},
       </if>
       <if test="monthlyPaymentValue != null" >
         #{monthlyPaymentValue,jdbcType=DECIMAL},
@@ -193,9 +189,6 @@
       </if>
       <if test="averageBalance != null" >
         #{averageBalance,jdbcType=DECIMAL},
-      </if>
-      <if test="accountPurpose != null" >
-        #{accountPurpose,jdbcType=VARCHAR},
       </if>
       <if test="floorNotificationAmount != null" >
         #{floorNotificationAmount,jdbcType=DECIMAL},
@@ -253,17 +246,17 @@
       <if test="issuer != null" >
         issuer = #{issuer,jdbcType=VARCHAR},
       </if>
-      <if test="name != null" >
-        name = #{name,jdbcType=VARCHAR},
-      </if>
       <if test="status != null" >
         status = #{status,jdbcType=VARCHAR},
       </if>
-      <if test="type != null" >
-        type = #{type,jdbcType=VARCHAR},
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
       </if>
       <if test="currency != null" >
         currency = #{currency,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=VARCHAR},
       </if>
       <if test="monthlyPaymentValue != null" >
         monthly_payment_value = #{monthlyPaymentValue,jdbcType=DECIMAL},
@@ -276,9 +269,6 @@
       </if>
       <if test="averageBalance != null" >
         average_balance = #{averageBalance,jdbcType=DECIMAL},
-      </if>
-      <if test="accountPurpose != null" >
-        account_purpose = #{accountPurpose,jdbcType=VARCHAR},
       </if>
       <if test="floorNotificationAmount != null" >
         floor_notification_amount = #{floorNotificationAmount,jdbcType=DECIMAL},
@@ -328,15 +318,14 @@
       scheme_name = #{schemeName,jdbcType=VARCHAR},
       identification = #{identification,jdbcType=VARCHAR},
       issuer = #{issuer,jdbcType=VARCHAR},
-      name = #{name,jdbcType=VARCHAR},
       status = #{status,jdbcType=VARCHAR},
-      type = #{type,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
       currency = #{currency,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR},
       monthly_payment_value = #{monthlyPaymentValue,jdbcType=DECIMAL},
       monthly_received_value = #{monthlyReceivedValue,jdbcType=DECIMAL},
       monthly_transaction_number = #{monthlyTransactionNumber,jdbcType=INTEGER},
       average_balance = #{averageBalance,jdbcType=DECIMAL},
-      account_purpose = #{accountPurpose,jdbcType=VARCHAR},
       floor_notification_amount = #{floorNotificationAmount,jdbcType=DECIMAL},
       ceiling_notification_amount = #{ceilingNotificationAmount,jdbcType=DECIMAL},
       statement_cycle = #{statementCycle,jdbcType=VARCHAR},
@@ -352,4 +341,77 @@
       updated_at = #{updatedAt,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  
+  <!-- custom -->
+  <sql id="where">
+    <where>
+        <if test="iban!=null and iban!='' ">
+            and iban = #{iban}
+        </if>
+        <if test="schemeName!=null and schemeName!='' ">
+            and scheme_name = #{schemeName}
+        </if>
+        <if test="identification!=null and identification!='' ">
+            and identification = #{identification}
+        </if>
+        <if test="issuer!=null and issuer!='' ">
+            and issuer = #{issuer}
+        </if>
+        <if test="status!=null and status!=''">
+            and status = #{status}
+        </if>
+        <if test="name!=null and name!='' ">
+            and name = #{name}
+        </if>
+        <if test="currency!=null and currency!=''">
+            and currency = #{currency}
+        </if>
+        <if test="type!=null and type!=''">
+            and type = #{type}
+        </if>
+        <if test="statementCycle!=null and statementCycle!=''">
+            and statement_cycle = #{statementCycle}
+        </if>
+        <if test="closingDate!=null and closingDate!=''">
+            and closing_date = #{closingDate}
+        </if>
+        <if test="purpose!=null and purpose!=''">
+            and purpose = #{purpose}
+        </if>
+        <if test="restriction!=null and restriction!=''">
+            and restriction = #{restriction}
+        </if>
+        <if test="targetGoLiveDate!=null and targetGoLiveDate!=''">
+            and target_go_live_date = #{targetGoLiveDate}
+        </if>
+        <if test="targetClosingDate!=null and targetClosingDate!=''">
+            and target_closing_date = #{targetClosingDate}
+        </if>
+        <if test="urgencyFlag!=null and urgencyFlag!=''">
+            and urgency_flag = #{urgencyFlag}
+        </if>
+    </where>
+  </sql>
+  <select id="find" resultMap="BaseResultMap" parameterType="com.bulain.activiti.pojo.AccountSearch">
+    select 
+    <include refid="Base_Column_List" />
+    from accounts
+    <include refid="where"/>
+    <include refid="common.orderby"/>
+  </select>
+  <select id="count" resultType="java.lang.Long" parameterType="com.bulain.activiti.pojo.AccountSearch">
+    select count(*)
+    from accounts
+    <include refid="where"/>
+  </select>
+  <select id="page" resultMap="BaseResultMap" parameterType="com.bulain.activiti.pojo.AccountSearch">
+    <![CDATA[${PAGE_HEAD}]]>
+    select 
+    <include refid="Base_Column_List" />
+    from accounts
+    <include refid="where"/>
+    <include refid="common.orderby"/>
+    <![CDATA[${PAGE_FOOT}]]>
+  </select>
+  
 </mapper>

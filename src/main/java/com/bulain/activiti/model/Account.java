@@ -1,9 +1,14 @@
 package com.bulain.activiti.model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class Account {
+import com.bulain.common.model.Trackable;
+
+public class Account implements Trackable, Serializable {
+    private static final long serialVersionUID = 5485486377260193480L;
+
     private Integer id;
 
     private String iban;
@@ -14,13 +19,13 @@ public class Account {
 
     private String issuer;
 
-    private String name;
-
     private String status;
 
-    private String type;
+    private String name;
 
     private String currency;
+
+    private String type;
 
     private BigDecimal monthlyPaymentValue;
 
@@ -29,8 +34,6 @@ public class Account {
     private Integer monthlyTransactionNumber;
 
     private BigDecimal averageBalance;
-
-    private String accountPurpose;
 
     private BigDecimal floorNotificationAmount;
 
@@ -98,14 +101,6 @@ public class Account {
         this.issuer = issuer == null ? null : issuer.trim();
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
-    }
-
     public String getStatus() {
         return status;
     }
@@ -114,12 +109,12 @@ public class Account {
         this.status = status == null ? null : status.trim();
     }
 
-    public String getType() {
-        return type;
+    public String getName() {
+        return name;
     }
 
-    public void setType(String type) {
-        this.type = type == null ? null : type.trim();
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
     }
 
     public String getCurrency() {
@@ -128,6 +123,14 @@ public class Account {
 
     public void setCurrency(String currency) {
         this.currency = currency == null ? null : currency.trim();
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type == null ? null : type.trim();
     }
 
     public BigDecimal getMonthlyPaymentValue() {
@@ -160,14 +163,6 @@ public class Account {
 
     public void setAverageBalance(BigDecimal averageBalance) {
         this.averageBalance = averageBalance;
-    }
-
-    public String getAccountPurpose() {
-        return accountPurpose;
-    }
-
-    public void setAccountPurpose(String accountPurpose) {
-        this.accountPurpose = accountPurpose == null ? null : accountPurpose.trim();
     }
 
     public BigDecimal getFloorNotificationAmount() {

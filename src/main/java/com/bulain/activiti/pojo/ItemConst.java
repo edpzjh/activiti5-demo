@@ -9,4 +9,8 @@ public interface ItemConst {
     String NAME_BOOLEAN = "Boolean";
     String NAME_GROUP_TYPE = "GroupType";
     String NAME_CATEGORY_TYPE = "CategoryType";
+    String NAME_ACCOUNT_STATUS = "AccountStatus";
+    String NAME_CURRENCY = "Currency";
+    String NAME_CASH_ACCOUNT_TYPE = "CashAccountType";
+    String NAME_FREQUENCY = "Frequency";
 }

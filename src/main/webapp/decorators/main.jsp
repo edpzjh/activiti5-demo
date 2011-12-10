@@ -37,6 +37,7 @@
             <li class="sub-menu"><a href="<s:url value='/joda/list.action'/>">Joda</a></li>
             <li class="sub-menu"><a href="<s:url value='/group/list.action'/>">Group</a></li>
             <li class="sub-menu"><a href="<s:url value='/category/list.action'/>">Category</a></li>
+            <li class="sub-menu"><a href="<s:url value='/account/list.action'/>">Acount</a></li>
         </ul>
     </div>
     <div class="section">
