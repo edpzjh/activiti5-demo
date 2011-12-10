@@ -35,7 +35,6 @@ $(document).ready(function() {
     $("#create_joda_xtime").timepicker();
 });
 </script>
-</script>
 
 </body>
 </html>

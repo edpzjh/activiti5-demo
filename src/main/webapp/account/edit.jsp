@@ -31,7 +31,11 @@
 <script type="text/javascript">
 $(document).ready(function() {
 	$("#update").validate();
+    $("#update_account_targetGoLiveDate").datepicker({dateFormat:'<s:text name="fmt.jq.date"/>'});
+    $("#update_account_targetClosingDate").datepicker({dateFormat:'<s:text name="fmt.jq.date"/>'});
+    $("#update_account_closingDate").datepicker({dateFormat:'<s:text name="fmt.jq.date"/>'});
 });
 </script>
+
 </body>
 </html>

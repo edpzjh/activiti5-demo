@@ -8,6 +8,7 @@ public class AccountView extends Account{
     private String currencyName;
     private String typeName;
     private String statementCycleName;
+    private String urgencyFlagName;
     
     public String getStatusName() {
         return statusName;
@@ -32,5 +33,11 @@ public class AccountView extends Account{
     }
     public void setStatementCycleName(String statementCycleName) {
         this.statementCycleName = statementCycleName;
+    }
+    public String getUrgencyFlagName() {
+        return urgencyFlagName;
+    }
+    public void setUrgencyFlagName(String urgencyFlagName) {
+        this.urgencyFlagName = urgencyFlagName;
     }
 }

@@ -31,7 +31,10 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
-	$("#create").validate();
+    $("#create").validate();
+    $("#create_account_targetGoLiveDate").datepicker({dateFormat:'<s:text name="fmt.jq.date"/>'});
+    $("#create_account_targetClosingDate").datepicker({dateFormat:'<s:text name="fmt.jq.date"/>'});
+    $("#create_account_closingDate").datepicker({dateFormat:'<s:text name="fmt.jq.date"/>'});
 });
 </script>
 

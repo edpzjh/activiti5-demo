@@ -33,6 +33,7 @@ public class AccountAction extends PageSupportActionSupport {
     private List<Item> listReferanceCurrency;
     private List<Item> listReferanceCashAccountType;
     private List<Item> listReferanceFrequency;
+    private List<Item> listReferanceBoolean;
     
     public String list() {
         search = (AccountSearch) getSearchFromSession(AccountSearch.class, search);
@@ -111,6 +112,7 @@ public class AccountAction extends PageSupportActionSupport {
         listReferanceCurrency = referanceService.findItem(ItemConst.NAME_CURRENCY, getLanguage());
         listReferanceCashAccountType = referanceService.findItem(ItemConst.NAME_CASH_ACCOUNT_TYPE, getLanguage());
         listReferanceFrequency = referanceService.findItem(ItemConst.NAME_FREQUENCY, getLanguage());
+        listReferanceBoolean =  referanceService.findItem(ItemConst.NAME_BOOLEAN, getLanguage());
     }
     
     public void prepareNewn(){
@@ -143,6 +145,7 @@ public class AccountAction extends PageSupportActionSupport {
         view.setCurrencyName(referanceService.getText(ItemConst.NAME_CURRENCY, account.getCurrency(), getLanguage()));
         view.setTypeName(referanceService.getText(ItemConst.NAME_CASH_ACCOUNT_TYPE, account.getType(), getLanguage()));
         view.setStatementCycleName(referanceService.getText(ItemConst.NAME_FREQUENCY, account.getStatementCycle(), getLanguage()));
+        view.setUrgencyFlagName(referanceService.getText(ItemConst.NAME_BOOLEAN, account.getUrgencyFlag(), getLanguage()));
         
         return view;
     }
@@ -201,5 +204,9 @@ public class AccountAction extends PageSupportActionSupport {
 
     public void setReferanceService(ReferanceService referanceService) {
         this.referanceService = referanceService;
+    }
+
+    public List<Item> getListReferanceBoolean() {
+        return listReferanceBoolean;
     }
 }

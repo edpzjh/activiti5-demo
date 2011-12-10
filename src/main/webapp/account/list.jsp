@@ -55,7 +55,7 @@
         <th width="10%"><page:order fixOrderBy="updated_at"><s:text name="common.updatedAt"/></page:order></th>
         <th class="minNoWrap"><s:text name="action.action"/></th>
     </tr>
-    <s:iterator value="listCategory" status="status">
+    <s:iterator value="listAccount" status="status">
         <tr class="<s:if test="#status.even">list-line-even</s:if><s:else>list-line-odd</s:else>" >
             <td class="noWrap"><s:property value="name"/></td>
             <td class="noWrap"><s:property value="typeName"/></td>
