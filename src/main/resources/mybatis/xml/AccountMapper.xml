@@ -413,5 +413,16 @@
     <include refid="common.orderby"/>
     <![CDATA[${PAGE_FOOT}]]>
   </select>
-  
+  <select id="countByDuplicate" resultType="long" parameterType="com.bulain.activiti.model.Account">
+    select count(*)
+    from accounts
+    <where>
+        <if test="id!=null ">
+            and id != #{id}
+        </if>
+        <if test="name!=null and name!='' ">
+            and name = #{name}
+        </if>
+    </where>
+  </select>
 </mapper>

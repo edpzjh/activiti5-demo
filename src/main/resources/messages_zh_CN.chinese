@@ -57,6 +57,10 @@ validate.mindate=${getText(fieldName)}: 请输入一个最小为 ${min} 的日�
 validate.email=${getText(fieldName)}: 请输入正确格式的电子邮件
 validate.url=${getText(fieldName)}: 请输入合法的网址
 validate.conversion=${getText(fieldName)}: 不能正确转换
+validate.duplicate.1={0}：已经存在
+validate.duplicate.2={0}-{1}：已经存在
+validate.duplicate.3={0}-{1}-{2}：已经存在
+validate.duplicate.4={0}-{1}-{2}-{3}：已经存在
 
 fmt.date=yyyy-MM-dd
 fmt.time=HH:mm

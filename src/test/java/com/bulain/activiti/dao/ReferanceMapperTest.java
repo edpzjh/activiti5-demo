@@ -145,4 +145,26 @@ public class ReferanceMapperTest extends ServiceTestCase {
         assertEquals(1, updateByPrimaryKey);
     }
 
+    @Test
+    public void testCountByUniqueKey4Create(){
+        Referance record = new Referance();
+        record.setName("name_104");
+        record.setCode("code_104");
+        record.setLang("lang_104");
+        record.setCategory("category_104");
+        Long cnt = referanceMapper.countByDuplicate(record);
+        assertEquals(Long.valueOf(1), cnt);
+    }
+    
+    @Test
+    public void testCountByUniqueKey4Update(){
+        Referance record = new Referance();
+        record.setId(Integer.valueOf(104));
+        record.setName("name_103");
+        record.setCode("code_103");
+        record.setLang("lang_103");
+        record.setCategory("category_103");
+        Long cnt = referanceMapper.countByDuplicate(record);
+        assertEquals(Long.valueOf(1), cnt);
+    }
 }

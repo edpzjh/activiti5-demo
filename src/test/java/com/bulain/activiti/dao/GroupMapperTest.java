@@ -72,9 +72,29 @@ public class GroupMapperTest extends ServiceTestCase {
     }
 
     @Test
+    public void testCountByUniqueKey4Create(){
+        Group record = new Group();
+        record.setName("name_104");
+        record.setType("type_104");
+        Long cnt = groupMapper.countByDuplicate(record);
+        assertEquals(Long.valueOf(1), cnt);
+    }
+    
+    @Test
+    public void testCountByUniqueKey4Update(){
+        Group record = new Group();
+        record.setId(Integer.valueOf(104));
+        record.setName("name_103");
+        record.setType("type_103");
+        Long cnt = groupMapper.countByDuplicate(record);
+        assertEquals(Long.valueOf(1), cnt);
+    }
+    
+    @Test
     public void testFind() {
         GroupSearch search = new GroupSearch();
         search.setName("name_page");
+        search.setType("type_page");
         List<Group> find = groupMapper.find(search);
         assertEquals(3, find.size());
     }
@@ -98,6 +118,7 @@ public class GroupMapperTest extends ServiceTestCase {
     public void testCount() {
         GroupSearch search = new GroupSearch();
         search.setName("name_page");
+        search.setType("type_page");
         Long count = groupMapper.count(search);
         assertEquals(Long.valueOf(3), count);
     }
@@ -106,10 +127,10 @@ public class GroupMapperTest extends ServiceTestCase {
     public void testPage() {
         GroupSearch search = new GroupSearch();
         search.setName("name_page");
+        search.setType("type_page");
         search.setLow(0);
         search.setHigh(20);
         List<Group> listGroup = groupMapper.page(search);
         assertEquals(3, listGroup.size());
     }
-
 }

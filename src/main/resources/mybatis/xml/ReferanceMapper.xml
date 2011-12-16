@@ -205,4 +205,25 @@
     and lang=#{lang}
     and category=#{category}
   </select>
+  <select id="countByDuplicate" resultType="long" parameterType="com.bulain.activiti.model.Referance">
+    select count(*)
+    from referances
+    <where>
+        <if test="id!=null ">
+            and id != #{id}
+        </if>
+        <if test="name != null and name != '' ">
+            and name = #{name}
+        </if>
+        <if test="code != null and code != '' ">
+            and code = #{code}
+        </if>
+        <if test="lang != null and lang != '' ">
+            and lang = #{lang}
+        </if>
+        <if test="category != null and category != '' ">
+            and category = #{category}
+        </if>
+    </where>
+  </select>
 </mapper>

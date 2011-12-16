@@ -158,4 +158,19 @@
     <include refid="common.orderby"/>
     <![CDATA[${PAGE_FOOT}]]>
   </select>
+  <select id="countByDuplicate" resultType="long" parameterType="com.bulain.activiti.model.Category">
+    select count(*)
+    from categorys
+    <where>
+        <if test="id!=null ">
+            and id != #{id}
+        </if>
+        <if test="name!=null and name!='' ">
+            and name = #{name}
+        </if>
+        <if test="type!=null and type!=''">
+            and type = #{type}
+        </if>
+    </where>
+  </select>
 </mapper>

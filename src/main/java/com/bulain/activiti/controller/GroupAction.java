@@ -17,6 +17,8 @@ import com.bulain.activiti.service.ReferanceService;
 import com.bulain.common.controller.PageSupportActionSupport;
 
 public class GroupAction extends PageSupportActionSupport {
+    private static final String TEXT_GROUP_TYPE = "group.type";
+    private static final String TEXT_GROUP_NAME = "group.name";
     private static final String TEXT_GROUP_MODEL = "group.model";
     private static final long serialVersionUID = -4580561000078777884L;
     private static final Logger LOG = LoggerFactory.getLogger(GroupAction.class);
@@ -28,7 +30,7 @@ public class GroupAction extends PageSupportActionSupport {
 
     private transient GroupService groupService;
     private transient ReferanceService referanceService;
-    
+
     private List<Item> listReferanceGroupType;
 
     public String list() {
@@ -73,11 +75,11 @@ public class GroupAction extends PageSupportActionSupport {
     public String update() {
         try {
             groupService.update(group, true);
-            String msg = getText("common.updateInfo", new String[]{TEXT_GROUP_MODEL});
+            String msg = getText("common.updateInfo", new String[]{getText(TEXT_GROUP_MODEL)});
             addActionMessage(msg);
         } catch (Exception e) {
             LOG.error("update()", e);
-            String msg = getText("common.updateError", new String[]{TEXT_GROUP_MODEL});
+            String msg = getText("common.updateError", new String[]{getText(TEXT_GROUP_MODEL)});
             addActionError(msg);
             return ERROR;
         }
@@ -86,15 +88,15 @@ public class GroupAction extends PageSupportActionSupport {
     public String destroy() {
         try {
             groupService.delete(id);
-            String msg = getText("common.deleteInfo", new String[]{TEXT_GROUP_MODEL});
+            String msg = getText("common.deleteInfo", new String[]{getText(TEXT_GROUP_MODEL)});
             addActionMessage(msg);
         } catch (Exception e) {
             LOG.error("destroy()", e);
-            String msg = getText("common.deleteError", new String[]{TEXT_GROUP_MODEL});
+            String msg = getText("common.deleteError", new String[]{getText(TEXT_GROUP_MODEL)});
             addActionError(msg);
             return ERROR;
         }
-        
+
         return SUCCESS;
     }
 
@@ -102,23 +104,35 @@ public class GroupAction extends PageSupportActionSupport {
         listReferanceGroupType = referanceService.findItem(ItemConst.NAME_GROUP_TYPE, getLanguage());
     }
 
-    public void prepareNewn(){
+    public void prepareNewn() {
         prepareList();
     }
-    
-    public void prepareEdit(){
+
+    public void prepareEdit() {
         prepareList();
     }
-    
-    public void prepareCreate(){
+
+    public void prepareCreate() {
         prepareList();
     }
-    
+
     public void prepareUpdate() {
         if (id != null) {
             group = groupService.get(id);
         }
         prepareList();
+    }
+
+    public void validateCreate() {
+        long cnt = groupService.countByDuplicate(group);
+        if (cnt > 0) {
+            String msg = getText("validate.duplicate.2", new String[]{getText(TEXT_GROUP_NAME), getText(TEXT_GROUP_TYPE)});
+            addActionError(msg);
+        }
+    }
+
+    public void validateUpdate() {
+        validateCreate();
     }
 
     protected List<GroupView> formatList(List<Group> list) {
@@ -132,9 +146,9 @@ public class GroupAction extends PageSupportActionSupport {
     protected GroupView formatItem(Group group) {
         GroupView view = new GroupView();
         BeanUtils.copyProperties(group, view);
-        
+
         view.setTypeName(referanceService.getText(ItemConst.NAME_GROUP_TYPE, group.getType(), getLanguage()));
-        
+
         return view;
     }
 
@@ -184,5 +198,5 @@ public class GroupAction extends PageSupportActionSupport {
     public void setReferanceService(ReferanceService referanceService) {
         this.referanceService = referanceService;
     }
-    
+
 }

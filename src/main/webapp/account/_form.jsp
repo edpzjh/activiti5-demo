@@ -57,7 +57,7 @@
     </tr>
     <tr>
         <td class="page-form-label"><s:text name="account.statementCycle"/></td>
-        <td class="page-form-value"><s:select name="account.statementCycle" list="listReferanceFrequency" listKey="key" listValue="value" value="account.statementCycle" cssClass="required"/></td>
+        <td class="page-form-value"><s:select name="account.statementCycle" list="listReferanceFrequency" listKey="key" listValue="value" value="account.statementCycle"/></td>
         <td class="page-form-label"><s:text name="account.closingDate"/></td>
         <td class="page-form-value"><s:date id="closingDate" name="account.closingDate" format="%{getText('fmt.date')}" /><s:textfield key="account.closingDate" value="%{closingDate}" cssClass="date" maxlength="10"/></td>
     </tr>

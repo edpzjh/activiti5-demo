@@ -3,6 +3,9 @@ package com.bulain.activiti.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.bulain.activiti.model.Referance;
 import com.bulain.activiti.pojo.Item;
 import com.bulain.activiti.pojo.ItemConst;
@@ -14,6 +17,13 @@ import com.bulain.common.controller.PageSupportActionSupport;
 
 public class ReferanceAction extends PageSupportActionSupport {
     private static final long serialVersionUID = -6586209271699101686L;
+    private static final Logger LOG = LoggerFactory.getLogger(ReferanceAction.class);
+    
+    private static final String TEXT_REFERANCE_MODEL = "referance.model";
+    private static final String TEXT_REFERANCE_NAME = "referance.name";
+    private static final String TEXT_REFERANCE_CODE = "referance.code";
+    private static final String TEXT_REFERANCE_LANG = "referance.lang";
+    private static final String TEXT_REFERANCE_CATEGORY = "referance.category";
 
     private Integer id;
 
@@ -46,7 +56,16 @@ public class ReferanceAction extends PageSupportActionSupport {
         return SUCCESS;
     }
     public String create() {
-        referanceService.insert(referanceBean);
+        try {
+            referanceService.insert(referanceBean);
+            String msg = getText("info.create", new String[]{getText(TEXT_REFERANCE_MODEL)});
+            addActionMessage(msg);
+        } catch (Exception e) {
+            LOG.error("create()", e);
+            String msg = getText("error.create", new String[]{getText(TEXT_REFERANCE_MODEL)});
+            addActionError(msg);
+            return ERROR;
+        }
         return SUCCESS;
     }
     public String show() {
@@ -59,7 +78,16 @@ public class ReferanceAction extends PageSupportActionSupport {
         return SUCCESS;
     }
     public String update() {
-        referanceService.update(referance, false);
+        try {
+            referanceService.update(referance, false);
+            String msg = getText("info.update", new String[]{getText(TEXT_REFERANCE_MODEL)});
+            addActionMessage(msg);
+        } catch (Exception e) {
+            LOG.error("update()", e);
+            String msg = getText("error.update", new String[]{getText(TEXT_REFERANCE_MODEL)});
+            addActionError(msg);
+            return ERROR;
+        }
         return SUCCESS;
     }
     public String destroy() {
@@ -83,6 +111,37 @@ public class ReferanceAction extends PageSupportActionSupport {
     }
     public void prepareEdit() {
         prepareList();
+    }
+    public void prepareCreate() {
+        prepareList();
+    }
+    public void prepareUpdate() {
+        prepareList();
+        if (id != null) {
+            referance = referanceService.get(id);
+        }
+    }
+
+    public void validateCreate() {
+        Referance ref = new Referance();
+        ref.setName(referanceBean.getName());
+        ref.setCode(referanceBean.getCode());
+        ref.setCategory(referanceBean.getCategory());
+        long cnt = referanceService.countByDuplicate(ref);
+        if (cnt > 0) {
+            String msg = getText("validate.duplicate.3", new String[]{getText(TEXT_REFERANCE_NAME),
+                    getText(TEXT_REFERANCE_CODE), getText(TEXT_REFERANCE_CATEGORY)});
+            addActionError(msg);
+        }
+    }
+
+    public void validateUpdate() {
+        long cnt = referanceService.countByDuplicate(referance);
+        if (cnt > 0) {
+            String msg = getText("validate.duplicate.4", new String[]{getText(TEXT_REFERANCE_NAME),
+                    getText(TEXT_REFERANCE_CODE), getText(TEXT_REFERANCE_LANG), getText(TEXT_REFERANCE_CATEGORY)});
+            addActionError(msg);
+        }
     }
 
     protected List<ReferanceView> formatList(List<Referance> list) {

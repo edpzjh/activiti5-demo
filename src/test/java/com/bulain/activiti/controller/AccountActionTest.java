@@ -59,6 +59,8 @@ public class AccountActionTest extends ActionTestCase {
     public void testCreate() throws Exception {
         initServletMockObjects();
         request.setParameter("account.name", "name");
+        request.setParameter("account.status", "status");
+        request.setParameter("account.currency", "currency");
         request.setParameter("account.type", "type");
 
         ActionProxy proxy = getActionProxy("/account/create");
@@ -104,6 +106,8 @@ public class AccountActionTest extends ActionTestCase {
         initServletMockObjects();
         request.setParameter("id", "103");
         request.setParameter("account.name", "name_updated");
+        request.setParameter("account.status", "status_updated");
+        request.setParameter("account.currency", "currency_updated");
         request.setParameter("account.type", "type_updated");
 
         ActionProxy proxy = getActionProxy("/account/update");
