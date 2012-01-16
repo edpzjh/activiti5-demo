@@ -17,9 +17,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.bulain.common.test.SpringTestCase;
+import com.bulain.common.test.ServiceTestCase;
 
-public class ActivitiTest extends SpringTestCase {
+public class ActivitiTest extends ServiceTestCase {
     @Autowired
     private RepositoryService repositoryService;
     @Autowired

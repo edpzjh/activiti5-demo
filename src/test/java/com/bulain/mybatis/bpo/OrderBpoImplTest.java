@@ -20,13 +20,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.bulain.common.dataset.DataSet;
 import com.bulain.common.dataset.SeedDataSet;
-import com.bulain.common.test.SpringTestCase;
+import com.bulain.common.test.ServiceTestCase;
 import com.bulain.mybatis.model.Order;
 import com.bulain.mybatis.test.TestConst;
 
 @SeedDataSet(file = TestConst.TEST_DATA_INIT_COMMON_XML)
 @DataSet(file = "test-data/init_orders.xml")
-public class OrderBpoImplTest extends SpringTestCase {
+public class OrderBpoImplTest extends ServiceTestCase {
     @Autowired
     private OrderBpo orderBpo;
     @Autowired

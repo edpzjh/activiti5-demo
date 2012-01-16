@@ -8,12 +8,12 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.bulain.common.dataset.DataSet;
-import com.bulain.common.test.ServiceTestCase;
+import com.bulain.common.test.DaoTestCase;
 import com.bulain.mybatis.model.OrderHis;
 import com.bulain.mybatis.pojo.OrderSearch;
 
 @DataSet(file = "test-data/init_order_hiss.xml")
-public class OrderHisMapperTest extends ServiceTestCase {
+public class OrderHisMapperTest extends DaoTestCase {
     @Autowired
     private OrderHisMapper orderHisMapper;
 

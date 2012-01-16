@@ -9,12 +9,12 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.bulain.common.dataset.DataSet;
-import com.bulain.common.test.ServiceTestCase;
+import com.bulain.common.test.DaoTestCase;
 import com.bulain.mybatis.model.OrderMaster;
 import com.bulain.mybatis.pojo.OrderSearch;
 
 @DataSet(file = "test-data/init_order_masters.xml")
-public class OrderMasterMapperTest extends ServiceTestCase {
+public class OrderMasterMapperTest extends DaoTestCase {
     @Autowired
     private OrderMasterMapper orderMasterMapper;
 

@@ -14,13 +14,13 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.bulain.common.dataset.DataSet;
-import com.bulain.common.test.ServiceTestCase;
+import com.bulain.common.test.DaoTestCase;
 import com.bulain.common.util.SystemClock;
 import com.bulain.mybatis.model.Joda;
 import com.bulain.mybatis.pojo.JodaSearch;
 
 @DataSet(file = "test-data/init_jodas.xml")
-public class JodaMapperTest extends ServiceTestCase {
+public class JodaMapperTest extends DaoTestCase {
     @Autowired
     private JodaMapper jodaMapper;
 
