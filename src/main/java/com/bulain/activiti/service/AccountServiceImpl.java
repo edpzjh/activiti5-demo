@@ -6,11 +6,11 @@ import com.bulain.activiti.pojo.AccountSearch;
 import com.bulain.common.dao.PagedMapper;
 import com.bulain.common.service.PagedServiceImpl;
 
-public class AccountServiceImpl extends PagedServiceImpl<AccountSearch, Account> implements AccountService {
+public class AccountServiceImpl extends PagedServiceImpl<Account, AccountSearch> implements AccountService {
     private AccountMapper accountMapper;
     
     @Override
-    protected PagedMapper<AccountSearch, Account> getPagedMapper() {
+    protected PagedMapper<Account, AccountSearch> getPagedMapper() {
         return accountMapper;
     }
 

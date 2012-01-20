@@ -14,7 +14,7 @@ import com.bulain.mybatis.model.OrderHis;
 import com.bulain.mybatis.model.OrderMaster;
 import com.bulain.mybatis.pojo.OrderSearch;
 
-public class OrderServiceImpl extends PagedServiceImpl<OrderSearch, Order> implements OrderService {
+public class OrderServiceImpl extends PagedServiceImpl<Order, OrderSearch> implements OrderService {
     private OrderMapper orderMapper;
     private OrderMasterMapper orderMasterMapper;
     private OrderHisMapper orderHisMapper;
@@ -24,7 +24,7 @@ public class OrderServiceImpl extends PagedServiceImpl<OrderSearch, Order> imple
     }
 
     @Override
-    public PagedMapper<OrderSearch, Order> getPagedMapper() {
+    public PagedMapper<Order, OrderSearch> getPagedMapper() {
         return orderMapper;
     }
 

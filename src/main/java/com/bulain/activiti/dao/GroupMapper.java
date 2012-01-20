@@ -4,6 +4,6 @@ import com.bulain.activiti.model.Group;
 import com.bulain.activiti.pojo.GroupSearch;
 import com.bulain.common.dao.PagedMapper;
 
-public interface GroupMapper extends PagedMapper<GroupSearch, Group> {
+public interface GroupMapper extends PagedMapper<Group, GroupSearch> {
 
 }

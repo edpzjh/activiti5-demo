@@ -8,7 +8,7 @@ import com.bulain.activiti.pojo.ReferanceBean;
 import com.bulain.activiti.pojo.ReferanceSearch;
 import com.bulain.common.service.PagedService;
 
-public interface ReferanceService extends PagedService<ReferanceSearch, Referance> {
+public interface ReferanceService extends PagedService<Referance, ReferanceSearch> {
     void insert(ReferanceBean referanceBean);
 
     String getText(String name, String code, String lang);
