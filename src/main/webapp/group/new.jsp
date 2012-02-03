@@ -17,7 +17,7 @@
     <s:include value="_form.jsp"/>
     <table cellspacing="0" width="100%">
         <tr>
-            <td class="page-form-centered"><s:submit value="%{getText('action.create')}"/></td>
+            <td class="page-form-centered"><s:submit id="btn_create" value="%{getText('action.create')}"/></td>
         </tr>
     </table>
 </s:form>
