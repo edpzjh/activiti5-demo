@@ -47,6 +47,7 @@ validate.required=${getText(fieldName)}: 必选字段
 validate.requiredstring=${getText(fieldName)}: 不能为空字符
 validate.maxlength=${getText(fieldName)}: 请输入一个长度最多是 ${max} 的字符串
 validate.minlength=${getText(fieldName)}: 请输入一个长度最少是 ${min} 的字符串
+validate.stringlength=${getText(fieldName)}: 请输入一个长度介于 ${min} 和 ${max} 之间的字符串
 validate.rangelength=${getText(fieldName)}: 请输入一个长度介于 ${min} 和 ${max} 之间的字符串
 validate.range=${getText(fieldName)}: 请输入一个介于 ${min} 和 ${max} 之间的值
 validate.max=${getText(fieldName)}: 请输入一个最大为 ${max} 的值

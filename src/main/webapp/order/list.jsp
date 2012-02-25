@@ -66,7 +66,7 @@
     <s:iterator value="listOrder" status="status">
         <tr class="<s:if test="#status.even">list-line-even</s:if><s:else>list-line-odd</s:else>" >
             <td class="noWrap"><s:property value="name"/></td>
-            <td class="noWrap"><s:property value="note"/></td>
+            <td class="noWrap"><page:textarea value="note"/></td>
             <td class="noWrap"><s:property value="createdBy"/></td>
             <td class="noWrap"><s:date name="updatedAt" format="%{getText('fmt.timestamp')}" /></td>
             <td class="noWrap"><s:property value="updatedBy"/></td>
