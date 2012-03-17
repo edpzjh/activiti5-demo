@@ -75,7 +75,7 @@ public class ReferanceServiceImpl extends PagedServiceImpl<Referance, ReferanceS
                 referance.getCategory());
         cacheService.delete(Item.class, key);
         key = String.format("%s%s%s%s%s%s%s", referance.getName(), COMA, referance.getCode(), COMA,
-                referance.getLang(), COMA + referance.getCategory());
+                referance.getLang(), COMA, referance.getCategory());
         cacheService.delete(Item.class, key);
     }
     public void delete(Integer id) {
