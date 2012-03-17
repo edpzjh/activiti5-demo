@@ -5,7 +5,7 @@
     <bean id="orderService" class="com.bulain.mybatis.service.OrderServiceImpl"/>
     <bean id="jodaService" class="com.bulain.mybatis.service.JodaServiceImpl"/>
     <bean id="referanceService" class="com.bulain.activiti.service.ReferanceServiceImpl"/>
-    <bean id="cacheService" class="com.bulain.common.cache.NoCacheServiceImpl"/>
+    <bean id="cacheService" class="com.bulain.common.cache.SimpleCacheServiceImpl"/>
     <bean id="groupService" class="com.bulain.activiti.service.GroupServiceImpl"/>
     <bean id="categoryService" class="com.bulain.activiti.service.CategoryServiceImpl"/>
     <bean id="accountService" class="com.bulain.activiti.service.AccountServiceImpl"/>
