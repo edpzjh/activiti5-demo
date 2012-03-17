@@ -59,6 +59,12 @@
             </exclusions>
         </dependency>
 
+        <!-- dbcp -->
+        <dependency>
+            <groupId>commons-dbcp</groupId>
+            <artifactId>commons-dbcp</artifactId>
+        </dependency>
+
 		<!-- database -->
         <dependency>
             <groupId>mysql</groupId>
