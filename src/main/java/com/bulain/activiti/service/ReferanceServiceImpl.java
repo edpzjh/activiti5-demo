@@ -37,7 +37,8 @@ public class ReferanceServiceImpl extends PagedServiceImpl<Referance, ReferanceS
     public void insert(Referance referance) {
         super.insert(referance);
 
-        String key = referance.getName() + COMA + referance.getLang() + COMA + referance.getCategory();
+        String key = String.format("%s%s%s%s%s", referance.getName(), COMA, referance.getLang(), COMA,
+                referance.getCategory());
         cacheService.delete(Item.class, key);
     }
     public void insert(ReferanceBean referanceBean) {
@@ -59,10 +60,10 @@ public class ReferanceServiceImpl extends PagedServiceImpl<Referance, ReferanceS
         super.insert(beanEN);
         super.insert(beanCN);
 
-        String key = beanEN.getName() + COMA + beanEN.getLang() + COMA + beanEN.getCategory();
+        String key = String.format("%s%s%s%s%s", beanEN.getName(), COMA, beanEN.getLang(), COMA, beanEN.getCategory());
         cacheService.delete(Item.class, key);
 
-        key = beanCN.getName() + COMA + beanCN.getLang() + COMA + beanCN.getCategory();
+        key = String.format("%s%s%s%s%s", beanCN.getName(), COMA, beanCN.getLang(), COMA, beanCN.getCategory());
         cacheService.delete(Item.class, key);
     }
 
@@ -70,10 +71,11 @@ public class ReferanceServiceImpl extends PagedServiceImpl<Referance, ReferanceS
         super.update(referance, forced);
 
         cacheService.delete(Referance.class, referance.getId());
-        String key = referance.getName() + COMA + referance.getLang() + COMA + referance.getCategory();
+        String key = String.format("%s%s%s%s%s", referance.getName(), COMA, referance.getLang(), COMA,
+                referance.getCategory());
         cacheService.delete(Item.class, key);
-        key = referance.getName() + COMA + referance.getCode() + COMA + referance.getLang() + COMA
-                + referance.getCategory();
+        key = String.format("%s%s%s%s%s%s%s", referance.getName(), COMA, referance.getCode(), COMA,
+                referance.getLang(), COMA + referance.getCategory());
         cacheService.delete(Item.class, key);
     }
     public void delete(Integer id) {
@@ -81,10 +83,11 @@ public class ReferanceServiceImpl extends PagedServiceImpl<Referance, ReferanceS
         super.delete(id);
 
         cacheService.delete(Referance.class, id);
-        String key = referance.getName() + COMA + referance.getLang() + COMA + referance.getCategory();
+        String key = String.format("%s%s%s%s%s", referance.getName(), COMA, referance.getLang(), COMA,
+                referance.getCategory());
         cacheService.delete(Item.class, key);
-        key = referance.getName() + COMA + referance.getCode() + COMA + referance.getLang() + COMA
-                + referance.getCategory();
+        key = String.format("%s%s%s%s%s%s%s", referance.getName(), COMA, referance.getCode(), COMA,
+                referance.getLang(), COMA, referance.getCategory());
         cacheService.delete(Item.class, key);
     }
 
@@ -96,7 +99,7 @@ public class ReferanceServiceImpl extends PagedServiceImpl<Referance, ReferanceS
             return DEFAULT_TEXT;
         }
 
-        String key = name + COMA + code + COMA + lang + COMA + category;
+        String key = String.format("%s%s%s%s%s%s%s", name, COMA, code, COMA, lang, COMA, category);
         Item item = (Item) cacheService.get(Item.class, key);
 
         if (item == null) {
@@ -121,7 +124,7 @@ public class ReferanceServiceImpl extends PagedServiceImpl<Referance, ReferanceS
     }
 
     public List<Item> findItem(String name, String lang, String category) {
-        String key = name + COMA + lang + COMA + category;
+        String key = String.format("%s%s%s%s%s", name, COMA, lang, COMA, category);
         @SuppressWarnings("unchecked")
         List<Item> list = (List<Item>) cacheService.get(Item.class, key);
 
