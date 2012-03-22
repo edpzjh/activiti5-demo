@@ -6,4 +6,5 @@ Thumbs.db
 .classpath
 .project
 .settings/
+spy.log
 src/migration/drivers/
