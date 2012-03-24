@@ -1,5 +1,5 @@
 This is a activiti 5 demo.
-use the next technology: mysql, spring, mybatis, struts2, activiti 5
+use the next technology: mysql, spring, mybatis, struts2, activiti5
 
 If you want to build this project, please follow the next step.
 1, checkout out parent and run: 
@@ -14,14 +14,16 @@ If you want to build this project, please follow the next step.
     git submodule update
 4, create mysql database for test: 
     change src/migration/environments/test.properties
-    change src/test/resources/jdbc-test.properties
+    change src/test/resources/jdbc.properties
     mvn test
-5, create mysql database for development:
+5, run integration test: mvn verify -Pit
+   start jetty: mvn jetty:run -Pit
+6, create mysql database for development:
     change src/migration/environments/development.properties
     change src/main/resources/jdbc.properties
     mvn migration:up
     mvn clean package
-6, generate java code from database using mybatis generator:
+7, generate java code from database using mybatis generator:
     change build.properties
     change src/test/resources/mybatis/mybatis-generator-config.xml
     ant genfile
