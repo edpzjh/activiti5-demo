@@ -17,7 +17,7 @@
     <s:include value="_form.jsp"/>
     <table cellspacing="0" width="100%">
         <tr>
-            <td class="page-form-centered"><s:submit value="%{getText('action.update')}"/></td>
+            <td class="page-form-centered"><s:submit id="btn_update"  value="%{getText('action.update')}"/></td>
         </tr>
     </table>
 </s:form>

@@ -13,9 +13,9 @@
         <s:set name="locale" value="#session['WW_TRANS_I18N_LOCALE']" />
         <script src="<s:url value='/web-static/jquery/js/localization/messages_%{#locale}.js'/>" type="text/javascript"></script>
         <script src="<s:url value='/web-static/jquery/js/jquery-ui-1.8.4.custom.min.js'/>" type="text/javascript"></script>
-        <script src="<s:url value='/web-static/jquery/js/jquery.cookie.js'/>"></script>
-        <script src="<s:url value='/web-static/static/js/jquery.cookie.extend.js'/>"></script>
-        <script src="<s:url value='/web-static/static/js/jquery.cookie.menu.js'/>"></script>
+        <script src="<s:url value='/web-static/jquery/js/jquery.cookie.js'/>" type="text/javascript"></script>
+        <script src="<s:url value='/web-static/static/js/jquery.cookie.extend.js'/>" type="text/javascript"></script>
+        <script src="<s:url value='/web-static/static/js/jquery.cookie.menu.js'/>" type="text/javascript"></script>
         <script src="<s:url value='/web-static/jquery/js/jquery.ui.timepicker.js'/>" type="text/javascript"></script>
         <script src="<s:url value='/web-static/static/js/public.js'/>" type="text/javascript"></script>
         <title><decorator:title default="sitemesh" /></title>

@@ -2,7 +2,7 @@ package com.bulain.activiti.it;
 
 import java.util.concurrent.TimeUnit;
 
-import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.openqa.selenium.By;
@@ -25,7 +25,7 @@ public class WebTestCase extends ServiceTestCase {
     private static final String FIREFOX_DRIVER = "FirefoxDriver";
     private static final String INTERNET_EXPLORER_DRIVER = "InternetExplorerDriver";
     
-    protected WebDriver driver;
+    protected static WebDriver driver;
     @Autowired
     protected String baseUrl;
     @Autowired
@@ -35,6 +35,9 @@ public class WebTestCase extends ServiceTestCase {
     
     @Before
     public void setUp() {
+        if (driver != null) {
+            return;
+        }
         if (INTERNET_EXPLORER_DRIVER.equalsIgnoreCase(webDriver)) {
             DesiredCapabilities ieCapabilities = DesiredCapabilities.internetExplorer();
             ieCapabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
@@ -49,8 +52,8 @@ public class WebTestCase extends ServiceTestCase {
         driver.manage().timeouts().implicitlyWait(waitSeconds, TimeUnit.SECONDS);
     }
     
-    @After
-    public void tearDown() {
+    @AfterClass
+    public static void tearDownClass() {
         driver.quit();
     }
     

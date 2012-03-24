@@ -8,19 +8,19 @@
     </tr>
     <tr>
         <td class="page-form-label"><s:text name="group.name"/></td>
-        <td class="page-form-value"><s:property value="group.name"/></td>
+        <td class="page-form-value"><span id="show_group_name"><s:property value="group.name"/></span></td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <td class="page-form-label"><s:text name="group.type"/></td>
-        <td class="page-form-value"><s:property value="group.typeName"/></td>
+        <td class="page-form-value"><span id="show_group_type"><s:property value="group.typeName"/></span></td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <td class="page-form-label"><s:text name="group.description"/></td>
-        <td class="page-form-value" colspan="3"><page:textarea value="group.description"/></td>
+        <td class="page-form-value" colspan="3"><span id="show_group_description"><page:textarea value="group.description"/></span></td>
     </tr>
     <s:set name="track" value="group"/>
     <s:include value="/common/_track.jsp"/>
