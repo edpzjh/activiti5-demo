@@ -13,7 +13,7 @@ public class GroupIT extends WebTestCase {
     
     @Test
     public void testCreate() {
-        driver.get(baseUrl + "/activiti5-demo/group/new.action");
+        driver.get(baseUrl + "/group/new.action");
         driver.findElement(By.id("create_group_name")).clear();
         driver.findElement(By.id("create_group_name")).sendKeys("group01");
         new Select(driver.findElement(By.id("create_group_type"))).selectByValue("ACCOUNT");
