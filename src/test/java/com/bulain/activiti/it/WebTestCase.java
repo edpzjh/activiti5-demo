@@ -2,7 +2,6 @@ package com.bulain.activiti.it;
 
 import java.util.concurrent.TimeUnit;
 
-import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.openqa.selenium.By;
@@ -25,7 +24,7 @@ public class WebTestCase extends ServiceTestCase {
     private static final String FIREFOX_DRIVER = "FirefoxDriver";
     private static final String INTERNET_EXPLORER_DRIVER = "InternetExplorerDriver";
     
-    protected static WebDriver driver;
+    protected WebDriver driver;
     @Autowired
     protected String baseUrl;
     @Autowired
@@ -35,6 +34,7 @@ public class WebTestCase extends ServiceTestCase {
     
     @Before
     public void setUp() {
+        driver = WebDriverUtil.getDriver();
         if (driver != null) {
             return;
         }
@@ -50,11 +50,7 @@ public class WebTestCase extends ServiceTestCase {
             driver = new HtmlUnitDriver();
         }
         driver.manage().timeouts().implicitlyWait(waitSeconds, TimeUnit.SECONDS);
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-        driver.quit();
+        WebDriverUtil.setDriver(driver);
     }
     
     protected boolean isElementPresent(By by) {
