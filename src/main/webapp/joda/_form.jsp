@@ -28,13 +28,13 @@
     </tr>
     <tr>
         <td class="page-form-label"><s:text name="joda.xdatetime"/></td>
-        <td class="page-form-value"><s:date id="xdatetime" name="joda.xdatetime" format="%{getText('fmt.datetime')}" /><s:textfield key="joda.xdatetime" value="%{xdatetime}" cssClass="date" maxlength="16"/></td>
+        <td class="page-form-value"><s:date id="xdatetime" name="joda.xdatetime" format="%{getText('fmt.datetime')}" /><s:textfield key="joda.xdatetime" value="%{xdatetime}" cssClass="datetime" maxlength="16"/></td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <td class="page-form-label"><s:text name="joda.xtimestamp"/></td>
-        <td class="page-form-value"><s:date id="xtimestamp" name="joda.xtimestamp" format="%{getText('fmt.datetime')}" /><s:textfield key="joda.xtimestamp" value="%{xtimestamp}" cssClass="date" maxlength="16"/></td>
+        <td class="page-form-value"><s:date id="xtimestamp" name="joda.xtimestamp" format="%{getText('fmt.datetime')}" /><s:textfield key="joda.xtimestamp" value="%{xtimestamp}" cssClass="datetime" maxlength="16"/></td>
         <td></td>
         <td></td>
     </tr>
