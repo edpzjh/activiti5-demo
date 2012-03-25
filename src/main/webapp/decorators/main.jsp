@@ -55,7 +55,7 @@
 <script language="JavaScript" type="text/javascript">
     $(document).ready(function(){
         var menus = ['a','b'];
-        jQueryMenu.cookieMenu(menus);
+        jQueryMenu.cookieMenu(menus, {path:'/activiti5-demo'});
     });
 </script>
             </div>
