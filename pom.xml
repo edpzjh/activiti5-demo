@@ -315,6 +315,7 @@
                             <configuration>
                                 <target name="native2ascii">
                                     <native2ascii dest="${project.build.directory}/classes" src="${project.build.directory}/classes" includes="**/*.chinese" ext=".properties" encoding="UTF-8" />
+                                    <delete file="${project.build.directory}/classes/jdbc.properties"/>
                                     <copy todir="${project.build.directory}/classes">
                                         <fileset dir="${project.build.directory}/test-classes" includes="jdbc.properties" />
                                     </copy>
