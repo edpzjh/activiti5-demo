@@ -9,13 +9,13 @@
     </tr>
     <tr>
         <td class="page-form-label"><s:text name="order.name"/></td>
-        <td class="page-form-value"><s:property value="order.name"/></td>
+        <td class="page-form-value"><span id="show_order_name"><s:property value="order.name"/></span></td>
         <td></td>
         <td></td>
     </tr>
     <tr>
         <td class="page-form-label"><s:text name="order.note"/></td>
-        <td class="page-form-value" colspan="3"><page:textarea value="order.note"/></td>
+        <td class="page-form-value" colspan="3"><span id="show_order_note"><page:textarea value="order.note"/></span></td>
     </tr>
     <s:set name="track" value="order"/>
     <s:include value="/common/_track.jsp"/>
