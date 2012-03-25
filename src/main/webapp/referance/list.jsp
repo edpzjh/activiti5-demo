@@ -48,8 +48,8 @@
             <td colspan="4">
                 <table cellspacing="0" width="100%">
                     <tr>
-                        <td width="40%"><s:url id="url" action="new" /><a href="<s:property value="#url"/>"><s:text name="action.new"/><s:text name="referance.model"/></a></td>
-                        <td class="page-form-centered"><s:submit value="%{getText('action.search')}" /></td>
+                        <td width="40%"><s:url id="url" action="new" /><a id="lnk_new" href="<s:property value="#url"/>"><s:text name="action.new"/><s:text name="referance.model"/></a></td>
+                        <td class="page-form-centered"><s:submit id="btn_search" value="%{getText('action.search')}" /></td>
                         <td width="40%" />
                     </tr>
                 </table>
