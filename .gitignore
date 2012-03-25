@@ -7,6 +7,6 @@ Thumbs.db
 .project
 .settings/
 spy.log
-activiti5-demo.log
+activiti5-demo.log*
 chromedriver.log
 src/migration/drivers/
