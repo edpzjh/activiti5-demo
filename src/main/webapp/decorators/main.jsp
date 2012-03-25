@@ -25,7 +25,7 @@
         <div id="container">
           <div id="header">
           </div>
-          <div id="login"><span><a href="?request_locale=en_US">English</a>|<a href="?request_locale=zh_CN">Chinese</a></span></div>
+          <div id="login"><span><a href="javascript:void(0);" onclick="javascript:requestLocale('en_US');">English</a>|<a href="javascript:void(0);" onclick="javascript:requestLocale('zh_CN');">Chinese</a></span></div>
           <div id="main">
             <div id="sidebar">
 <div>
