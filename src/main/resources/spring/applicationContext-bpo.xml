@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
-<beans>
-    <bean id="orderBpo" class="com.bulain.activiti.bpo.OrderBpoImpl">
-        <property name="orderService" ref="orderService" />
-        <property name="taskService" ref="taskService" />
-    </bean>
+<beans default-autowire="byName">
+    <bean id="orderBpo" class="com.bulain.activiti.bpo.OrderBpoImpl" />
+    <bean id="activitiBpo" class="com.bulain.activiti.bpo.ActivitiBpoImpl" />
 </beans>

@@ -25,9 +25,9 @@ public class ActivitiAction extends DefaultActionSupport {
     private List<ProcessInstance> listProcessInstance;
     private List<Task> listPersonTask;
     private List<Task> listGroupTask;
+    private List<HistoricProcessInstance> listHistoryProcessInstance;
     private List<HistoricTaskInstance> listHistoryTask;
     private List<HistoricActivityInstance> listHistoryActivityInstance;
-    private List<HistoricProcessInstance> listHistoryProcessInstance;
 
     private String processDefinitionId;
     private String executionId;
