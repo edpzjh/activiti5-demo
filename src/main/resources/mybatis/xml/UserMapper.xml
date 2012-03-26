@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.bulain.mybatis.dao.UserMapper" >
-  <resultMap id="BaseResultMap" type="com.bulain.mybatis.model.User" >
+<mapper namespace="com.bulain.activiti.dao.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.bulain.activiti.model.User" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="first_name" property="firstName" jdbcType="VARCHAR" />
     <result column="last_name" property="lastName" jdbcType="VARCHAR" />
@@ -23,7 +23,7 @@
     delete from users
     where id = #{id}
   </delete>
-  <insert id="insert" parameterType="com.bulain.mybatis.model.User" >
+  <insert id="insert" parameterType="com.bulain.activiti.model.User" >
     insert into users (first_name, last_name, created_by, created_at, updated_by, updated_at
       )
     values (#{firstName}, #{lastName}, #{createdBy}, #{createdAt}, #{updatedBy}, #{updatedAt}
@@ -32,7 +32,7 @@
       SELECT LAST_INSERT_ID()
     </selectKey>
   </insert>
-  <insert id="insertSelective" parameterType="com.bulain.mybatis.model.User" >
+  <insert id="insertSelective" parameterType="com.bulain.activiti.model.User" >
     insert into users
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="firstName != null" >
@@ -78,7 +78,7 @@
       SELECT LAST_INSERT_ID()
     </selectKey>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.bulain.mybatis.model.User" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.bulain.activiti.model.User" >
     update users
     <set >
       <if test="firstName != null" >
@@ -102,7 +102,7 @@
     </set>
     where id = #{id}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.bulain.mybatis.model.User" >
+  <update id="updateByPrimaryKey" parameterType="com.bulain.activiti.model.User" >
     update users
     set first_name = #{firstName},
       last_name = #{lastName},
@@ -124,19 +124,19 @@
   		</if>
   	</where>
   </sql>
-  <select id="find" resultMap="BaseResultMap" parameterType="com.bulain.mybatis.pojo.UserSearch">
+  <select id="find" resultMap="BaseResultMap" parameterType="com.bulain.activiti.pojo.UserSearch">
   	select 
     <include refid="Base_Column_List" />
     from users
     <include refid="where"/>
     <include refid="common.orderby"/>
   </select>
-  <select id="count" resultType="java.lang.Long" parameterType="com.bulain.mybatis.pojo.UserSearch">
+  <select id="count" resultType="java.lang.Long" parameterType="com.bulain.activiti.pojo.UserSearch">
   	select count(*)
     from users
     <include refid="where"/>
   </select>
-  <select id="page" resultMap="BaseResultMap" parameterType="com.bulain.mybatis.pojo.UserSearch">
+  <select id="page" resultMap="BaseResultMap" parameterType="com.bulain.activiti.pojo.UserSearch">
   	<![CDATA[${PAGE_HEAD}]]>
   	select 
     <include refid="Base_Column_List" />

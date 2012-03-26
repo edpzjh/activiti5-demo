@@ -2,20 +2,20 @@
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
 <beans>
     <bean id="userMapper" parent="baseMapper">
-        <property name="mapperInterface" value="com.bulain.mybatis.dao.UserMapper" />
+        <property name="mapperInterface" value="com.bulain.activiti.dao.UserMapper" />
     </bean>
 
     <bean id="orderMapper" parent="baseMapper">
-        <property name="mapperInterface" value="com.bulain.mybatis.dao.OrderMapper" />
+        <property name="mapperInterface" value="com.bulain.activiti.dao.OrderMapper" />
     </bean>
     <bean id="orderMasterMapper" parent="baseMapper">
-        <property name="mapperInterface" value="com.bulain.mybatis.dao.OrderMasterMapper" />
+        <property name="mapperInterface" value="com.bulain.activiti.dao.OrderMasterMapper" />
     </bean>
     <bean id="orderHisMapper" parent="baseMapper">
-        <property name="mapperInterface" value="com.bulain.mybatis.dao.OrderHisMapper" />
+        <property name="mapperInterface" value="com.bulain.activiti.dao.OrderHisMapper" />
     </bean>
     <bean id="jodaMapper" parent="baseMapper">
-        <property name="mapperInterface" value="com.bulain.mybatis.dao.JodaMapper" />
+        <property name="mapperInterface" value="com.bulain.activiti.dao.JodaMapper" />
     </bean>
     
     <bean id="referanceMapper" parent="baseMapper">

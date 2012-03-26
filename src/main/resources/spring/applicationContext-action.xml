@@ -2,10 +2,10 @@
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
 
 <beans default-autowire="byName">
-    <bean id="userAction" class="com.bulain.mybatis.controller.UserAction" singleton="false" />
-    <bean id="activitiAction" class="com.bulain.mybatis.controller.ActivitiAction" singleton="false" />
-    <bean id="orderAction" class="com.bulain.mybatis.controller.OrderAction" singleton="false" />
-    <bean id="jodaAction" class="com.bulain.mybatis.controller.JodaAction" singleton="false" />
+    <bean id="userAction" class="com.bulain.activiti.controller.UserAction" singleton="false" />
+    <bean id="activitiAction" class="com.bulain.activiti.controller.ActivitiAction" singleton="false" />
+    <bean id="orderAction" class="com.bulain.activiti.controller.OrderAction" singleton="false" />
+    <bean id="jodaAction" class="com.bulain.activiti.controller.JodaAction" singleton="false" />
     <bean id="referanceAction" class="com.bulain.activiti.controller.ReferanceAction" singleton="false" />
     <bean id="groupAction" class="com.bulain.activiti.controller.GroupAction" singleton="false" />
     <bean id="categoryAction" class="com.bulain.activiti.controller.CategoryAction" singleton="false" />
