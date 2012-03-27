@@ -1,6 +1,7 @@
 package com.bulain.activiti.bpo;
 
 import static org.junit.Assert.assertEquals;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -9,7 +10,7 @@ import org.activiti.engine.RepositoryService;
 import org.activiti.engine.RuntimeService;
 import org.activiti.engine.TaskService;
 import org.activiti.engine.task.Task;
-import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,32 +28,41 @@ public class ActivitiBpoTest extends ServiceTestCase {
     private RuntimeService runtimeService;
     @Autowired
     private TaskService taskService;
-    
-    private String deploymentId;
+
+    private static String deploymentId;
+    private static ActivitiBpoTest test;
 
     @Before
     public void setUp() throws Exception {
-        deploymentId = repositoryService.createDeployment().addClasspathResource("diagrams/order.bpmn20.xml").deploy()
-                .getId();
-        setUpActiviti();
+        if (deploymentId == null) {
+            test = this;
+            setUpActiviti();
+        }
     }
 
-    private void setUpActiviti(){
+    private void setUpActiviti() {
+        deploymentId = repositoryService.createDeployment().addClasspathResource("diagrams/order.bpmn20.xml").deploy()
+                .getId();
+
         Map<String, Object> variables = new HashMap<String, Object>();
         variables.put("owner", "bulain");
-        for(int i=0; i< 10; i++){
+        for (int i = 0; i < 10; i++) {
             runtimeService.startProcessInstanceByKey("order", variables);
         }
 
         List<Task> listTask = taskService.createTaskQuery().taskCandidateUser("bulain").list();
-        for(int i=0; i< 5; i++){
+        for (int i = 0; i < 5; i++) {
             Task task = listTask.get(i);
             taskService.claim(task.getId(), "bulain");
         }
     }
     
-    @After
-    public void tearDown() throws Exception {
+    @AfterClass
+    public static void tearDownClass() throws Exception {
+        test.tearDownActiviti();
+    }
+    
+    private void tearDownActiviti(){
         repositoryService.deleteDeployment(deploymentId, true);
     }
 
@@ -73,7 +83,7 @@ public class ActivitiBpoTest extends ServiceTestCase {
         List<Task> listTask = activitiBpo.pageTask(search, page);
         assertEquals(2, listTask.size());
     }
-    
+
     @Test
     public void testPageTask4TaskCandidateUser() {
         TaskSearch search = new TaskSearch();
