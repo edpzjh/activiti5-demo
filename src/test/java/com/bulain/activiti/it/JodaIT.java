@@ -10,8 +10,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
+import com.bulain.activiti.test.TestConst;
 import com.bulain.common.dataset.DataSet;
+import com.bulain.common.dataset.SeedDataSet;
+import com.bulain.common.test.WebTestCase;
 
+@SeedDataSet(file = TestConst.IT_DATA_INIT_COMMON_XML)
 @DataSet(file = "it-data/init_jodas.xml")
 public class JodaIT extends WebTestCase {
     

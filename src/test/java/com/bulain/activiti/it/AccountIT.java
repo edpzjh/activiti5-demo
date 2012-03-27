@@ -1,6 +1,8 @@
 package com.bulain.activiti.it;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 import java.util.List;
 
 import org.junit.Test;
@@ -9,8 +11,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.support.ui.Select;
 
+import com.bulain.activiti.test.TestConst;
 import com.bulain.common.dataset.DataSet;
+import com.bulain.common.dataset.SeedDataSet;
+import com.bulain.common.test.WebTestCase;
 
+@SeedDataSet(file = TestConst.IT_DATA_INIT_COMMON_XML)
 @DataSet(file = "it-data/init_accounts.xml")
 public class AccountIT extends WebTestCase {
     

@@ -11,6 +11,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.support.ui.Select;
 
+import com.bulain.activiti.test.TestConst;
+import com.bulain.common.dataset.SeedDataSet;
+import com.bulain.common.test.WebTestCase;
+
+@SeedDataSet(file = TestConst.IT_DATA_INIT_COMMON_XML)
 public class ReferanceIT  extends WebTestCase {
     
     @Test
