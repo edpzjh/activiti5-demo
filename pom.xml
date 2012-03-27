@@ -101,6 +101,7 @@
             <groupId>com.bulain</groupId>
             <artifactId>common-test</artifactId>
             <version>${common.version}</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
