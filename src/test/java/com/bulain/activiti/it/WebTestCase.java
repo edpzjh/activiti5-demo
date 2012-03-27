@@ -3,7 +3,6 @@ package com.bulain.activiti.it;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -17,9 +16,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.bulain.common.dataset.SeedDataSet;
 import com.bulain.common.test.ServiceTestCase;
 
-@Ignore
 @SeedDataSet(file = "it-data/init_common.xml")
-public class WebTestCase extends ServiceTestCase {
+public abstract class WebTestCase extends ServiceTestCase {
     private static final String CHROME_DRIVER = "ChromeDriver";
     private static final String FIREFOX_DRIVER = "FirefoxDriver";
     private static final String INTERNET_EXPLORER_DRIVER = "InternetExplorerDriver";
