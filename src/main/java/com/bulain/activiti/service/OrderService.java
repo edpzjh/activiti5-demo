@@ -7,5 +7,5 @@ import com.bulain.common.service.PagedService;
 public interface OrderService extends PagedService<Order, OrderSearch> {
     Order getByWfId(String wfId);
 
-    void finish(Integer id);
+    void finish(Long id);
 }

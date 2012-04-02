@@ -21,7 +21,7 @@ public class CategoryServiceTest extends ServiceTestCase {
 
     @Test
     public void testGet() {
-        Category category = categoryService.get(Integer.valueOf(102));
+        Category category = categoryService.get(Long.valueOf(102));
         assertNotNull(category);
 
         assertEquals("name_102", category.getName());
@@ -39,7 +39,7 @@ public class CategoryServiceTest extends ServiceTestCase {
     @Test
     public void testUpdate() {
         Category category = new Category();
-        category.setId(Integer.valueOf(104));
+        category.setId(Long.valueOf(104));
         category.setName("name-updated");
         category.setType("type-updated");
         categoryService.update(category, true);
@@ -47,7 +47,7 @@ public class CategoryServiceTest extends ServiceTestCase {
 
     @Test
     public void testDelete() {
-        categoryService.delete(Integer.valueOf(101));
+        categoryService.delete(Long.valueOf(101));
     }
     
     @Test
@@ -62,7 +62,7 @@ public class CategoryServiceTest extends ServiceTestCase {
     @Test
     public void testCountByUniqueKey4Update(){
         Category record = new Category();
-        record.setId(Integer.valueOf(104));
+        record.setId(Long.valueOf(104));
         record.setName("name_103");
         record.setType("type_103");
         Long cnt = categoryService.countByDuplicate(record);

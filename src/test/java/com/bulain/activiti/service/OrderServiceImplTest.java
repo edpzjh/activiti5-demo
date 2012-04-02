@@ -36,7 +36,7 @@ public class OrderServiceImplTest extends ServiceTestCase {
 
     @Test
     public void testGet() {
-        Order order = orderService.get(Integer.valueOf(102));
+        Order order = orderService.get(Long.valueOf(102));
         assertNotNull(order);
 
         assertEquals("name_102", order.getName());
@@ -54,7 +54,7 @@ public class OrderServiceImplTest extends ServiceTestCase {
     @Test
     public void testUpdate() {
         Order order = new Order();
-        order.setId(Integer.valueOf(104));
+        order.setId(Long.valueOf(104));
         order.setName("firstName-updated");
         order.setNote("lastName-updated");
         orderService.update(order, true);
@@ -62,7 +62,7 @@ public class OrderServiceImplTest extends ServiceTestCase {
 
     @Test
     public void testDelete() {
-        orderService.delete(Integer.valueOf(101));
+        orderService.delete(Long.valueOf(101));
     }
 
     @Test
@@ -102,13 +102,13 @@ public class OrderServiceImplTest extends ServiceTestCase {
     @Test
     public void testFinish() {
         // prepare
-        Order exist = orderMapper.selectByPrimaryKey(Integer.valueOf(102));
+        Order exist = orderMapper.selectByPrimaryKey(Long.valueOf(102));
 
         // test
-        orderService.finish(Integer.valueOf(102));
+        orderService.finish(Long.valueOf(102));
 
         // assert order
-        Order order = orderMapper.selectByPrimaryKey(Integer.valueOf(102));
+        Order order = orderMapper.selectByPrimaryKey(Long.valueOf(102));
         assertNull(order);
 
         // prepare search

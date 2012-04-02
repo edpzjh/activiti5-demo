@@ -18,7 +18,7 @@ public class JodaAction extends PageSupportActionSupport {
     private static final long serialVersionUID = -985235699430511943L;
     private static final Logger LOG = LoggerFactory.getLogger(JodaAction.class);
 
-    private Integer id;
+    private Long id;
 
     private JodaSearch search;
     private Joda joda;
@@ -112,11 +112,11 @@ public class JodaAction extends PageSupportActionSupport {
         return view;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

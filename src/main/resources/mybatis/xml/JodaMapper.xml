@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.bulain.activiti.dao.JodaMapper" >
   <resultMap id="BaseResultMap" type="com.bulain.activiti.model.Joda" >
-    <id column="id" property="id" jdbcType="INTEGER" />
+    <id column="id" property="id" jdbcType="BIGINT" />
     <result column="xdate" property="xdate" jdbcType="DATE" />
     <result column="xtime" property="xtime" jdbcType="TIME" />
     <result column="xdatetime" property="xdatetime" jdbcType="TIMESTAMP" />
@@ -17,13 +17,13 @@
     id, xdate, xtime, xdatetime, xtimestamp, created_by, created_at, updated_by, updated_at, 
     version
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />
     from joda_demo
     where id = #{id}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     delete from joda_demo
     where id = #{id}
   </delete>
@@ -32,7 +32,7 @@
       updated_by, updated_at, version)
     values (#{xdate}, #{xtime}, #{xdatetime}, #{xtimestamp}, #{createdBy}, #{createdAt}, 
       #{updatedBy}, #{updatedAt}, #{version})
-    <selectKey resultType="java.lang.Integer" keyProperty="id" >
+    <selectKey resultType="java.lang.Long" keyProperty="id" >
       SELECT LAST_INSERT_ID()
     </selectKey>
   </insert>
@@ -96,7 +96,7 @@
         #{version},
       </if>
     </trim>
-    <selectKey resultType="java.lang.Integer" keyProperty="id" >
+    <selectKey resultType="java.lang.Long" keyProperty="id" >
       SELECT LAST_INSERT_ID()
     </selectKey>
   </insert>

@@ -23,7 +23,7 @@ public class GroupAction extends PageSupportActionSupport {
     private static final long serialVersionUID = -4580561000078777884L;
     private static final Logger LOG = LoggerFactory.getLogger(GroupAction.class);
 
-    private Integer id;
+    private Long id;
     private GroupSearch search;
     private Group group;
     private List<GroupView> listGroup;
@@ -152,10 +152,10 @@ public class GroupAction extends PageSupportActionSupport {
         return view;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

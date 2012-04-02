@@ -28,7 +28,7 @@ public class OrderServiceImpl extends PagedServiceImpl<Order, OrderSearch> imple
         return orderMapper;
     }
 
-    public void finish(Integer id) {
+    public void finish(Long id) {
         Order order = orderMapper.selectByPrimaryKey(id);
 
         Date effDate = new Date();

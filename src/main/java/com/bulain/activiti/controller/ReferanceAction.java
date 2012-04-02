@@ -25,7 +25,7 @@ public class ReferanceAction extends PageSupportActionSupport {
     private static final String TEXT_REFERANCE_LANG = "referance.lang";
     private static final String TEXT_REFERANCE_CATEGORY = "referance.category";
 
-    private Integer id;
+    private Long id;
 
     private ReferanceSearch search;
     private Referance referance;
@@ -168,11 +168,11 @@ public class ReferanceAction extends PageSupportActionSupport {
         this.search = search;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

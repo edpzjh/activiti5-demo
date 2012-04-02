@@ -8,7 +8,7 @@ import com.bulain.common.model.Trackable;
 public class Category implements Trackable, Serializable {
     private static final long serialVersionUID = 5745753532061415385L;
 
-    private Integer id;
+    private Long id;
 
     private String name;
 
@@ -24,11 +24,11 @@ public class Category implements Trackable, Serializable {
 
     private Date updatedAt;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

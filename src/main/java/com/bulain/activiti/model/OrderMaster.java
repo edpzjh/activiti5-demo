@@ -9,7 +9,7 @@ import com.bulain.common.model.Trackable;
 public class OrderMaster implements Entity, Trackable, Serializable {
     private static final long serialVersionUID = -9106706103055787112L;
 
-    private Integer id;
+    private Long id;
     private String name;
     private String note;
     private Date effDate;
@@ -18,11 +18,11 @@ public class OrderMaster implements Entity, Trackable, Serializable {
     private String updatedBy;
     private Date updatedAt;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

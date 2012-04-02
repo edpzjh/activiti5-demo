@@ -22,7 +22,7 @@ public class AccountAction extends PageSupportActionSupport {
     private static final String TEXT_ACCOUNT_NAME = "account.name";
     private static final Logger LOG = LoggerFactory.getLogger(AccountAction.class);
 
-    private Integer id;
+    private Long id;
     private AccountSearch search;
     private Account account;
     private List<AccountView> listAccount;
@@ -170,11 +170,11 @@ public class AccountAction extends PageSupportActionSupport {
         return view;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

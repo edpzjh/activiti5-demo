@@ -9,7 +9,7 @@ import com.bulain.common.model.Trackable;
 public class Order implements Entity, Trackable, Serializable {
     private static final long serialVersionUID = 5970173395415963059L;
 
-    private Integer id;
+    private Long id;
     private String name;
     private String note;
     private String createdBy;
@@ -19,11 +19,11 @@ public class Order implements Entity, Trackable, Serializable {
     private String wfId;
     private String wfStatus;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

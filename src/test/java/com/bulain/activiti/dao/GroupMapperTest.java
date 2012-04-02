@@ -20,7 +20,7 @@ public class GroupMapperTest extends ServiceTestCase {
 
     @Test
     public void testDeleteByPrimaryKey() {
-        int deleteByPrimaryKey = groupMapper.deleteByPrimaryKey(Integer.valueOf(101));
+        int deleteByPrimaryKey = groupMapper.deleteByPrimaryKey(Long.valueOf(101));
         assertEquals(1, deleteByPrimaryKey);
     }
 
@@ -44,7 +44,7 @@ public class GroupMapperTest extends ServiceTestCase {
 
     @Test
     public void testSelectByPrimaryKey() {
-        Group selectByPrimaryKey = groupMapper.selectByPrimaryKey(Integer.valueOf(102));
+        Group selectByPrimaryKey = groupMapper.selectByPrimaryKey(Long.valueOf(102));
         assertNotNull(selectByPrimaryKey);
 
         assertEquals("name_102", selectByPrimaryKey.getName());
@@ -54,7 +54,7 @@ public class GroupMapperTest extends ServiceTestCase {
     @Test
     public void testUpdateByPrimaryKeySelective() {
         Group record = new Group();
-        record.setId(Integer.valueOf(103));
+        record.setId(Long.valueOf(103));
         record.setName("name-updated");
         record.setType("type-updated");
         int updateByPrimaryKeySelective = groupMapper.updateByPrimaryKeySelective(record);
@@ -64,7 +64,7 @@ public class GroupMapperTest extends ServiceTestCase {
     @Test
     public void testUpdateByPrimaryKey() {
         Group record = new Group();
-        record.setId(Integer.valueOf(104));
+        record.setId(Long.valueOf(104));
         record.setName("name-updated");
         record.setType("type-updated");
         int updateByPrimaryKey = groupMapper.updateByPrimaryKey(record);
@@ -83,7 +83,7 @@ public class GroupMapperTest extends ServiceTestCase {
     @Test
     public void testCountByUniqueKey4Update(){
         Group record = new Group();
-        record.setId(Integer.valueOf(104));
+        record.setId(Long.valueOf(104));
         record.setName("name_103");
         record.setType("type_103");
         Long cnt = groupMapper.countByDuplicate(record);

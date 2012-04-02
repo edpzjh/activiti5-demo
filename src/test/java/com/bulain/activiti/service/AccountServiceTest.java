@@ -21,7 +21,7 @@ public class AccountServiceTest extends ServiceTestCase {
 
     @Test
     public void testGet() {
-        Account account = accountService.get(Integer.valueOf(102));
+        Account account = accountService.get(Long.valueOf(102));
         assertNotNull(account);
 
         assertEquals("name_102", account.getName());
@@ -39,7 +39,7 @@ public class AccountServiceTest extends ServiceTestCase {
     @Test
     public void testUpdate() {
         Account account = new Account();
-        account.setId(Integer.valueOf(104));
+        account.setId(Long.valueOf(104));
         account.setName("name-updated");
         account.setType("type-updated");
         accountService.update(account, true);
@@ -47,7 +47,7 @@ public class AccountServiceTest extends ServiceTestCase {
 
     @Test
     public void testDelete() {
-        accountService.delete(Integer.valueOf(101));
+        accountService.delete(Long.valueOf(101));
     }
     
     @Test
@@ -61,7 +61,7 @@ public class AccountServiceTest extends ServiceTestCase {
     @Test
     public void testCountByUniqueKey4Update(){
         Account record = new Account();
-        record.setId(Integer.valueOf(104));
+        record.setId(Long.valueOf(104));
         record.setName("name_103");
         Long cnt = accountService.countByDuplicate(record);
         assertEquals(Long.valueOf(1), cnt);

@@ -21,7 +21,7 @@ public class GroupServiceTest extends ServiceTestCase {
 
     @Test
     public void testGet() {
-        Group group = groupService.get(Integer.valueOf(102));
+        Group group = groupService.get(Long.valueOf(102));
         assertNotNull(group);
 
         assertEquals("name_102", group.getName());
@@ -39,7 +39,7 @@ public class GroupServiceTest extends ServiceTestCase {
     @Test
     public void testUpdate() {
         Group group = new Group();
-        group.setId(Integer.valueOf(104));
+        group.setId(Long.valueOf(104));
         group.setName("name-updated");
         group.setType("type-updated");
         groupService.update(group, true);
@@ -47,7 +47,7 @@ public class GroupServiceTest extends ServiceTestCase {
 
     @Test
     public void testDelete() {
-        groupService.delete(Integer.valueOf(101));
+        groupService.delete(Long.valueOf(101));
     }
     
     @Test
@@ -62,7 +62,7 @@ public class GroupServiceTest extends ServiceTestCase {
     @Test
     public void testCountByUniqueKey4Update(){
         Group record = new Group();
-        record.setId(Integer.valueOf(104));
+        record.setId(Long.valueOf(104));
         record.setName("name_103");
         record.setType("type_103");
         Long cnt = groupService.countByDuplicate(record);

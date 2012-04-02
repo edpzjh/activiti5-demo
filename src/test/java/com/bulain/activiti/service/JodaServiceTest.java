@@ -38,7 +38,7 @@ public class JodaServiceTest extends ServiceTestCase {
 
     @Test
     public void testDelete() {
-        jodaService.delete(Integer.valueOf(101));
+        jodaService.delete(Long.valueOf(101));
     }
 
     @Test
@@ -54,7 +54,7 @@ public class JodaServiceTest extends ServiceTestCase {
 
     @Test
     public void testGet() {
-        Joda selectByPrimaryKey = jodaService.get(Integer.valueOf(102));
+        Joda selectByPrimaryKey = jodaService.get(Long.valueOf(102));
         assertNotNull(selectByPrimaryKey);
 
         DateTime xdate = new DateTime(2010, 4, 3, 0, 0, 0, 0);
@@ -71,7 +71,7 @@ public class JodaServiceTest extends ServiceTestCase {
     @Test
     public void testUpdate() {
         Joda record = new Joda();
-        record.setId(Integer.valueOf(103));
+        record.setId(Long.valueOf(103));
         Date xdate = SystemClock.getDate();
         record.setXdate(xdate);
         record.setXtime(xdate);

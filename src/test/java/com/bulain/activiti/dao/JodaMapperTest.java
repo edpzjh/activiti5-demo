@@ -37,7 +37,7 @@ public class JodaMapperTest extends DaoTestCase {
 
     @Test
     public void testDeleteByPrimaryKey() {
-        int deleteByPrimaryKey = jodaMapper.deleteByPrimaryKey(Integer.valueOf(101));
+        int deleteByPrimaryKey = jodaMapper.deleteByPrimaryKey(Long.valueOf(101));
         assertEquals(1, deleteByPrimaryKey);
     }
 
@@ -67,7 +67,7 @@ public class JodaMapperTest extends DaoTestCase {
 
     @Test
     public void testSelectByPrimaryKey() {
-        Joda selectByPrimaryKey = jodaMapper.selectByPrimaryKey(Integer.valueOf(102));
+        Joda selectByPrimaryKey = jodaMapper.selectByPrimaryKey(Long.valueOf(102));
         assertNotNull(selectByPrimaryKey);
 
         DateTime xdate = new DateTime(2010, 4, 3, 0, 0, 0, 0);
@@ -84,7 +84,7 @@ public class JodaMapperTest extends DaoTestCase {
     @Test
     public void testUpdateByPrimaryKeySelective() {
         Joda record = new Joda();
-        record.setId(Integer.valueOf(103));
+        record.setId(Long.valueOf(103));
         Date xdate = SystemClock.getDate();
         record.setXdate(xdate);
         record.setXtime(xdate);
@@ -97,7 +97,7 @@ public class JodaMapperTest extends DaoTestCase {
     @Test
     public void testUpdateByPrimaryKey() {
         Joda record = new Joda();
-        record.setId(Integer.valueOf(104));
+        record.setId(Long.valueOf(104));
         Date xdate = SystemClock.getDate();
         record.setXdate(xdate);
         record.setXtime(xdate);

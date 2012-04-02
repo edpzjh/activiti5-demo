@@ -24,7 +24,7 @@ public class UserServiceImplTest extends ServiceTestCase {
 
     @Test
     public void testGet() {
-        User user = userService.get(Integer.valueOf(102));
+        User user = userService.get(Long.valueOf(102));
         assertNotNull(user);
 
         assertEquals("first_name_102", user.getFirstName());
@@ -42,7 +42,7 @@ public class UserServiceImplTest extends ServiceTestCase {
     @Test
     public void testUpdate() {
         User user = new User();
-        user.setId(Integer.valueOf(104));
+        user.setId(Long.valueOf(104));
         user.setFirstName("firstName-updated");
         user.setLastName("lastName-updated");
         userService.update(user, true);
@@ -50,7 +50,7 @@ public class UserServiceImplTest extends ServiceTestCase {
 
     @Test
     public void testDelete() {
-        userService.delete(Integer.valueOf(101));
+        userService.delete(Long.valueOf(101));
     }
 
     @Test

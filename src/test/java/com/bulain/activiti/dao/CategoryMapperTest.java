@@ -20,7 +20,7 @@ public class CategoryMapperTest extends ServiceTestCase {
 
     @Test
     public void testDeleteByPrimaryKey() {
-        int deleteByPrimaryKey = categoryMapper.deleteByPrimaryKey(Integer.valueOf(101));
+        int deleteByPrimaryKey = categoryMapper.deleteByPrimaryKey(Long.valueOf(101));
         assertEquals(1, deleteByPrimaryKey);
     }
 
@@ -44,7 +44,7 @@ public class CategoryMapperTest extends ServiceTestCase {
 
     @Test
     public void testSelectByPrimaryKey() {
-        Category selectByPrimaryKey = categoryMapper.selectByPrimaryKey(Integer.valueOf(102));
+        Category selectByPrimaryKey = categoryMapper.selectByPrimaryKey(Long.valueOf(102));
         assertNotNull(selectByPrimaryKey);
 
         assertEquals("name_102", selectByPrimaryKey.getName());
@@ -54,7 +54,7 @@ public class CategoryMapperTest extends ServiceTestCase {
     @Test
     public void testUpdateByPrimaryKeySelective() {
         Category record = new Category();
-        record.setId(Integer.valueOf(103));
+        record.setId(Long.valueOf(103));
         record.setName("name-updated");
         record.setType("type-updated");
         int updateByPrimaryKeySelective = categoryMapper.updateByPrimaryKeySelective(record);
@@ -73,7 +73,7 @@ public class CategoryMapperTest extends ServiceTestCase {
     @Test
     public void testCountByUniqueKey4Update(){
         Category record = new Category();
-        record.setId(Integer.valueOf(104));
+        record.setId(Long.valueOf(104));
         record.setName("name_103");
         record.setType("type_103");
         Long cnt = categoryMapper.countByDuplicate(record);
@@ -83,7 +83,7 @@ public class CategoryMapperTest extends ServiceTestCase {
     @Test
     public void testUpdateByPrimaryKey() {
         Category record = new Category();
-        record.setId(Integer.valueOf(104));
+        record.setId(Long.valueOf(104));
         record.setName("name-updated");
         record.setType("type-updated");
         int updateByPrimaryKey = categoryMapper.updateByPrimaryKey(record);
