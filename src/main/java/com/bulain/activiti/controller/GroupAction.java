@@ -126,7 +126,8 @@ public class GroupAction extends PageSupportActionSupport {
     public void validateCreate() {
         long cnt = groupService.countByDuplicate(group);
         if (cnt > 0) {
-            String msg = getText("validate.duplicate.2", new String[]{getText(TEXT_GROUP_NAME), getText(TEXT_GROUP_TYPE)});
+            String msg = getText("validate.duplicate.2", new String[]{getText(TEXT_GROUP_NAME),
+                    getText(TEXT_GROUP_TYPE)});
             addActionError(msg);
         }
     }

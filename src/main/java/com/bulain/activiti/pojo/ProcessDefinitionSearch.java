@@ -10,8 +10,7 @@ public class ProcessDefinitionSearch extends Search {
     private String processDefinitionKey;
     private String processDefinitionResourceName;
     private String status; // suspended,active
-    
-    
+
     public String getProcessDefinitionCategory() {
         return processDefinitionCategory;
     }
@@ -42,5 +41,5 @@ public class ProcessDefinitionSearch extends Search {
     public void setStatus(String status) {
         this.status = status;
     }
-    
+
 }

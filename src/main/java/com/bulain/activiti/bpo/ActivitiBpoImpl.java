@@ -25,7 +25,7 @@ public class ActivitiBpoImpl implements ActivitiBpo {
 
     public List<ProcessDefinition> pageProcessDefinition(ProcessDefinitionSearch search, Page page) {
         ProcessDefinitionQuery query = repositoryService.createProcessDefinitionQuery();
-        
+
         if (StringUtils.isNotBlank(search.getProcessDefinitionCategory())) {
             query.processDefinitionCategory(search.getProcessDefinitionCategory());
         }
@@ -40,13 +40,13 @@ public class ActivitiBpoImpl implements ActivitiBpo {
         }
         if ("active".equals(search.getStatus())) {
             query.active();
-        }else if ("suspended".equals(search.getStatus())) {
+        } else if ("suspended".equals(search.getStatus())) {
             query.suspended();
         }
-        
+
         long cnt = query.count();
         page.setCount(cnt);
-        
+
         String orderBy = search.getOrderBy();
         if ("processDefinitionCategory".equals(orderBy)) {
             query.orderByProcessDefinitionCategory();
@@ -66,14 +66,14 @@ public class ActivitiBpoImpl implements ActivitiBpo {
             query.asc();
         }
 
-        List<ProcessDefinition> listPage = query.listPage((int) page.getLow(), (int)page.getHigh());
-        
+        List<ProcessDefinition> listPage = query.listPage((int) page.getLow(), (int) page.getHigh());
+
         return listPage;
     }
 
     public List<ProcessInstance> pageProcessInstance(ProcessInstanceSearch search, Page page) {
         ProcessInstanceQuery query = runtimeService.createProcessInstanceQuery();
-        
+
         if (StringUtils.isNotBlank(search.getProcessInstanceBusinessKey())) {
             query.processInstanceBusinessKey(search.getProcessInstanceBusinessKey());
         }
@@ -82,13 +82,13 @@ public class ActivitiBpoImpl implements ActivitiBpo {
         }
         if ("active".equals(search.getStatus())) {
             query.active();
-        }else if ("suspended".equals(search.getStatus())) {
+        } else if ("suspended".equals(search.getStatus())) {
             query.suspended();
         }
-        
+
         long cnt = query.count();
         page.setCount(cnt);
-        
+
         String orderBy = search.getOrderBy();
         if ("processDefinitionKey".equals(orderBy)) {
             query.orderByProcessDefinitionKey();
@@ -102,12 +102,12 @@ public class ActivitiBpoImpl implements ActivitiBpo {
         } else {
             query.asc();
         }
-        
-        List<ProcessInstance> listPage = query.listPage((int) page.getLow(), (int)page.getHigh());
-        
+
+        List<ProcessInstance> listPage = query.listPage((int) page.getLow(), (int) page.getHigh());
+
         return listPage;
     }
-    
+
     public List<Task> pageTask(TaskSearch search, Page page) {
         TaskQuery query = taskService.createTaskQuery();
 
@@ -172,7 +172,7 @@ public class ActivitiBpoImpl implements ActivitiBpo {
             query.asc();
         }
 
-        List<Task> listPage = query.listPage((int) page.getLow(), (int)page.getHigh());
+        List<Task> listPage = query.listPage((int) page.getLow(), (int) page.getHigh());
 
         return listPage;
     }
@@ -186,5 +186,5 @@ public class ActivitiBpoImpl implements ActivitiBpo {
     public void setTaskService(TaskService taskService) {
         this.taskService = taskService;
     }
-    
+
 }

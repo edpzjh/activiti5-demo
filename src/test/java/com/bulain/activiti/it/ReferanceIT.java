@@ -16,12 +16,12 @@ import com.bulain.common.dataset.SeedDataSet;
 import com.bulain.common.test.WebTestCase;
 
 @SeedDataSet(file = TestConst.IT_DATA_INIT_COMMON_XML)
-public class ReferanceIT  extends WebTestCase {
-    
+public class ReferanceIT extends WebTestCase {
+
     @Test
     public void testList() {
         List<WebElement> listTr;
-        
+
         driver.get(baseUrl + "/referance/list.action");
         new Select(driver.findElement(By.id("search_search_name"))).selectByValue("");
         driver.findElement(By.id("search_search_code")).clear();
@@ -31,7 +31,7 @@ public class ReferanceIT  extends WebTestCase {
         listTr = driver.findElements(By.xpath("id('list')/tbody/tr"));
         assertEquals(11, listTr.size());
         assertTrue(isElementPresent(By.id("btn_search")));
-        
+
         driver.get(baseUrl + "/referance/list.action");
         new Select(driver.findElement(By.id("search_search_name"))).selectByValue("AddressType");
         driver.findElement(By.id("search_search_code")).clear();
@@ -42,7 +42,7 @@ public class ReferanceIT  extends WebTestCase {
         assertEquals(7, listTr.size());
         assertTrue(isElementPresent(By.id("btn_search")));
     }
-    
+
     @Test
     public void testCreate() {
         driver.get(baseUrl + "/referance/list.action");
@@ -60,7 +60,7 @@ public class ReferanceIT  extends WebTestCase {
         assertEquals(8, listTr.size());
         assertTrue(isElementPresent(By.id("btn_search")));
     }
-    
+
     @Test
     public void testUpdate() {
         driver.get(baseUrl + "/referance/list.action");
@@ -75,7 +75,7 @@ public class ReferanceIT  extends WebTestCase {
         driver.findElement(By.id("btn_update")).click();
         assertTrue(isElementPresent(By.id("btn_search")));
     }
-    
+
     @Test
     public void testShow() {
         driver.get(baseUrl + "/referance/list.action?request_locale=en_US");
@@ -92,7 +92,7 @@ public class ReferanceIT  extends WebTestCase {
         assertEquals("", category);
         assertEquals("Residential", text);
     }
-    
+
     @Test
     public void testDelete() {
         driver.get(baseUrl + "/referance/list.action");
@@ -106,5 +106,5 @@ public class ReferanceIT  extends WebTestCase {
         assertEquals(7, listTr.size());
         assertTrue(isElementPresent(By.id("btn_search")));
     }
-    
+
 }

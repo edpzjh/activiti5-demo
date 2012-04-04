@@ -8,7 +8,7 @@ import com.bulain.common.service.PagedServiceImpl;
 
 public class AccountServiceImpl extends PagedServiceImpl<Account, AccountSearch> implements AccountService {
     private AccountMapper accountMapper;
-    
+
     @Override
     protected PagedMapper<Account, AccountSearch> getPagedMapper() {
         return accountMapper;

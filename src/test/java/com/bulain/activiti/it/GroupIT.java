@@ -19,11 +19,11 @@ import com.bulain.common.test.WebTestCase;
 @SeedDataSet(file = TestConst.IT_DATA_INIT_COMMON_XML)
 @DataSet(file = "it-data/init_groups.xml")
 public class GroupIT extends WebTestCase {
-    
+
     @Test
     public void testList() {
         List<WebElement> listTr;
-        
+
         driver.get(baseUrl + "/group/list.action");
         driver.findElement(By.id("search_search_name")).clear();
         driver.findElement(By.id("search_search_name")).sendKeys("name_page");
@@ -32,7 +32,7 @@ public class GroupIT extends WebTestCase {
         listTr = driver.findElements(By.xpath("id('list')/tbody/tr"));
         assertEquals(4, listTr.size());
         assertTrue(isElementPresent(By.id("btn_search")));
-        
+
         driver.get(baseUrl + "/group/list.action");
         driver.findElement(By.id("search_search_name")).clear();
         new Select(driver.findElement(By.id("search_search_type"))).selectByValue("");
@@ -41,7 +41,7 @@ public class GroupIT extends WebTestCase {
         assertEquals(8, listTr.size());
         assertTrue(isElementPresent(By.id("btn_search")));
     }
-    
+
     @Test
     public void testCreate() {
         driver.get(baseUrl + "/group/list.action");
@@ -54,7 +54,7 @@ public class GroupIT extends WebTestCase {
         assertEquals(9, listTr.size());
         assertTrue(isElementPresent(By.id("btn_search")));
     }
-    
+
     @Test
     public void testUpdate() {
         driver.get(baseUrl + "/group/list.action");
@@ -66,7 +66,7 @@ public class GroupIT extends WebTestCase {
         driver.findElement(By.id("btn_update")).click();
         assertTrue(isElementPresent(By.id("btn_search")));
     }
-    
+
     @Test
     public void testShow() {
         driver.get(baseUrl + "/group/list.action");
@@ -79,7 +79,7 @@ public class GroupIT extends WebTestCase {
         assertEquals("Account", type);
         assertEquals("", description);
     }
-    
+
     @Test
     public void testDelete() {
         driver.get(baseUrl + "/group/list.action");
@@ -93,5 +93,5 @@ public class GroupIT extends WebTestCase {
         assertEquals(7, listTr.size());
         assertTrue(isElementPresent(By.id("btn_search")));
     }
-    
+
 }

@@ -123,7 +123,7 @@ public class AccountAction extends PageSupportActionSupport {
     public void prepareEdit() {
         prepareList();
     }
-    
+
     public void prepareCreate() {
         prepareList();
     }

@@ -49,18 +49,18 @@ public class CategoryServiceTest extends ServiceTestCase {
     public void testDelete() {
         categoryService.delete(Long.valueOf(101));
     }
-    
+
     @Test
-    public void testCountByUniqueKey4Create(){
+    public void testCountByUniqueKey4Create() {
         Category record = new Category();
         record.setName("name_104");
         record.setType("type_104");
         Long cnt = categoryService.countByDuplicate(record);
         assertEquals(Long.valueOf(1), cnt);
     }
-    
+
     @Test
-    public void testCountByUniqueKey4Update(){
+    public void testCountByUniqueKey4Update() {
         Category record = new Category();
         record.setId(Long.valueOf(104));
         record.setName("name_103");

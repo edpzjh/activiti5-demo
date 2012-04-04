@@ -5,7 +5,6 @@
 // Generated on: 2011.11.19 at 01:03:20 ���� CST 
 //
 
-
 package com.bulain.swift.pojo;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -13,12 +12,13 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
-
 /**
- * <p>Java class for Document complex type.
+ * <p>
+ * Java class for Document complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="Document">
@@ -35,9 +35,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Document", propOrder = {
-    "acctReqAck"
-})
+@XmlType(name = "Document", propOrder = {"acctReqAck"})
 public class DocumentReqAck {
 
     @XmlElement(name = "AcctReqAck", required = true)
@@ -46,10 +44,8 @@ public class DocumentReqAck {
     /**
      * Gets the value of the acctReqAck property.
      * 
-     * @return
-     *     possible object is
-     *     {@link AccountRequestAcknowledgementV01 }
-     *     
+     * @return possible object is {@link AccountRequestAcknowledgementV01 }
+     * 
      */
     public AccountRequestAcknowledgementV01 getAcctReqAck() {
         return acctReqAck;
@@ -59,9 +55,8 @@ public class DocumentReqAck {
      * Sets the value of the acctReqAck property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link AccountRequestAcknowledgementV01 }
-     *     
+     *            allowed object is {@link AccountRequestAcknowledgementV01 }
+     * 
      */
     public void setAcctReqAck(AccountRequestAcknowledgementV01 value) {
         this.acctReqAck = value;

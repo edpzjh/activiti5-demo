@@ -18,11 +18,11 @@ import com.bulain.common.test.WebTestCase;
 @SeedDataSet(file = TestConst.IT_DATA_INIT_COMMON_XML)
 @DataSet(file = "it-data/init_users.xml")
 public class UserIT extends WebTestCase {
-    
+
     @Test
     public void testList() {
         List<WebElement> listTr;
-        
+
         driver.get(baseUrl + "/user/list.action");
         driver.findElement(By.id("search_search_firstName")).clear();
         driver.findElement(By.id("search_search_firstName")).sendKeys("first_name_page");
@@ -32,7 +32,7 @@ public class UserIT extends WebTestCase {
         listTr = driver.findElements(By.xpath("id('list')/tbody/tr"));
         assertEquals(4, listTr.size());
         assertTrue(isElementPresent(By.id("btn_search")));
-        
+
         driver.get(baseUrl + "/user/list.action");
         driver.findElement(By.id("search_search_firstName")).clear();
         driver.findElement(By.id("search_search_lastName")).clear();
@@ -41,7 +41,7 @@ public class UserIT extends WebTestCase {
         assertEquals(8, listTr.size());
         assertTrue(isElementPresent(By.id("btn_search")));
     }
-    
+
     @Test
     public void testCreate() {
         driver.get(baseUrl + "/user/list.action");
@@ -55,7 +55,7 @@ public class UserIT extends WebTestCase {
         assertEquals(9, listTr.size());
         assertTrue(isElementPresent(By.id("btn_search")));
     }
-    
+
     @Test
     public void testUpdate() {
         driver.get(baseUrl + "/user/list.action");
@@ -68,7 +68,7 @@ public class UserIT extends WebTestCase {
         driver.findElement(By.id("btn_update")).click();
         assertTrue(isElementPresent(By.id("btn_search")));
     }
-    
+
     @Test
     public void testShow() {
         driver.get(baseUrl + "/user/list.action");
@@ -79,7 +79,7 @@ public class UserIT extends WebTestCase {
         assertEquals("first_name_101", firstName);
         assertEquals("last_name_101", lastName);
     }
-    
+
     @Test
     public void testDelete() {
         driver.get(baseUrl + "/user/list.action");
@@ -93,5 +93,5 @@ public class UserIT extends WebTestCase {
         assertEquals(7, listTr.size());
         assertTrue(isElementPresent(By.id("btn_search")));
     }
-    
+
 }

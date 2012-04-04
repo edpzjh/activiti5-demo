@@ -72,16 +72,16 @@ public class GroupMapperTest extends ServiceTestCase {
     }
 
     @Test
-    public void testCountByUniqueKey4Create(){
+    public void testCountByUniqueKey4Create() {
         Group record = new Group();
         record.setName("name_104");
         record.setType("type_104");
         Long cnt = groupMapper.countByDuplicate(record);
         assertEquals(Long.valueOf(1), cnt);
     }
-    
+
     @Test
-    public void testCountByUniqueKey4Update(){
+    public void testCountByUniqueKey4Update() {
         Group record = new Group();
         record.setId(Long.valueOf(104));
         record.setName("name_103");
@@ -89,7 +89,7 @@ public class GroupMapperTest extends ServiceTestCase {
         Long cnt = groupMapper.countByDuplicate(record);
         assertEquals(Long.valueOf(1), cnt);
     }
-    
+
     @Test
     public void testFind() {
         GroupSearch search = new GroupSearch();

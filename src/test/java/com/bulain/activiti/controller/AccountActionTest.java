@@ -13,7 +13,6 @@ import com.bulain.common.test.ActionTestCase;
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionProxy;
 
-
 @DataSet(file = "test-data/init_accounts.xml")
 public class AccountActionTest extends ActionTestCase {
 
@@ -128,4 +127,3 @@ public class AccountActionTest extends ActionTestCase {
     }
 
 }
-

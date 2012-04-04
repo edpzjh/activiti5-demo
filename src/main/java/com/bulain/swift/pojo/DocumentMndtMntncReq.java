@@ -5,7 +5,6 @@
 // Generated on: 2011.11.19 at 02:55:57 ���� CST 
 //
 
-
 package com.bulain.swift.pojo;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -13,11 +12,13 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for Document complex type.
+ * <p>
+ * Java class for Document complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="Document">
@@ -34,10 +35,8 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Document", propOrder = {
-    "acctMndtMntncReq"
-})
-public class DocumentMndtMntncReq{
+@XmlType(name = "Document", propOrder = {"acctMndtMntncReq"})
+public class DocumentMndtMntncReq {
 
     @XmlElement(name = "AcctMndtMntncReq", required = true)
     protected AccountMandateMaintenanceRequestV01 acctMndtMntncReq;
@@ -45,10 +44,8 @@ public class DocumentMndtMntncReq{
     /**
      * Gets the value of the acctMndtMntncReq property.
      * 
-     * @return
-     *     possible object is
-     *     {@link AccountMandateMaintenanceRequestV01 }
-     *     
+     * @return possible object is {@link AccountMandateMaintenanceRequestV01 }
+     * 
      */
     public AccountMandateMaintenanceRequestV01 getAcctMndtMntncReq() {
         return acctMndtMntncReq;
@@ -58,9 +55,8 @@ public class DocumentMndtMntncReq{
      * Sets the value of the acctMndtMntncReq property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link AccountMandateMaintenanceRequestV01 }
-     *     
+     *            allowed object is {@link AccountMandateMaintenanceRequestV01 }
+     * 
      */
     public void setAcctMndtMntncReq(AccountMandateMaintenanceRequestV01 value) {
         this.acctMndtMntncReq = value;

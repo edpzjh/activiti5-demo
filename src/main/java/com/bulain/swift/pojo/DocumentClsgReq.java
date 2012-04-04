@@ -5,7 +5,6 @@
 // Generated on: 2011.11.19 at 02:56:20 ���� CST 
 //
 
-
 package com.bulain.swift.pojo;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -13,11 +12,13 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for Document complex type.
+ * <p>
+ * Java class for Document complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="Document">
@@ -34,9 +35,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Document", propOrder = {
-    "acctClsgReq"
-})
+@XmlType(name = "Document", propOrder = {"acctClsgReq"})
 public class DocumentClsgReq {
 
     @XmlElement(name = "AcctClsgReq", required = true)
@@ -45,10 +44,8 @@ public class DocumentClsgReq {
     /**
      * Gets the value of the acctClsgReq property.
      * 
-     * @return
-     *     possible object is
-     *     {@link AccountClosingRequestV01 }
-     *     
+     * @return possible object is {@link AccountClosingRequestV01 }
+     * 
      */
     public AccountClosingRequestV01 getAcctClsgReq() {
         return acctClsgReq;
@@ -58,9 +55,8 @@ public class DocumentClsgReq {
      * Sets the value of the acctClsgReq property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link AccountClosingRequestV01 }
-     *     
+     *            allowed object is {@link AccountClosingRequestV01 }
+     * 
      */
     public void setAcctClsgReq(AccountClosingRequestV01 value) {
         this.acctClsgReq = value;

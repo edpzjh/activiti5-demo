@@ -60,18 +60,18 @@ public class CategoryMapperTest extends ServiceTestCase {
         int updateByPrimaryKeySelective = categoryMapper.updateByPrimaryKeySelective(record);
         assertEquals(1, updateByPrimaryKeySelective);
     }
-    
+
     @Test
-    public void testCountByUniqueKey4Create(){
+    public void testCountByUniqueKey4Create() {
         Category record = new Category();
         record.setName("name_104");
         record.setType("type_104");
         Long cnt = categoryMapper.countByDuplicate(record);
         assertEquals(Long.valueOf(1), cnt);
     }
-    
+
     @Test
-    public void testCountByUniqueKey4Update(){
+    public void testCountByUniqueKey4Update() {
         Category record = new Category();
         record.setId(Long.valueOf(104));
         record.setName("name_103");

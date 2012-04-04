@@ -22,7 +22,7 @@ public class AccountSearch extends Search {
     private Date targetGoLiveDate;
     private Date targetClosingDate;
     private String urgencyFlag;
-    
+
     public String getIban() {
         return iban;
     }

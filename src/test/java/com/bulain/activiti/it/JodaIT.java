@@ -18,11 +18,11 @@ import com.bulain.common.test.WebTestCase;
 @SeedDataSet(file = TestConst.IT_DATA_INIT_COMMON_XML)
 @DataSet(file = "it-data/init_jodas.xml")
 public class JodaIT extends WebTestCase {
-    
+
     @Test
     public void testList() {
         List<WebElement> listTr;
-        
+
         driver.get(baseUrl + "/joda/list.action?request_locale=zh_CN");
         driver.findElement(By.id("search_search_xdate")).clear();
         driver.findElement(By.id("search_search_xdate")).sendKeys("2010-04-04");
@@ -32,7 +32,7 @@ public class JodaIT extends WebTestCase {
         listTr = driver.findElements(By.xpath("id('list')/tbody/tr"));
         assertEquals(4, listTr.size());
         assertTrue(isElementPresent(By.id("btn_search")));
-        
+
         driver.get(baseUrl + "/joda/list.action?request_locale=zh_CN");
         driver.findElement(By.id("search_search_xdate")).clear();
         driver.findElement(By.id("search_search_xdate")).sendKeys("");
@@ -43,7 +43,7 @@ public class JodaIT extends WebTestCase {
         assertEquals(8, listTr.size());
         assertTrue(isElementPresent(By.id("btn_search")));
     }
-    
+
     @Test
     public void testCreate() {
         driver.get(baseUrl + "/joda/list.action?request_locale=zh_CN");
@@ -57,7 +57,7 @@ public class JodaIT extends WebTestCase {
         assertEquals(9, listTr.size());
         assertTrue(isElementPresent(By.id("btn_search")));
     }
-    
+
     @Test
     public void testUpdate() {
         driver.get(baseUrl + "/joda/list.action?request_locale=zh_CN");
@@ -70,7 +70,7 @@ public class JodaIT extends WebTestCase {
         driver.findElement(By.id("btn_update")).click();
         assertTrue(isElementPresent(By.id("btn_search")));
     }
-    
+
     @Test
     public void testShow() {
         driver.get(baseUrl + "/joda/list.action?request_locale=zh_CN");
@@ -81,7 +81,7 @@ public class JodaIT extends WebTestCase {
         assertEquals("2010-04-01", xdate);
         assertEquals("05:00", xtime);
     }
-    
+
     @Test
     public void testDelete() {
         driver.get(baseUrl + "/joda/list.action?request_locale=zh_CN");
@@ -95,5 +95,5 @@ public class JodaIT extends WebTestCase {
         assertEquals(7, listTr.size());
         assertTrue(isElementPresent(By.id("btn_search")));
     }
-    
+
 }

@@ -56,13 +56,13 @@ public class ActivitiBpoTest extends ServiceTestCase {
             taskService.claim(task.getId(), "bulain");
         }
     }
-    
+
     @AfterClass
     public static void tearDownClass() throws Exception {
         test.tearDownActiviti();
     }
-    
-    private void tearDownActiviti(){
+
+    private void tearDownActiviti() {
         repositoryService.deleteDeployment(deploymentId, true);
     }
 

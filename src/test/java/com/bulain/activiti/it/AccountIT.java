@@ -19,11 +19,11 @@ import com.bulain.common.test.WebTestCase;
 @SeedDataSet(file = TestConst.IT_DATA_INIT_COMMON_XML)
 @DataSet(file = "it-data/init_accounts.xml")
 public class AccountIT extends WebTestCase {
-    
+
     @Test
-    public void testList(){
+    public void testList() {
         List<WebElement> listTr;
-        
+
         driver.get(baseUrl + "/account/list.action");
         driver.findElement(By.id("search_search_name")).clear();
         driver.findElement(By.id("search_search_name")).sendKeys("name_page");
@@ -32,7 +32,7 @@ public class AccountIT extends WebTestCase {
         listTr = driver.findElements(By.xpath("id('list')/tbody/tr"));
         assertEquals(4, listTr.size());
         assertTrue(isElementPresent(By.id("btn_search")));
-        
+
         driver.get(baseUrl + "/account/list.action");
         driver.findElement(By.id("search_search_name")).clear();
         new Select(driver.findElement(By.id("search_search_type"))).selectByValue("");
@@ -41,9 +41,9 @@ public class AccountIT extends WebTestCase {
         assertEquals(8, listTr.size());
         assertTrue(isElementPresent(By.id("btn_search")));
     }
-    
+
     @Test
-    public void testCreate(){
+    public void testCreate() {
         driver.get(baseUrl + "/account/list.action");
         driver.findElement(By.id("lnk_new")).click();
         driver.findElement(By.id("create_account_name")).clear();
@@ -58,9 +58,9 @@ public class AccountIT extends WebTestCase {
         assertEquals(9, listTr.size());
         assertTrue(isElementPresent(By.id("btn_search")));
     }
-    
+
     @Test
-    public void testUpdate(){
+    public void testUpdate() {
         driver.get(baseUrl + "/account/list.action");
         String xpath = String.format("//tr[td/text()='%s']/td/a[contains(@href,'edit.action')]", "name_101");
         driver.findElement(By.xpath(xpath)).click();
@@ -70,9 +70,9 @@ public class AccountIT extends WebTestCase {
         driver.findElement(By.id("btn_update")).click();
         assertTrue(isElementPresent(By.id("btn_search")));
     }
-    
+
     @Test
-    public void testShow(){
+    public void testShow() {
         driver.get(baseUrl + "/account/list.action");
         String xpath = String.format("//tr[td/text()='%s']/td/a[contains(@href,'show.action')]", "name_101");
         driver.findElement(By.xpath(xpath)).click();
@@ -81,9 +81,9 @@ public class AccountIT extends WebTestCase {
         assertEquals("name_101", name);
         assertEquals("CashPayment", type);
     }
-    
+
     @Test
-    public void testDelete(){
+    public void testDelete() {
         driver.get(baseUrl + "/account/list.action");
         String xpath = String.format("//tr[td/text()='%s']/td/a[contains(@href,'destroy.action')]", "name_101");
         driver.findElement(By.xpath(xpath)).click();
@@ -95,5 +95,5 @@ public class AccountIT extends WebTestCase {
         assertEquals(7, listTr.size());
         assertTrue(isElementPresent(By.id("btn_search")));
     }
-    
+
 }

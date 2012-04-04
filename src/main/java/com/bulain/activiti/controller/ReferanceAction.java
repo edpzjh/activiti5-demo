@@ -18,7 +18,7 @@ import com.bulain.common.controller.PageSupportActionSupport;
 public class ReferanceAction extends PageSupportActionSupport {
     private static final long serialVersionUID = -6586209271699101686L;
     private static final Logger LOG = LoggerFactory.getLogger(ReferanceAction.class);
-    
+
     private static final String TEXT_REFERANCE_MODEL = "referance.model";
     private static final String TEXT_REFERANCE_NAME = "referance.name";
     private static final String TEXT_REFERANCE_CODE = "referance.code";

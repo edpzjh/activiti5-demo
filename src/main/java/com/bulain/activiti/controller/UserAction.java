@@ -87,7 +87,7 @@ public class UserAction extends PageSupportActionSupport {
             addActionError(msg);
             return ERROR;
         }
-        
+
         return SUCCESS;
     }
 

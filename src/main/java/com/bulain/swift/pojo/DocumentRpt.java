@@ -5,7 +5,6 @@
 // Generated on: 2011.11.19 at 02:54:43 ���� CST 
 //
 
-
 package com.bulain.swift.pojo;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -13,11 +12,13 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for Document complex type.
+ * <p>
+ * Java class for Document complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="Document">
@@ -34,9 +35,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Document", propOrder = {
-    "acctRpt"
-})
+@XmlType(name = "Document", propOrder = {"acctRpt"})
 public class DocumentRpt {
 
     @XmlElement(name = "AcctRpt", required = true)
@@ -45,10 +44,8 @@ public class DocumentRpt {
     /**
      * Gets the value of the acctRpt property.
      * 
-     * @return
-     *     possible object is
-     *     {@link AccountReportV01 }
-     *     
+     * @return possible object is {@link AccountReportV01 }
+     * 
      */
     public AccountReportV01 getAcctRpt() {
         return acctRpt;
@@ -58,9 +55,8 @@ public class DocumentRpt {
      * Sets the value of the acctRpt property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link AccountReportV01 }
-     *     
+     *            allowed object is {@link AccountReportV01 }
+     * 
      */
     public void setAcctRpt(AccountReportV01 value) {
         this.acctRpt = value;

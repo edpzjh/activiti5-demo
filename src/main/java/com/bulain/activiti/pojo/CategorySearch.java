@@ -6,7 +6,7 @@ public class CategorySearch extends Search {
     private static final long serialVersionUID = -843348538225583316L;
     private String name;
     private String type;
-    
+
     public String getName() {
         return name;
     }

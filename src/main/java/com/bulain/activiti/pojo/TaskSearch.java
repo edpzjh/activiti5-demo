@@ -4,7 +4,7 @@ import java.util.Date;
 
 import com.bulain.common.page.Search;
 
-public class TaskSearch extends Search{
+public class TaskSearch extends Search {
     private static final long serialVersionUID = -5197008445122447863L;
 
     private String taskName;
@@ -15,12 +15,12 @@ public class TaskSearch extends Search{
     private String taskDefinitionKey;
     private Date taskCreateTimeStart;
     private Date taskCreateTimeEnd;
-    
+
     private String processInstanceBusinessKey;
-    
+
     private String processDefinitionKey;
     private String processDefinitionName;
-    
+
     public String getTaskName() {
         return taskName;
     }
@@ -87,5 +87,5 @@ public class TaskSearch extends Search{
     public void setProcessDefinitionName(String processDefinitionName) {
         this.processDefinitionName = processDefinitionName;
     }
-    
+
 }

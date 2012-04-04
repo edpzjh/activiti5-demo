@@ -5,7 +5,6 @@
 // Generated on: 2011.11.19 at 02:53:55 ���� CST 
 //
 
-
 package com.bulain.swift.pojo;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -13,11 +12,13 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for Document complex type.
+ * <p>
+ * Java class for Document complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="Document">
@@ -34,9 +35,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Document", propOrder = {
-    "acctReqRjctn"
-})
+@XmlType(name = "Document", propOrder = {"acctReqRjctn"})
 public class DocumentReqRjctn {
 
     @XmlElement(name = "AcctReqRjctn", required = true)
@@ -45,10 +44,8 @@ public class DocumentReqRjctn {
     /**
      * Gets the value of the acctReqRjctn property.
      * 
-     * @return
-     *     possible object is
-     *     {@link AccountRequestRejectionV01 }
-     *     
+     * @return possible object is {@link AccountRequestRejectionV01 }
+     * 
      */
     public AccountRequestRejectionV01 getAcctReqRjctn() {
         return acctReqRjctn;
@@ -58,9 +55,8 @@ public class DocumentReqRjctn {
      * Sets the value of the acctReqRjctn property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link AccountRequestRejectionV01 }
-     *     
+     *            allowed object is {@link AccountRequestRejectionV01 }
+     * 
      */
     public void setAcctReqRjctn(AccountRequestRejectionV01 value) {
         this.acctReqRjctn = value;

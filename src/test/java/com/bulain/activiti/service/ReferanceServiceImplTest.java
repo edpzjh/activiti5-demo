@@ -94,7 +94,7 @@ public class ReferanceServiceImplTest extends ServiceTestCase {
     }
 
     @Test
-    public void testCountByUniqueKey4Create(){
+    public void testCountByUniqueKey4Create() {
         Referance record = new Referance();
         record.setName("name_104");
         record.setCode("code_104");
@@ -103,9 +103,9 @@ public class ReferanceServiceImplTest extends ServiceTestCase {
         Long cnt = referanceService.countByDuplicate(record);
         assertEquals(Long.valueOf(1), cnt);
     }
-    
+
     @Test
-    public void testCountByUniqueKey4Update(){
+    public void testCountByUniqueKey4Update() {
         Referance record = new Referance();
         record.setId(Long.valueOf(104));
         record.setName("name_103");

@@ -49,17 +49,17 @@ public class AccountServiceTest extends ServiceTestCase {
     public void testDelete() {
         accountService.delete(Long.valueOf(101));
     }
-    
+
     @Test
-    public void testCountByUniqueKey4Create(){
+    public void testCountByUniqueKey4Create() {
         Account record = new Account();
         record.setName("name_104");
         Long cnt = accountService.countByDuplicate(record);
         assertEquals(Long.valueOf(1), cnt);
     }
-    
+
     @Test
-    public void testCountByUniqueKey4Update(){
+    public void testCountByUniqueKey4Update() {
         Account record = new Account();
         record.setId(Long.valueOf(104));
         record.setName("name_103");

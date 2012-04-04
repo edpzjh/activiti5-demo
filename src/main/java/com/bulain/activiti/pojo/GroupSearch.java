@@ -4,10 +4,10 @@ import com.bulain.common.page.Search;
 
 public class GroupSearch extends Search {
     private static final long serialVersionUID = -8893872416604280253L;
-    
+
     private String name;
     private String type;
-    
+
     public String getName() {
         return name;
     }

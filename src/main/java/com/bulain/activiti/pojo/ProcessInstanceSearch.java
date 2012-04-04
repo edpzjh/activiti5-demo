@@ -2,13 +2,13 @@ package com.bulain.activiti.pojo;
 
 import com.bulain.common.page.Search;
 
-public class ProcessInstanceSearch extends Search{
+public class ProcessInstanceSearch extends Search {
     private static final long serialVersionUID = 468505443014004296L;
 
     private String processInstanceBusinessKey;
     private String processDefinitionKey;
     private String status; // suspended,active
-    
+
     public String getProcessInstanceBusinessKey() {
         return processInstanceBusinessKey;
     }
@@ -27,5 +27,5 @@ public class ProcessInstanceSearch extends Search{
     public void setStatus(String status) {
         this.status = status;
     }
-    
+
 }

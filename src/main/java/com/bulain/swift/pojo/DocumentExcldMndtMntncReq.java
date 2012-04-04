@@ -5,7 +5,6 @@
 // Generated on: 2011.11.19 at 02:55:29 ���� CST 
 //
 
-
 package com.bulain.swift.pojo;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -13,11 +12,13 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
-
 /**
- * <p>Java class for Document complex type.
+ * <p>
+ * Java class for Document complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="Document">
@@ -34,9 +35,7 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Document", propOrder = {
-    "acctExcldMndtMntncReq"
-})
+@XmlType(name = "Document", propOrder = {"acctExcldMndtMntncReq"})
 public class DocumentExcldMndtMntncReq {
 
     @XmlElement(name = "AcctExcldMndtMntncReq", required = true)
@@ -45,10 +44,9 @@ public class DocumentExcldMndtMntncReq {
     /**
      * Gets the value of the acctExcldMndtMntncReq property.
      * 
-     * @return
-     *     possible object is
-     *     {@link AccountExcludedMandateMaintenanceRequestV01 }
-     *     
+     * @return possible object is
+     *         {@link AccountExcludedMandateMaintenanceRequestV01 }
+     * 
      */
     public AccountExcludedMandateMaintenanceRequestV01 getAcctExcldMndtMntncReq() {
         return acctExcldMndtMntncReq;
@@ -58,9 +56,9 @@ public class DocumentExcldMndtMntncReq {
      * Sets the value of the acctExcldMndtMntncReq property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link AccountExcludedMandateMaintenanceRequestV01 }
-     *     
+     *            allowed object is
+     *            {@link AccountExcludedMandateMaintenanceRequestV01 }
+     * 
      */
     public void setAcctExcldMndtMntncReq(AccountExcludedMandateMaintenanceRequestV01 value) {
         this.acctExcldMndtMntncReq = value;

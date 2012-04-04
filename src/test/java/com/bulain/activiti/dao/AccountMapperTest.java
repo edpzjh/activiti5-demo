@@ -70,17 +70,17 @@ public class AccountMapperTest extends ServiceTestCase {
         int updateByPrimaryKey = accountMapper.updateByPrimaryKey(record);
         assertEquals(1, updateByPrimaryKey);
     }
-    
+
     @Test
-    public void testCountByUniqueKey4Create(){
+    public void testCountByUniqueKey4Create() {
         Account record = new Account();
         record.setName("name_104");
         Long cnt = accountMapper.countByDuplicate(record);
         assertEquals(Long.valueOf(1), cnt);
     }
-    
+
     @Test
-    public void testCountByUniqueKey4Update(){
+    public void testCountByUniqueKey4Update() {
         Account record = new Account();
         record.setId(Long.valueOf(104));
         record.setName("name_103");

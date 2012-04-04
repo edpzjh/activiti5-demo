@@ -13,12 +13,13 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
-
-
 /**
- * <p>Java class for Document complex type.
+ * <p>
+ * Java class for Document complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>
+ * The following schema fragment specifies the expected content contained within
+ * this class.
  * 
  * <pre>
  * &lt;complexType name="Document">
@@ -35,10 +36,8 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Document", propOrder = {
-    "acctOpngReq"
-})
-@XmlRootElement(name="Document", namespace="urn:iso:std:iso:20022:tech:xsd:acmt.007.001.01")
+@XmlType(name = "Document", propOrder = {"acctOpngReq"})
+@XmlRootElement(name = "Document", namespace = "urn:iso:std:iso:20022:tech:xsd:acmt.007.001.01")
 public class DocumentOpngReq {
 
     @XmlElement(name = "AcctOpngReq", required = true)
@@ -47,10 +46,8 @@ public class DocumentOpngReq {
     /**
      * Gets the value of the acctOpngReq property.
      * 
-     * @return
-     *     possible object is
-     *     {@link AccountOpeningRequestV01 }
-     *     
+     * @return possible object is {@link AccountOpeningRequestV01 }
+     * 
      */
     public AccountOpeningRequestV01 getAcctOpngReq() {
         return acctOpngReq;
@@ -60,9 +57,8 @@ public class DocumentOpngReq {
      * Sets the value of the acctOpngReq property.
      * 
      * @param value
-     *     allowed object is
-     *     {@link AccountOpeningRequestV01 }
-     *     
+     *            allowed object is {@link AccountOpeningRequestV01 }
+     * 
      */
     public void setAcctOpngReq(AccountOpeningRequestV01 value) {
         this.acctOpngReq = value;
