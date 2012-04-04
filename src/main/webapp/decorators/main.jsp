@@ -10,8 +10,10 @@
         <script src="<s:url value='/web-static/jquery/js/jquery-1.4.2.js'/>" type="text/javascript"></script>
         <script src="<s:url value='/web-static/jquery/js/jquery.validate.js'/>" type="text/javascript"></script>
         <script src="<s:url value='/web-static/jquery/js/jquery.validate.extends.js'/>" type="text/javascript"></script>
-        <s:set name="locale" value="#session['WW_TRANS_I18N_LOCALE']" />
+        <s:set var="locale" value="#session['WW_TRANS_I18N_LOCALE']" />
+        <s:if test="#locale!=null">
         <script src="<s:url value='/web-static/jquery/js/localization/messages_%{#locale}.js'/>" type="text/javascript"></script>
+        </s:if>
         <script src="<s:url value='/web-static/jquery/js/jquery-ui-1.8.4.custom.min.js'/>" type="text/javascript"></script>
         <script src="<s:url value='/web-static/jquery/js/jquery.cookie.js'/>" type="text/javascript"></script>
         <script src="<s:url value='/web-static/static/js/jquery.cookie.extend.js'/>" type="text/javascript"></script>
