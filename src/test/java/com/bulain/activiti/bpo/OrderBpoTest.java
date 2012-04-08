@@ -17,6 +17,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import com.bulain.activiti.model.Order;
 import com.bulain.activiti.test.TestConst;
@@ -26,8 +27,9 @@ import com.bulain.common.test.ServiceTestCase;
 
 @SeedDataSet(file = TestConst.TEST_DATA_INIT_COMMON_XML)
 @DataSet(file = "test-data/init_orders.xml")
-public class OrderBpoImplTest extends ServiceTestCase {
+public class OrderBpoTest extends ServiceTestCase {
     @Autowired
+    @Qualifier("orderBpoTx")
     private OrderBpo orderBpo;
     @Autowired
     private RepositoryService repositoryService;

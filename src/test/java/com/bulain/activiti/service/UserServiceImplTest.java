@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import com.bulain.activiti.model.User;
 import com.bulain.activiti.pojo.UserSearch;
@@ -20,6 +21,7 @@ import com.bulain.common.test.ServiceTestCase;
 @DataSet(file = "test-data/init_users.xml")
 public class UserServiceImplTest extends ServiceTestCase {
     @Autowired
+    @Qualifier("userServiceTx")
     private UserService userService;
 
     @Test

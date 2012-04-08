@@ -11,10 +11,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.bulain.activiti.model.Account;
 import com.bulain.activiti.pojo.AccountSearch;
 import com.bulain.common.dataset.DataSet;
-import com.bulain.common.test.ServiceTestCase;
+import com.bulain.common.test.DaoTestCase;
 
 @DataSet(file = "test-data/init_accounts.xml")
-public class AccountMapperTest extends ServiceTestCase {
+public class AccountMapperTest extends DaoTestCase {
     @Autowired
     private AccountMapper accountMapper;
 

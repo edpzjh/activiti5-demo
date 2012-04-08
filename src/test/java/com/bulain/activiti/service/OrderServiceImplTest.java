@@ -8,6 +8,7 @@ import java.util.List;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import com.bulain.activiti.dao.OrderHisMapper;
 import com.bulain.activiti.dao.OrderMapper;
@@ -26,6 +27,7 @@ import com.bulain.common.test.ServiceTestCase;
 @DataSet(file = "test-data/init_orders.xml")
 public class OrderServiceImplTest extends ServiceTestCase {
     @Autowired
+    @Qualifier("orderServiceTx")
     private OrderService orderService;
     @Autowired
     private OrderMapper orderMapper;

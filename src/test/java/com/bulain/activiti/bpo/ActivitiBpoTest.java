@@ -14,6 +14,7 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import com.bulain.activiti.pojo.TaskSearch;
 import com.bulain.common.page.Page;
@@ -21,6 +22,7 @@ import com.bulain.common.test.ServiceTestCase;
 
 public class ActivitiBpoTest extends ServiceTestCase {
     @Autowired
+    @Qualifier("activitiBpoTx")
     private ActivitiBpo activitiBpo;
     @Autowired
     private RepositoryService repositoryService;

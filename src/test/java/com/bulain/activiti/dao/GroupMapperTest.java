@@ -11,10 +11,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.bulain.activiti.model.Group;
 import com.bulain.activiti.pojo.GroupSearch;
 import com.bulain.common.dataset.DataSet;
-import com.bulain.common.test.ServiceTestCase;
+import com.bulain.common.test.DaoTestCase;
 
 @DataSet(file = "test-data/init_groups.xml")
-public class GroupMapperTest extends ServiceTestCase {
+public class GroupMapperTest extends DaoTestCase {
     @Autowired
     private GroupMapper groupMapper;
 

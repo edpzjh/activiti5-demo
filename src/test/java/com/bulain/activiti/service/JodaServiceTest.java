@@ -12,6 +12,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import com.bulain.activiti.model.Joda;
 import com.bulain.activiti.pojo.JodaSearch;
@@ -23,6 +24,7 @@ import com.bulain.common.util.SystemClock;
 @DataSet(file = "test-data/init_jodas.xml")
 public class JodaServiceTest extends ServiceTestCase {
     @Autowired
+    @Qualifier("jodaServiceTx")
     private JodaService jodaService;
 
     @Before

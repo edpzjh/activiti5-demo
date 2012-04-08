@@ -13,10 +13,10 @@ import com.bulain.activiti.pojo.Item;
 import com.bulain.activiti.pojo.ReferanceSearch;
 import com.bulain.common.dataset.DataSet;
 import com.bulain.common.page.Page;
-import com.bulain.common.test.ServiceTestCase;
+import com.bulain.common.test.DaoTestCase;
 
 @DataSet(file = "test-data/init_referances.xml")
-public class ReferanceMapperTest extends ServiceTestCase {
+public class ReferanceMapperTest extends DaoTestCase {
     @Autowired
     private ReferanceMapper referanceMapper;
 

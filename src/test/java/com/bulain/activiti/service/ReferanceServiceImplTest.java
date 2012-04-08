@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import com.bulain.activiti.model.Referance;
 import com.bulain.activiti.pojo.Item;
@@ -17,6 +18,7 @@ import com.bulain.common.test.ServiceTestCase;
 @DataSet(file = "test-data/init_referances.xml")
 public class ReferanceServiceImplTest extends ServiceTestCase {
     @Autowired
+    @Qualifier("referanceServiceTx")
     private ReferanceService referanceService;
 
     @Test

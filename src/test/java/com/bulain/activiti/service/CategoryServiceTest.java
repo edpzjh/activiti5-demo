@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import com.bulain.activiti.model.Category;
 import com.bulain.activiti.pojo.CategorySearch;
@@ -17,6 +18,7 @@ import com.bulain.common.test.ServiceTestCase;
 @DataSet(file = "test-data/init_categorys.xml")
 public class CategoryServiceTest extends ServiceTestCase {
     @Autowired
+    @Qualifier("categoryServiceTx")
     private CategoryService categoryService;
 
     @Test

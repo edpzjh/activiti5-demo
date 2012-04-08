@@ -7,6 +7,7 @@ import java.util.List;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import com.bulain.activiti.model.Account;
 import com.bulain.activiti.pojo.AccountSearch;
@@ -17,6 +18,7 @@ import com.bulain.common.test.ServiceTestCase;
 @DataSet(file = "test-data/init_accounts.xml")
 public class AccountServiceTest extends ServiceTestCase {
     @Autowired
+    @Qualifier("accountServiceTx")
     private AccountService accountService;
 
     @Test

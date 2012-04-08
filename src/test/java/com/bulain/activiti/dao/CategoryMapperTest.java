@@ -11,10 +11,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.bulain.activiti.model.Category;
 import com.bulain.activiti.pojo.CategorySearch;
 import com.bulain.common.dataset.DataSet;
-import com.bulain.common.test.ServiceTestCase;
+import com.bulain.common.test.DaoTestCase;
 
 @DataSet(file = "test-data/init_categorys.xml")
-public class CategoryMapperTest extends ServiceTestCase {
+public class CategoryMapperTest extends DaoTestCase {
     @Autowired
     private CategoryMapper categoryMapper;
 
