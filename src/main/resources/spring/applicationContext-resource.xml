@@ -29,22 +29,11 @@
         </property>
     </bean>
 
-    <bean class="com.bulain.common.advice.ExcludeBeanNameAutoProxyCreator">
+    <bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
         <property name="beanNames">
             <list>
                 <value>*ServiceTx</value>
                 <value>*BpoTx</value>
-            </list>
-        </property>
-        <property name="excludeBeanNames">
-            <list>
-                <value>repositoryService</value>
-                <value>runtimeService</value>
-                <value>taskService</value>
-                <value>historyService</value>
-                <value>managementService</value>
-                <value>identityService</value>
-                <value>formService</value>
             </list>
         </property>
         <property name="interceptorNames">
