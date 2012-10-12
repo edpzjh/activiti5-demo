@@ -27,3 +27,4 @@ If you want to build this project, please follow the next step.
     change build.properties
     change src/test/resources/mybatis/mybatis-generator-config.xml
     ant genfile
+    
